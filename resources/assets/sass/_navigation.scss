@@ -1,0 +1,142 @@
+.navbar {
+	min-height: 100px;
+
+	.navbar-brand {
+		font-size: 2em;
+		color: $body-bg;
+	}
+
+	.navbar-nav {
+		margin-right: 15px;
+	}
+
+	.nav-item {
+		font-size: 1.3em;
+	}
+
+	#navigation-link {
+		color: #fff;
+
+		&:hover {
+			color: $text-color-splash;
+		}
+	}
+
+	#navigation-link.scrolled {
+		color: #777;
+	}
+
+	.navbar-toggler {
+		border: none;
+
+		&:focus {
+			border: none;
+			outline: none;
+		}
+	}
+
+	.navbar-toggler-icon {
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245,248,250)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+	}
+
+	.navbar-collapse {
+		margin-left: -16px;
+		margin-right: -16px;
+		padding-left: 16px;
+	}
+}
+.navbar.scrolled {
+  background-color: #f8f8f8 !important;
+  border-bottom: 1px solid #f8f8f8;
+  transition: background-color 200ms linear;
+}
+
+.navbar-brand.scrolled, .nav-link.scrolled {
+	color: #777 !important;
+}
+
+.navbar-toggler-icon.scrolled {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(119,119,119)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.navbar-right-menu {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+
+	li a {
+		color: #fff;
+
+		&:hover, &:focus {
+			color: #fff;
+		}
+	}
+}
+
+/* SECONDARY NAVBAR STYLING */
+
+	.navbar-secondary {
+		background-color: #618f8e;
+		
+		.navbar-brand {
+			color: #fff;
+		}
+
+		.nav-item a {
+			color: #fff !important;
+		}
+	}
+
+/* END SECONDARY NAVBAR STYLING */
+
+@media screen and (max-width: 767px) {
+	.navbar-collapse {
+		background-color: transparent;
+	}
+
+	.navbar-left {
+		border-bottom: 1px solid #e3e3e3;
+	}
+
+	.navbar-right {
+		margin-top: -7px;
+		background-color: #f8f8f8;
+	}
+
+	.navbar-right-menu li a {
+		display: block;
+		padding: 10px 15px;
+		color: #777;
+	}
+
+	.navbar-toggle {
+		border: none;
+		
+		.icon-bar {
+			border: 1px solid #fff;
+		}
+	}
+
+	.navbar-secondary {
+		.icon-bar {
+			border: 1px solid #777;
+		}
+	}
+
+	.icon-bar.scrolled {
+		border: 1px solid #777;
+	}
+}
+
+@media screen and (min-width: 768px) {
+
+	.navbar-left li {
+		padding: 12px 0px;
+	}
+
+	.navbar-right-menu li {
+		display: inline-block;
+		padding: 33px 12px;
+		font-size: 1.5em;
+	}
+}

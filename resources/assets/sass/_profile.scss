@@ -1,0 +1,236 @@
+.profile-wrapper {
+	margin-top: 150px;
+	overflow: auto;
+	padding-bottom: 150px;
+
+	.nav-tabs {
+		margin-top: 50px;
+	}
+
+	.main-content {
+
+		.content-section {
+			padding-top: 25px;
+			padding-left: 15px;
+			display: none;
+
+			&:first-child {
+				display: initial;
+			}
+
+			.question-details {
+				padding: 15px;
+				margin-bottom: 10px;
+				border-radius: 10px;
+				border: 1px solid #a9a9a9;
+    			box-shadow: 0 0 3px #a9a9a9;
+    			position: relative;
+
+    			#topic-header, #question-header, #name-header, #response-header {
+    				padding: 0px;
+    			}
+
+    			#details-question {
+					margin-bottom: 10px;
+				}
+
+    			#question-metrics {
+    				font-size: 0.8em;
+				    position: absolute;
+				    bottom: 5px;
+				    left: 2px;
+				    width: 100%;
+				    height: 20px;
+				    margin-left: 15px;
+
+				    ul {
+				    	list-style-type: none;
+				    	margin: 0px;
+				    	padding: 0px;
+
+				    	li {
+				    		display: inline-block;
+				    		margin-right: 15px;
+
+				    		&:last-child {
+				    			margin-right: 0px;
+				    		}
+				    	}
+				    }
+    			}
+
+    			.view-responses {
+    				position: absolute;
+    				top: 10px;
+    				right: 10px;
+    			}
+
+    			.question-details-overlay {
+				    display: none;
+				    background-color: #8eafae;
+				    z-index: 1000;
+				    align-items: center;
+				    position: absolute;
+				    top: 0;
+				    left: 0;
+				    bottom: 0;
+				    color: white;
+				    width: 100%;
+
+				    p {
+				    	margin-left: auto;
+				    	margin-right: auto;
+				    	font-size: 1.5em;
+				    }
+    			}
+			}
+
+			#content-edit-email, #content-edit-password {
+				display: none;
+			}
+
+			#password-input {
+				margin-bottom: 10px;
+			}
+
+			#edit-password-form, #edit-email-form {
+				margin-bottom: 10px;
+			}
+
+			.card {
+				margin-bottom: 15px;
+			}
+
+			.response-advisor-info {
+				.advisor-img {
+					max-width: 150px;
+
+					img {
+						float: left;
+						margin-right: 15px;
+						border-radius: 5%;
+					}
+				}
+
+				.advisor-details {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+
+					li {
+						h4, h6 {
+							margin: 0;
+						}
+					}
+				}
+			}
+
+			.response-text {
+				blockquote {
+					text-align: center;
+				}
+
+				.lower-quote {
+					float: right;
+
+				}
+			}
+
+			.discussion-button {
+				button {
+					position: absolute;
+					right: 10px;
+				}
+			}
+		}
+	}
+}
+
+
+
+/* ADVISOR PROFILE STYLING */
+
+.question-details-wrapper {
+	position: relative;
+
+	#question-respond {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+	.response-input-form {
+	    position: relative;
+	    top: -10px;
+	    padding: 15px;
+	    margin-bottom: 10px;
+	    border-radius: 10px;
+	    border: 1px solid #a9a9a9;
+	    -webkit-box-shadow: 0 0 3px #a9a9a9;
+	    box-shadow: 0 0 3px #a9a9a9;
+
+	    .help-block {
+	    	display: block;
+	    	margin-bottom: 10px;
+	    }
+	}
+}
+
+.response-details-wrapper {
+	#details-question {
+		margin-bottom: 0px;
+	}
+
+	#details-response {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width:576px) {
+	.profile-wrapper {
+		.nav-item {
+			width: 100%;
+		}
+	}
+
+	.main-content {
+		margin-bottom: 200px;
+	}
+
+	.response-advisor-info {
+
+		.advisor-img {
+			max-width: 100% !important;
+
+			img {		
+				float: none;
+				margin-bottom: 10px;
+				width: 100%;
+			}
+		}
+
+		.advisor-details {
+			text-align: center;
+			margin-bottom: 15px;
+
+			li {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	.response-text {
+		margin-bottom: 30px;
+	}
+
+	.discussion-button {
+		width: 100%;
+
+		button {
+			width: 100%;
+			position: relative !important;
+			right: auto !important;
+		}
+	}
+
+}

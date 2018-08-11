@@ -1,0 +1,21 @@
+.admin-container {
+	min-height: calc(100vh - 150px);
+	margin-top: 150px;
+	margin-bottom: 200px;
+
+	.admin-section {
+		display: none;
+	}
+}
+
+.admin-form-wrapper {
+	margin: 150px auto;
+}
+
+#no-email {
+	margin-top: 10px;
+}
+
+.user-delete, .advisor-delete, .advisorRequest-delete, .advisorRequest-approve {
+	cursor: pointer;
+}

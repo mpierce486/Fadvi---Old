@@ -1,0 +1,97 @@
+#discussion-wrapper {
+	margin-top: 150px;
+
+	#discussion-top {
+		text-align: center;
+		margin: auto;
+
+		#discussion-top-advisor {
+			text-align: center;
+			margin: auto;
+
+			img {
+				margin: auto;
+				height: 200px;
+			}
+		}
+	}
+
+	.discussion-post-content-user {
+		position: relative;
+		background: $text-color-splash;
+		border-radius: .4em;
+		min-height: 100px;
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 80%;
+			width: 0;
+			height: 0;
+			border: 20px solid transparent;
+			border-right-color: $text-color-splash;
+			border-left: 0;
+			border-bottom: 0;
+			margin-top: -10px;
+			margin-left: -20px;
+		}
+	}
+
+	.discussion-post-content-advisor {
+		position: relative;
+		background: $text-color-splash;
+		border-radius: .4em;
+		min-height: 100px;
+		display: flex;
+		align-items: center;
+		float: right;
+
+		&:after {
+			content: '';
+		    position: absolute;
+		    right: 0;
+		    top: 80%;
+		    width: 0;
+		    height: 0;
+		    border: 20px solid transparent;
+		    border-left-color: #9acccd;
+		    border-right: 0;
+		    border-bottom: 0;
+		    margin-bottom: -10px;
+		    margin-right: -20px;
+		}
+	}
+
+	.discussion-post-wrapper:last-child {
+		margin-bottom: 150px;
+	}
+
+	.discussion-post-name-user, .discussion-post-name-advisor {
+		clear: both;
+	}
+
+	.discussion-post-name-advisor {
+		float: right;
+	}
+
+	#email-notifications {
+		margin-top: 50px;
+		padding-left: 0px;
+	}
+
+	#discussion-input {
+		margin-bottom: 200px;
+		padding: 1px;
+	}
+}
+
+@media screen and (max-width: 767px)
+{
+	#discussion-wrapper {
+		height: calc(100vh - 150px);
+	}
+}

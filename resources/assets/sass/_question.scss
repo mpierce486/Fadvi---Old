@@ -1,0 +1,34 @@
+#question-heading {
+	font-weight: bold;
+	color: #777;
+	text-align: center;
+	margin-bottom: 50px;
+
+	span {
+		text-transform: lowercase;
+	}
+}
+
+#question-wrapper {
+	padding: 50px;
+	background-color: $text-color-splash;
+	border-radius: 5px;
+	margin: auto;
+
+	textarea {
+		resize: vertical;
+	}
+}
+
+#question-submit-success {
+	margin: 10px auto 20px auto;
+	text-align: center;
+	display: none;
+}
+
+@media screen and (max-width: 576px)
+{
+	#question-wrapper {
+		margin-bottom: 200px;
+	}
+}

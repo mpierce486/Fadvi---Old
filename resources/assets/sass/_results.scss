@@ -1,0 +1,175 @@
+.location-options {
+	position: absolute;
+	left: 0;
+	top: 75px;
+	width: 100%;
+	background-color: #f8f8f8;
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 1px solid #e3e3e3;
+
+	ul {
+		list-style-type: none;
+		margin: 0px;
+		padding: 4px 0 0 55px;
+
+		li {
+			float: left;
+			margin-right: 10px;
+
+			input[type=text] {
+				@media only screen and (min-width: 768px) {
+					max-width: 300px;
+				}
+			}
+		}
+
+		li:first-child {
+			padding-top: 7px;
+		}
+
+		@media only screen and (max-width: 767px) {
+			li:last-child {
+				margin-bottom: 12px;
+				width: 100%;
+				padding-right: 15px;
+			}	
+		}
+
+		@media only screen and (min-width: 768px) {
+			li:last-child {
+				width: 300px;
+			}	
+		}
+			
+	}
+}
+
+.advisor-favorite {
+	position: relative;
+}
+
+.remove-advisor-favorite {
+	position: relative;
+	top: 1px;
+}
+
+.loading, .static-conf, .static-opp {
+	display: none;
+}
+
+.results-container {
+
+	.results-header {
+		text-align: center;
+	}
+
+	.results-item {
+		width: 100%;
+		min-height: 120px;
+		border: 1px solid #000;
+		margin-bottom: 5px;
+		padding: 10px;
+		box-shadow: 1px 1px 1px #000;
+		position: relative;
+		border-radius: 5px;
+
+		.results-item-img {
+			width: 7em;
+		}
+
+		.results-item-name {
+			margin-bottom: 5px;
+		}
+
+		.results-item-title, .results-item-company {
+			margin: 0 0 3px 0;
+		}
+
+		.results-item-specialties {
+			ul {
+				list-style-type: none;
+				margin: 0px;
+				padding: 0px;
+				font-size: 12px;
+			}
+		}
+
+		.save-load {
+			display: none;
+		}
+
+		.see-more {
+			position: absolute;
+			bottom: 3px;
+			right: 10px;
+			cursor: pointer;
+		}
+	}
+}
+
+/* MODAL CONTACT FORM STYLING */
+.modal-contact-img {
+	height: auto;
+}
+
+#contact-confirm-view {
+	display: none;
+
+	#contact-confirm-link {
+		color: $text-color-splash;
+	}
+}
+
+#footer-confirm {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	.results-container {
+		margin-top: 150px;
+	}
+
+	.results-item-img {
+		float: left;
+		margin-right: 10px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.location-options ul {
+		padding: 4px 0 0 15px;
+	}
+
+	.results-container {
+		margin-top: 200px;
+	}
+
+	.results-item {
+		text-align: center;
+	}
+
+	.results-item-img {
+		margin: 0px auto;
+	}
+
+	.results-item-specialties {
+		margin-bottom: 15px;
+	}
+
+	.advisor-favorite, .remove-advisor-favorite {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.favorites-content {
+		margin-left: 0px;
+
+		.local-results-item {
+			margin-left: 0px;
+			padding-right: 0px;
+		}
+	}
+
+
+}

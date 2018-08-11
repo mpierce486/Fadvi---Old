@@ -1,0 +1,88 @@
+// Variables
+@import "variables";
+
+/* // Bootstrap
+@import '~bootstrap/scss/bootstrap';
+ */
+
+// Header Partial
+@import "navigation";
+
+// Footer Partial
+@import "footer";
+
+// Main Partial
+@import "main";
+
+// Authentication Views Partial
+@import "auth";
+
+// Profile Views Partial
+@import "profile";
+
+// Results Page Partial
+@import "results";
+
+// Admin Page Partial
+@import "admin";
+
+// Discussion Page Partial
+@import "discussion";
+
+// Privacy Policy and ToS Page Partial
+@import "terms";
+
+// Support Page Partial
+@import "support";
+
+// Question Page Partial
+@import "question";
+
+.navbar-laravel {
+  background-color: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+html {
+	position: relative;
+	min-height: 100vh;
+}
+
+body {
+	background-color: $body-bg;
+	height: 100%;
+}
+
+.global-wrapper {
+	padding-top: 150px;
+}
+
+.form-control {
+	border: 1px solid #777;
+
+	&:focus {
+		border-color: $text-color-splash;
+		box-shadow: inset 0 1px 1px $text-color-splash, 0 0 8px $text-color-splash;
+	}
+}
+
+a {
+	color: #777;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+	color: $text-color-splash !important;
+}
+
+.btn-global {
+	background-color: $form-button-color !important;
+	color: #000 !important;
+
+	&:hover, &:focus {
+		background-color: #3f8888 !important;
+		color: #fff !important; 
+		border: 1px solid #a8a8a8 !important;
+		outline: none !important;
+	}
+}

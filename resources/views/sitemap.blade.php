@@ -1,0 +1,36 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>http://www.fadvi.com</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/terms-of-service</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/privacy-policy</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/sitemap</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/support</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/login</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/logout</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/register</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/login/error</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/join/advisor</loc>
+	</url>
+	<url>
+		<loc>http://www.fadvi.com/results</loc>
+	</url>
+</urlset>
+	
