@@ -29,31 +29,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function favorites()
-    {
-        return $this->belongsToMany('Fadvi\Advisor', 'favorites', 'user_id', 'advisor_id')->withTimestamps();
-    }
-
-    public function userFavorites()
-    {
-        return $this->favorites()->get();
-    }
-
-    public function addFavorite(Advisor $advisor)
-    {
-        $this->favorites()->attach($advisor->id);
-    }
-
-    public function removeFavorite(Advisor $advisor)
-    {
-        $this->favorites()->detach($advisor->id);
-    }
-
-    public function isFavorite(Advisor $advisor)
-    {
-        return (bool) $this->userFavorites()->where('id', $advisor->id)->count();
-    }
-
     public function questions()
     {
         return $this->hasMany('Fadvi\Question');
@@ -69,21 +44,21 @@ class User extends Authenticatable
         return $this->belongsToMany('Fadvi\Response', 'question_responses', 'user_id', 'response_id');
     }
 
-    // Used for retrieving the advisor info from the Contact Model
-    public function userContacts()
+    // Relationship for discussions the user is associated with
+    public function discussions()
     {
-        return $this->belongsToMany('Fadvi\Advisor', 'contacts', 'user_id', 'advisor_id')->withPivot('discussion_id')->get();
+        return $this->hasMany('Fadvi\Discussion');
     }
 
-    // Associated with the Contact Model
-    public function contacts()
+    // Relationship for discussions the advisor is associated with
+    public function discussionsAdvisor()
     {
-        return $this->hasMany('Fadvi\Contact');
+        return $this->hasMany('Fadvi\Discussion', 'advisor_id');
     }
 
     public function posts()
     {
-        return $this->hasMany('Fadvi\Discussion', 'user_id');
+        return $this->hasMany('Fadvi\Post', 'user_id');
     }
 
     /**

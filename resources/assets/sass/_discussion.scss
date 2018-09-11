@@ -48,13 +48,13 @@
 		min-height: 100px;
 		display: flex;
 		align-items: center;
-		float: right;
+		margin-bottom: 10px;
 
 		&:after {
 			content: '';
 		    position: absolute;
 		    right: 0;
-		    top: 80%;
+		    top: 70%;
 		    width: 0;
 		    height: 0;
 		    border: 20px solid transparent;
@@ -75,23 +75,36 @@
 	}
 
 	.discussion-post-name-advisor {
-		float: right;
+		text-align: right;
 	}
 
 	#email-notifications {
-		margin-top: 50px;
+		margin: 50px auto 0px auto;
 		padding-left: 0px;
+
+		.text-danger {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 
 	#discussion-input {
-		margin-bottom: 200px;
+		margin: 0px auto 200px auto;
 		padding: 1px;
+	}
+
+	#typing-notification {
+		display: none;
+	}
+
+	#submit-btn {
+		margin-top: 10px;
 	}
 }
 
 @media screen and (max-width: 767px)
 {
 	#discussion-wrapper {
-		height: calc(100vh - 150px);
+		min-height: calc(100vh - 150px);
 	}
 }

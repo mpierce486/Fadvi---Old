@@ -2,6 +2,7 @@
 	margin-top: 150px;
 	overflow: auto;
 	padding-bottom: 150px;
+	overflow-x: hidden;
 
 	.nav-tabs {
 		margin-top: 50px;
@@ -15,10 +16,14 @@
 			display: none;
 
 			&:first-child {
-				display: initial;
+				display: block;
 			}
 
-			.question-details {
+			h4 {
+				margin-bottom: 25px;
+			}
+
+			.question-details, .discussion-details {
 				padding: 15px;
 				margin-bottom: 10px;
 				border-radius: 10px;
@@ -85,6 +90,10 @@
     			}
 			}
 
+			#edit-email-toggle, #edit-password-toggle {
+				cursor: pointer;
+			}
+
 			#content-edit-email, #content-edit-password {
 				display: none;
 			}
@@ -101,7 +110,7 @@
 				margin-bottom: 15px;
 			}
 
-			.response-advisor-info {
+			.response-advisor-info, .discussion-advisor-info {
 				.advisor-img {
 					max-width: 150px;
 
@@ -125,6 +134,10 @@
 				}
 			}
 
+			.discussion-advisor-info {
+				min-height: 150px;
+			}
+
 			.response-text {
 				blockquote {
 					text-align: center;
@@ -136,11 +149,9 @@
 				}
 			}
 
-			.discussion-button {
-				button {
-					position: absolute;
-					right: 10px;
-				}
+			.discussion-link {
+				position: absolute;
+				right: 15px;
 			}
 		}
 	}
@@ -186,6 +197,8 @@
 	}
 }
 
+/* END ADVISOR PROFILE STYLING */
+
 @media (max-width:576px) {
 	.profile-wrapper {
 		.nav-item {
@@ -197,7 +210,7 @@
 		margin-bottom: 200px;
 	}
 
-	.response-advisor-info {
+	.response-advisor-info, .discussion-advisor-info {
 
 		.advisor-img {
 			max-width: 100% !important;
@@ -219,18 +232,35 @@
 		}
 	}
 
+	.discussion-details {
+		padding: 15px 15px 55px 15px !important;
+	}
+
 	.response-text {
 		margin-bottom: 30px;
+	}
+
+	.discussion-link {
+		bottom: 15px;
+		left: 15px;
+		right: 15px;
 	}
 
 	.discussion-button {
 		width: 100%;
 
-		button {
+		#begin-discussion {
 			width: 100%;
-			position: relative !important;
-			right: auto !important;
+			position: relative;
+			right: auto;
 		}
 	}
+}
 
+@media (min-width: 577px) {
+	#begin-discussion {
+			position: absolute;
+			right: 10px;
+		
+	}
 }

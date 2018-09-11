@@ -159,7 +159,7 @@ return [
          */
         Fadvi\Providers\AppServiceProvider::class,
         Fadvi\Providers\AuthServiceProvider::class,
-        // Fadvi\Providers\BroadcastServiceProvider::class,
+        Fadvi\Providers\BroadcastServiceProvider::class,
         Fadvi\Providers\EventServiceProvider::class,
         Fadvi\Providers\RouteServiceProvider::class,
 

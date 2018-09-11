@@ -2,6 +2,10 @@
 
 @section('content')
 
+@if (Session::has('newDiscussion'))
+<span class="hidden" id="newDiscussion"></span>
+@endif
+
 <div id="discussion-wrapper" class="container">
 	<div id="discussion-top">
 		<h2>Discussion With</h2>
@@ -27,11 +31,11 @@
 				</div>
 			@else
 				<div class="discussion-post-wrapper col-sm-12 col-md-12 col-lg-12">
-					<div class="discussion-post-content-advisor col-xs-12 col-sm-5">
-						<h4>{{ $post->post }}</h4>
+					<div class="discussion-post-content-advisor float-right col-xs-12 col-sm-5">
+						<h4><?php echo $post->post ?></h4>
 					</div>
 					<div class="discussion-post-name-advisor">
-						<h5>{{ $post->user->first_name }} {{ $post->user->last_name }}</h5>
+						<h5>{{ $post->user->first_name }}</h5>
 						<h6>{{ $post->created_at->diffForHumans() }}</h6>
 					</div>
 				</div>
@@ -53,7 +57,8 @@
 			<div class="form-group">
 				<textarea class="form-control input-global" id="discussion-form-input" name="discussion-form-input"></textarea>
 			</div>
-			<span class="help-block">This discussion is for general information and you should not communicate confidential details. To do so, ask to speak with the advisor privately offline.</span>
+			<span class="form-text text-info" id="typing-notification"></span>
+			<span class="form-text text-muted">This discussion is for general information and you should not communicate confidential details. To do so, ask to speak with the advisor privately offline.</span>
 			<button type="submit" class="btn btn-global" id="submit-btn">Submit</button>
 			<span class="hidden" data-id="{{ $post->discussion_id }}"></span>
 		</form>		
@@ -76,6 +81,15 @@
         force_p_newlines : false,
         statusbar: false,
         content_css: '/css/app.css',
+        setup: function(ed) {
+        	ed.on('keydown', function(e) {
+        		var dId = $('#discussion-input-form').find('.hidden').attr("data-id");
+				window.Echo.private('discussion.' + dId).whisper("typing", {
+					name: window.Fadvi.user
+				});
+        	});
+        }
     });
 </script>
+
 @stop

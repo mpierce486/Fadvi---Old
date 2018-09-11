@@ -236,6 +236,12 @@ Route::post('/question/response/{questionId}', [
  *  Discussion Routes
  */
 
+Route::get('/discussion/create/{questionId}/{advisorId}', [
+	'uses' => 'DiscussionController@createDiscussion',
+	'as' => 'discussion.create',
+	'middleware' => ['auth'],
+]);
+
 Route::get('/discussion/{id}', [
 	'uses' => 'DiscussionController@getDiscussion',
 	'as' => 'discussion',

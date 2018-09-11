@@ -12,7 +12,7 @@ class Response extends Model
 
     public function question()
     {
-    	return $this->belongsToMany('Fadvi\Question', 'question_responses', 'response_id', 'question_id');
+    	return $this->belongsToMany('Fadvi\Question', 'question_responses', 'response_id', 'question_id')->withPivot('discussion_created');
     }
 
     public function user()

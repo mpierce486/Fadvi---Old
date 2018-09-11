@@ -13,9 +13,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Fadvi\Events\Event' => [
-            'Fadvi\Listeners\EventListener',
-        ],
+        
     ];
 
     /**

@@ -6,6 +6,7 @@ use Auth;
 use Fadvi\User;
 use Fadvi\Advisor;
 use Fadvi\Response;
+use Fadvi\Discussion;
 use DB;
 use Carbon\Carbon;
 use Fadvi\Mail\ResetPasswordConfirm;
@@ -41,23 +42,31 @@ class ProfileController extends Controller
 
             // Get all responses that advisor has provided
             $advisorResponses = Auth::user()->advisorResponses();
-                    
+
+            // Get all discussions with users
+            $discussions = Discussion::where('advisor_id', $advisor->id)->get();
+                 
             return view('profile.advisor-profile')
                 ->with([
                     'user' => $user,
                     'advisor' => $advisor,
                     'advisorQuestions' => $advisorQuestions,
                     'advisorResponses' => $advisorResponses,
+                    'discussions' => $discussions,
                 ]);
         }
 
         // Get user's questions asked
         $questions = Auth::user()->userQuestions();
 
+        // Get user's discussions with advisors
+        $discussions = Auth::user()->discussions()->get();
+       
     	return view('profile.profile')
     		->with([
     			'user' => $user,
                 'questions' => $questions,
+                'discussions' => $discussions,
     		]);
     }
 

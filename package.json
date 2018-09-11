@@ -18,5 +18,10 @@
         "lodash": "^4.17.4",
         "popper.js": "^1.12",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "laravel-echo": "^1.4.0",
+        "pusher-js": "^4.3.0",
+        "sweetalert2": "^7.26.11"
     }
 }

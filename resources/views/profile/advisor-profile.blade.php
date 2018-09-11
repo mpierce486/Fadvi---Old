@@ -108,9 +108,32 @@
 		</div>
 		<div class="content-section" id="discussions">
 			<h4>These are your active discussions with users.</h4>
+			<div class="discussion-content">
+				@if (!$discussions->count())
+					<p>You do not have any active discussions with users.</p>
+				@else
+					@foreach ($discussions as $discussion)
+						<div class="discussion-details">
+							<div class="discussion-topic col-sm-8">
+								@foreach($discussion->question->topic as $topic)
+									<div id="details-topic" class="col-sm-12 row">
+										<h5 id="topic-header" class="col-sm-2"><strong>Topic:</strong></h5>
+										<div id="topic" class="col-sm-10 col-sm-offset-2">{{ $topic->topic_name }}</div>
+									</div>
+								@endforeach
+								<div id="details-question" class="col-sm-12 row">
+									<h5 id="question-header" class="col-sm-2"><strong>Question:</strong></h5>
+									<div id="question" class="col-sm-10 col-sm-offset-2">{{ $discussion->question->question }}</div>
+								</div>
+							</div>
+							<a href="{{ route('discussion', ['id' => $discussion->id ]) }}" class="btn btn-global discussion-link">Go To Discussion</a>
+						</div>
+					@endforeach
+				@endif
+			</div>
 		</div>
 		<div class="content-section table-responsive" id="usernamepassword">
-			<h2>Username & Password</h2>
+			<h4>Username & Password</h4>
 			<table class="section-item table" id="section-name">
 				<tr>
 					<td class="item-col-1"><strong>Name</strong></td>

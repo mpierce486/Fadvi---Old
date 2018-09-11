@@ -24,79 +24,116 @@
 	<div class="main-content">
 		<div class="content-section" id="questions">
 			<h2>Questions I Have Asked</h2>
-			<div class="questions-content">
-				<div class="content-section">
-					@if (!$questions->count())
-						<p>You have not asked any questions yet.</p>
-					@else
-						@foreach($questions as $question)
-							<div class="question-details col-sm-10">
-								@foreach($question->topic as $topic)
+			@if (!$questions->count())
+				<p>You have not asked any questions yet. Once you ask a question, you will see it here along with any responses from advisors.</p>
+			@else
+				@foreach($questions as $question)
+					<div class="question-details col-sm">
+						@foreach($question->topic as $topic)
+						<div id="details-topic" class="col-sm-12 row">
+							<h5 id="topic-header" class="col-sm-2"><strong>Topic:</strong></h5>
+							<div id="topic" class="col-sm-10 col-sm-offset-2">{{ $topic->topic_name }}</div>
+						</div>
+						@endforeach
+						<div id="details-question" class="col-sm-12 row">
+							<h5 id="question-header" class="col-sm-2"><strong>Question:</strong></h5>
+							<div id="question" class="col-sm-10 col-sm-offset-2">{{ $question->question }}</div>
+						</div>
+						<div id="question-metrics" class="row">
+							<ul>
+								<li id="metric-time"><i class="fas fa-hourglass-half" title="Time Posted"></i> {{ $question->created_at->diffForHumans() }}</li>
+								<li id="metric-responses"><i class="fas fa-comments" title="Responses"></i> {{ $question->countResponses() > 1 ? $question->countResponses().' Responses' : $question->countResponses().' Response'}} </li>
+							</ul>
+						</div>
+						@if ($question->countResponses())
+							<button class="btn btn-global view-responses" data-toggle="collapse" data-target="#questionResponses-{{ $question->id }}" aria-expanded="false">View Responses</button>
+							<div class="collapse" id="questionResponses-{{ $question->id }}">
+								@foreach ($question->getResponses() as $response)
+									<div class="card">
+										<div class="card-body row">
+											<div class="response-advisor-info col-sm">
+												@foreach ($response->advisor as $advisor)
+													<div class="advisor-img">
+														<img src="{{ asset('/') }}{{ $advisor->image_path }}" class="img-fluid" />
+													</div>
+													<ul class="advisor-details">
+														<li class="advisor-name">
+															<h4>{{ $advisor->first_name }} {{ $advisor->last_name }}</h4>
+														</li>
+														<li class="advisor-firm">
+															<h6>{{ $advisor->firm_name }}</h6>
+														</li>
+														<li class="advisor-location">
+															<h6>{{ $advisor->firm_city }}, {{ $advisor->firm_state }}</h6>
+														</li>
+													</ul>
+												@endforeach
+											</div>
+											<div class="response-text col-sm">
+												<span class="upper-quote text-muted"><i class="fas fa-quote-left"></i></span>
+												<blockquote class="blockquote">{{ $response->response }}</blockquote>
+												<span class="lower-quote text-muted"><i class="fas fa-quote-right"></i></span>
+											</div>
+											<div class="discussion-button col-sm-2 col-xs-12">
+												@if ($response->pivot->discussion_created === null)
+												<a class="btn btn-global" href="{{ URL::to('/discussion/create/'. $question->id . '/'. $advisor->id) }}" id="begin-discussion">Begin Discussion</a>
+												@else
+												<button class="btn btn-global" id="begin-discussion" title="Discussion Already Created" disabled>Begin Discussion</button>
+												@endif
+											</div>
+										</div>
+									</div>
+								@endforeach
+							</div>
+						@endif
+					</div>
+				@endforeach
+			@endif
+		</div>
+		<div class="content-section" id="discussions">
+			<h2>My Discussions With Advisors</h2>
+			@if (!$discussions->count())
+				<p>You do not have any active discussions with advisors.</p>
+			@else
+				@foreach ($discussions as $discussion)
+					<div class="discussion-details col-sm row">
+						<div class="discussion-advisor-info col-sm-4">
+							<div class="advisor-img">
+								<img src="{{ asset('/') }}{{ $discussion->advisor->image_path }}" class="img-fluid" />
+							</div>
+							<ul class="advisor-details">
+								<li class="advisor-name">
+									<h4>{{ $discussion->advisor->first_name }} {{ $discussion->advisor->last_name }}</h4>
+								</li>
+								<li class="advisor-firm">
+									<h6>{{ $discussion->advisor->firm_name }}</h6>
+								</li>
+								<li class="advisor-location">
+									<h6>{{ $discussion->advisor->firm_city }}, {{ $discussion->advisor->firm_state }}</h6>
+								</li>
+							</ul>
+						</div>
+						<div class="discussion-topic col-sm-8">
+							@foreach($discussion->question->topic as $topic)
 								<div id="details-topic" class="col-sm-12 row">
 									<h5 id="topic-header" class="col-sm-2"><strong>Topic:</strong></h5>
 									<div id="topic" class="col-sm-10 col-sm-offset-2">{{ $topic->topic_name }}</div>
 								</div>
-								@endforeach
-								<div id="details-question" class="col-sm-12 row">
-									<h5 id="question-header" class="col-sm-2"><strong>Question:</strong></h5>
-									<div id="question" class="col-sm-10 col-sm-offset-2">{{ $question->question }}</div>
-								</div>
-								<div id="question-metrics" class="row">
-									<ul>
-										<li id="metric-time"><i class="fas fa-hourglass-half" title="Time Posted"></i> {{ $question->created_at->diffForHumans() }}</li>
-										<li id="metric-responses"><i class="fas fa-comments" title="Responses"></i> {{ $question->countResponses() > 1 ? $question->countResponses().' Responses' : $question->countResponses().' Response'}} </li>
-									</ul>
-								</div>
-								@if ($question->countResponses())
-									<button class="btn btn-global view-responses" data-toggle="collapse" data-target="#questionResponses-{{ $question->id }}" aria-expanded="false">View Responses</button>
-									<div class="collapse" id="questionResponses-{{ $question->id }}">
-										@foreach ($question->getResponses() as $response)
-											<div class="card">
-												<div class="card-body row">
-													<div class="response-advisor-info col-sm">
-														@foreach ($response->advisor as $advisor)
-															<div class="advisor-img">
-																<img src="{{ asset('/') }}{{ $advisor->image_path }}" class="img-fluid" />
-															</div>
-															<ul class="advisor-details">
-																<li class="advisor-name">
-																	<h4>{{ $advisor->first_name }} {{ $advisor->last_name }}</h4>
-																</li>
-																<li class="advisor-firm">
-																	<h6>{{ $advisor->firm_name }}</h6>
-																</li>
-																<li class="advisor-location">
-																	<h6>{{ $advisor->firm_city }}, {{ $advisor->firm_state }}</h6>
-																</li>
-															</ul>
-														@endforeach
-													</div>
-													<div class="response-text col-sm">
-														<span class="upper-quote text-muted"><i class="fas fa-quote-left"></i></span>
-														<blockquote class="blockquote">{{ $response->response }}</blockquote>
-														<span class="lower-quote text-muted"><i class="fas fa-quote-right"></i></span>
-													</div>
-													<div class="discussion-button col-sm-2 col-xs-12">
-														<button class="btn btn-global">Begin Discussion</button>
-													</div>
-												</div>
-											</div>
-										@endforeach
-									</div>
-								@endif
+							@endforeach
+							<div id="details-question" class="col-sm-12 row">
+								<h5 id="question-header" class="col-sm-2"><strong>Question:</strong></h5>
+								<div id="question" class="col-sm-10 col-sm-offset-2">{{ $discussion->question->question }}</div>
 							</div>
-						@endforeach
-					@endif
-				</div>
-			</div>
-		</div>
-		<div class="content-section" id="discussions">
-			<h2>Advisors I Have Contacted</h2>
-
+						</div>
+						<a href="{{ route('discussion', ['id' => $discussion->id ]) }}" class="btn btn-global discussion-link">Go To Discussion</a>
+					</div>
+					
+				@endforeach
+			@endif
 		</div>
 
 		<div class="content-section table-responsive" id="usernamepassword">
-			<h2>Username & Password</h2>
+			<h4>Username & Password</h4>
 			<table class="section-item table" id="section-name">
 				<tr>
 					<td class="item-col-1"><strong>Name</strong></td>

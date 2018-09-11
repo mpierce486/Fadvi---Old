@@ -12,11 +12,21 @@ class Discussion extends Model
      * @var array
      */
     protected $fillable = [
-        'discussion_id', 'user_id', 'advisor_id', 'post'
+        'user_id', 'advisor_id', 'question_id',
     ];
 
     public function user()
     {
     	return $this->belongsTo('Fadvi\User', 'user_id');
+    }
+
+    public function advisor()
+    {
+        return $this->belongsTo('Fadvi\Advisor', 'advisor_id');
+    }
+
+    public function question()
+    {
+        return $this->belongsTo('Fadvi\Question', 'question_id');
     }
 }
