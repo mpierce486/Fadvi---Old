@@ -20,6 +20,9 @@
 // Profile Views Partial
 @import "profile";
 
+// Advisors Partial
+@import "advisors";
+
 // Results Page Partial
 @import "results";
 
@@ -37,6 +40,9 @@
 
 // Question Page Partial
 @import "question";
+
+// Why Page Partial
+@import "why";
 
 .navbar-laravel {
   background-color: transparent;
@@ -56,6 +62,10 @@ body {
 
 .global-wrapper {
 	padding-top: 150px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400 !important;
 }
 
 .form-control {

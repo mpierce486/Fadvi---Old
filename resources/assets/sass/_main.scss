@@ -57,6 +57,7 @@
 	#middle-header-text {
 		text-align: center;
 		margin-top: 0px;
+		margin-bottom: 25px;
 	}
 
 	#topics-wrapper {
@@ -77,14 +78,18 @@
 		    	height: 175px;
 		    	padding: 40px;
 		    	display: flex;
+		    	transition: .2s;
 		    	justify-content: center;
 		    	align-items: center;
 		    	text-align: center;
 
 		    	&:hover {
 		    		cursor: pointer;
-		    		
+		    		-ms-transform: scale(1.05); /* IE 9 */
+    				-webkit-transform: scale(1.05); /* Safari 3-8 */
+    				transform: scale(1.05); 
 		    		color: $text-color-splash;
+		    		border: 1px solid $text-color-splash
 		    	}
 
 		    	p {
@@ -242,6 +247,7 @@
 	#topics-wrapper {
 		padding-left: 0px;
 		padding-right: 0px;
+		max-width: 925px;
 	}
 
 	.hide-xs {
@@ -329,10 +335,6 @@
 
 	#main-banner-wrapper {
 		height: 525px;
-	}
-
-	#topics-wrapper {
-		max-width: 51%;
 	}
 
 	.advisor-categories {

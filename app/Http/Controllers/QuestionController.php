@@ -24,6 +24,10 @@ class QuestionController extends Controller
 {
     public function getQuestionView()
     {
+        // Retrieve the name of the topic the user has selected
+        $topic = Topic::where('topic_name', Session::get('topic'))->first();
+        
+
     	return view('question.question');
     }
 
@@ -49,6 +53,7 @@ class QuestionController extends Controller
                             'topic_id' => $topicId,
                             'views' => 0,
                             'responses' => 0,
+                            'details' => collect(Session::get('step-details'))
                         ]);
 
             DB::table('question_topic')->insert([
@@ -158,6 +163,55 @@ class QuestionController extends Controller
                 'question_id' => $questionId,
                 'user_id' => Auth::user()->id,
             ])->delete();
+        }
+    }
+
+    /**
+     *  Step by step question details workflow
+     */
+
+    public function postQuestionDetailsStep1(Request $request)
+    {
+        // Make sure Session variable is clear first
+        Session::forget('step-details');
+
+        if ($request->ajax())
+        {
+            $step1 = $request->input('step1');
+            $step1 = collect($step1);
+
+            // Add step 1 data to session variable
+            Session::push('step-details', $step1);
+
+            return response()->json(Session::get('step-details'));
+        }
+    }
+
+    public function postQuestionDetailsStep2(Request $request)
+    {
+        if ($request->ajax())
+        {
+            $step2 = $request->input('step2');
+            $step2 = collect($step2);
+
+            // Add step 2 data to session variable
+            Session::push('step-details', $step2);
+
+            return response()->json(Session::get('step-details'));
+        }
+    }
+
+    public function postQuestionDetailsStep3(Request $request)
+    {
+        if ($request->ajax())
+        {
+            $step3 = $request->input('step3');
+            $step3 = collect($step3);
+
+            // Add step 2 data to session variable
+            Session::push('step-details', $step3);
+
+           return response()->json(Session::get('step-details'));
         }
     }
 }

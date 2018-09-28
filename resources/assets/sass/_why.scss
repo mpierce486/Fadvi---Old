@@ -1,0 +1,24 @@
+#why-statement {
+	height: calc(100vh - 150px);
+	display: flex;
+	align-items: center;
+	margin: auto;
+	text-align: justify;
+
+	h3 {
+		font-weight: 100;
+		margin: auto;
+	}
+}
+
+@media (max-width: 767.98px) {
+	#why-statement {
+		width: 90%;
+	}
+}
+
+@media (min-width: 768px) {
+	#why-statement {
+		width: 50%;
+	}
+}

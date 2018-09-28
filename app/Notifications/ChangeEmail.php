@@ -45,6 +45,7 @@ class ChangeEmail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->subject('Fadvi Email Update')
                     ->greeting('Hello '. $this->user->first_name . ',')
                     ->line('This is a confirmation that you have changed your email address used to login to Fadvi. Please use this email for all future logins.');
     }

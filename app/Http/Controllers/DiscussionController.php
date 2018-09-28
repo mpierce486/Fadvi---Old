@@ -80,6 +80,8 @@ class DiscussionController extends Controller
     public function getDiscussion($id)
     {
         $discussion = Discussion::where('id', $id)->first();
+
+        $question = Question::where('id', $discussion->question_id)->first();
         
     	$user = User::where('id', $discussion->user_id)->first();
 
@@ -109,6 +111,7 @@ class DiscussionController extends Controller
     		'user' => $user,
     		'advisor' => $advisor,
             'posts' => $posts,
+            'question' => $question,
             'disNotif' => $disNotif,
     	]);
     }

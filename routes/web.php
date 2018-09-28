@@ -32,6 +32,20 @@ Route::get('/sitemap', [
 	'as' => 'sitemap',
 ]);
 
+Route::get('/advisors', [
+	'uses' => 'AdvisorController@getAdvisors',
+	'as' => 'advisors',
+]);
+
+Route::get('/why', [
+	'uses' => 'Controller@getWhy',
+	'as' => 'why',
+]);
+
+/**
+ *  Support Routes
+ */
+
 Route::get('/support', [
 	'uses' => 'SupportController@getSupport',
 	'as' => 'support',
@@ -229,6 +243,30 @@ Route::post('/question/submit', [
 
 Route::post('/question/response/{questionId}', [
 	'uses' => 'QuestionController@postQuestionResponse',
+	'middleware' => ['auth'],
+]);
+
+/**
+ *  Question step-by-step details
+ */
+
+Route::post('/question/details/1', [
+	'uses' => 'QuestionController@postQuestionDetailsStep1',
+	'middleware' => ['auth'],
+]);
+
+Route::post('/question/details/2', [
+	'uses' => 'QuestionController@postQuestionDetailsStep2',
+	'middleware' => ['auth'],
+]);
+
+Route::post('/question/details/3', [
+	'uses' => 'QuestionController@postQuestionDetailsStep3',
+	'middleware' => ['auth'],
+]);
+
+Route::post('/question/details/final', [
+	'uses' => 'QuestionController@postQuestionDetailsStepFinal',
 	'middleware' => ['auth'],
 ]);
 

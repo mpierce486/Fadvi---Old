@@ -12,7 +12,7 @@
 	@endif	
 
 	@if (Auth::check())
-	<form role="form" method="post" class="form-horizontal support-form col-sm-6 col-sm-offset-3">
+	<form role="form" method="post" class="form-horizontal support-form col-xs-12 col-lg-6 col-lg-offset-3">
 		<div class="form-group{{ $errors->has('support_content') ? ' has-error' : '' }}">
 			<span class="help-block">Please contact us with any questions or comments.</span>
 			<textarea class="form-control support-text input-global" rows="5" name="support_content"></textarea>
@@ -26,7 +26,7 @@
 		<input type="hidden" name="_token" value="{{Session::token()}}"/>			
 	</form>
 	@else
-	<form role="form" method="post" class="form-horizontal support-form col-sm-6 col-sm-offset-3">
+	<form role="form" method="post" class="form-horizontal support-form col-xs-12 col-lg-6 col-lg-offset-3">
 		<h4>Please contact us with any questions or comments.</h4>
 		<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 			<input type="email" placeholder="Enter email" class="form-control input-global" name="email"></input>

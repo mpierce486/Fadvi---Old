@@ -6,11 +6,10 @@ use Fadvi\User;
 use Carbon\Carbon;
 use DB;
 use Auth;
-use Mail;
+use Notification;
 
-
-use Fadvi\Mail\SupportRequest;
-use Fadvi\Mail\SupportRequestPublic;
+use Fadvi\Notifications\SupportRequestPublic;
+use Fadvi\Notifications\SupportRequest;
 
 use Illuminate\Http\Request;
 
@@ -45,7 +44,7 @@ class SupportController extends Controller
 			$user = User::where('id', Auth::user()->id)->first();
 
 			// Send email to admins notifying them
-	        Mail::to("support@fadvi.com")->send(new SupportRequest($summary, $user));
+	        Notification::route('mail', 'support@fadvi.com')->notify(new SupportRequest($user, $summary));
 
 	        return redirect()->route('support')->with('success', 'Your support request has been sent!');
 		}
@@ -68,11 +67,11 @@ class SupportController extends Controller
 			'updated_at' => Carbon::now(),
 		]);
 
-		$summary = $request->input('support_content');
 		$email = $request->input('email');
+		$summary = $request->input('support_content');
 
 		// Send email to admins notifying them
-        Mail::to("support@fadvi.com")->send(new SupportRequestPublic($summary, $email));
+        Notification::route('mail', 'support@fadvi.com')->notify(new SupportRequestPublic($email, $summary));
 
         return redirect()->route('support')->with('success', 'Your support request has been sent!');
 	    	

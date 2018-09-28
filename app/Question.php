@@ -12,7 +12,7 @@ class Question extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'question', 'topic_id', 'views', 'responses'
+        'user_id', 'question', 'topic_id', 'views', 'responses', 'details'
     ];
 
     public function user()
@@ -44,5 +44,6 @@ class Question extends Model
     {
         return $this->getResponses()->count();
     }
+
 
 }

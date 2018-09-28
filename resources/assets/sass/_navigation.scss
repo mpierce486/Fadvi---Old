@@ -14,16 +14,12 @@
 		font-size: 1.3em;
 	}
 
-	#navigation-link {
+	#navbarToggler .nav-item .nav-link {
 		color: #fff;
 
 		&:hover {
 			color: $text-color-splash;
 		}
-	}
-
-	#navigation-link.scrolled {
-		color: #777;
 	}
 
 	.navbar-toggler {

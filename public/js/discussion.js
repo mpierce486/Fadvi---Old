@@ -6,6 +6,14 @@ $(document).ready(function(){
 	
   	$("html, body").animate({ scrollTop: $(document).height() }, 0);
 
+  	//
+  	//	Question details collapse functionality
+  	//
+
+  	$('#question-details-icon span').click(function() {
+		$('#question-details').slideToggle();
+  	});
+
 	// 	==============================
 	//	LARAVEL ECHO LISTENING EVENT 
 	//	==============================

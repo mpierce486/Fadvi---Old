@@ -15,6 +15,12 @@
 			<h4 id="discussion-advisor-title">{{ $advisor->title }}</h4>
 			<h5 id="discussion-advisor-firm">{{ $advisor->firm_name }}</h5>
 		</div>
+		<div id="question-details-icon">
+			<span><i class="fas fa-exclamation-circle"></i></span>
+		</div>
+		<div class="card card-body col-xs-12 col-md-12 col-lg-6" id="question-details">
+			{{ $question->details }}
+		</div>
 	</div>
 
 	@if ($posts->count())

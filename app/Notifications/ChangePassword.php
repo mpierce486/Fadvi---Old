@@ -45,6 +45,7 @@ class ChangePassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+                    ->subject('Fadvi Password Update')
                     ->greeting('Hello '. $this->user->first_name . ',')
                     ->line('This is a confirmation that you have reset your password.')
                     ->line('If you did not initiate this request, please change your password by clicking the button below or going to Fadvi.com and selecting "Forgot Password".')

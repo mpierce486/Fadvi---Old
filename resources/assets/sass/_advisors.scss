@@ -1,0 +1,87 @@
+#nav-buttons-wrapper {
+	text-align: center;
+	margin-top: 75px;
+
+	#nav-buttons {
+		display: flex;
+		
+		margin: auto;
+
+		button {
+			flex: 1;
+			white-space: normal;
+			background-color: $text-color-splash;
+			color: #fff;
+
+			&:hover {
+				background-color: #3f8888;
+    			color: #fff;
+    			border: 1px solid #a8a8a8;
+    			outline: none;
+			}
+		}
+	}
+}
+
+#advisors-wrapper {
+	padding: 100px 0px;
+	margin-bottom: 100px;
+	display: flex;
+	flex-wrap: wrap;
+
+	.advisor-detail {
+		text-align: center;
+		margin-bottom: 100px;
+	}
+
+	.advisor-detail-img img {
+		height: 300px;
+		width: 300px;
+		border-radius: 50%;
+	}
+
+	.advisor-detail-name {
+		margin-top: 15px;
+	}
+
+	.advisor-detail-firm h5 {
+		font-weight: 100;
+	}
+
+	.more-toggle {
+		font-size: 15px;
+		cursor: pointer;
+	}
+}
+
+.nav-buttons-active {
+	background-color: #3f8888 !important;
+    color: #fff !important;
+    border: 1px solid #a8a8a8 !important;
+    outline: none !important;
+}
+
+@media (max-width: 575.98px) {
+	#nav-buttons button {
+		padding: 0.5rem 0.75rem;
+		font-size: 0.75rem;
+	}
+}
+
+@media (min-width: 576px) {
+	#nav-buttons {
+		flex-wrap: nowrap;
+	}
+}
+
+@media (min-width: 768px) {
+	#nav-buttons {
+		max-width: 75%;
+	}
+}
+
+@media (min-width: 992px) {
+	#nav-buttons {
+		max-width: 50%;
+	}
+}
