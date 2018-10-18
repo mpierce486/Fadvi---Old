@@ -2,15 +2,12 @@
 
 namespace Fadvi\Notifications;
 
-use Fadvi\User;
-use Fadvi\Question;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class QuestionNotificationAdvisorRegistered extends Notification
+class AdvisorAdded extends Notification
 {
     use Queueable;
 
@@ -19,11 +16,10 @@ class QuestionNotificationAdvisorRegistered extends Notification
      *
      * @return void
      */
-    public function __construct ($userAdvisor, $question, $topic)
+    public function __construct($advisor, $randomKey)
     {
-        $this->userAdvisor = $userAdvisor;
-        $this->question = $question;
-        $this->topic = $topic;
+        $this->advisor = $advisor;
+        $this->randomKey = $randomKey;
     }
 
     /**
@@ -46,12 +42,12 @@ class QuestionNotificationAdvisorRegistered extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('New Question is Available')
-                    ->greeting('Hello '. $this->userAdvisor->first_name . ',')
-                    ->line('A new question has been posted that you may be able to help with. You can respond by going to your profile after logging in.')
-                    ->line('Question Topic: '. $this->topic->topic_name)
-                    ->line('Question Summary: '. $this->question->question)
-                    ->action('Respond to Question', url('/profile/'.$this->userAdvisor->first_name . $this->userAdvisor->last_name));
+                    ->subject('You Have Been Added to the Fadvi Network!')
+                    ->greeting('Hello '. $this->advisor->first_name . ',')
+                    ->line('You have been added as an advisor to the Fadvi Advisor Network.')
+                    ->line('Fadvi was created with the mission of making advice more accessible to those that seek it. Our users will be posting questions and, if you meet the criteria, you will be notified and have the ability to respond and engage with that user.')
+                    ->line('To get started, please click the button below to register on the website to view any available questions.')
+                    ->action('Register', url('/register/advisor/'. $this->randomKey));
     }
 
     /**

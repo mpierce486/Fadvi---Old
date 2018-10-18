@@ -19,7 +19,18 @@
 			<span><i class="fas fa-exclamation-circle"></i></span>
 		</div>
 		<div class="card card-body col-xs-12 col-md-12 col-lg-6" id="question-details">
-			{{ $question->details }}
+			@foreach ($question->topic as $topic)
+			{{ $topic->topic_name }}
+			@endforeach
+			
+			<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
+			<p class="answer">{{ $question->getStep1() }}</p>
+			<span class="separator"></span> 
+			<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
+			<p class="answer">{{ $question->getStep2() }}</p>
+			<span class="separator"></span> 
+			<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
+			<p class="answer">{{ $question->getStep3() }}</p>
 		</div>
 	</div>
 

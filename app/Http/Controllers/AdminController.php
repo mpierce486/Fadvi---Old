@@ -13,7 +13,7 @@ use DB;
 use Mail;
 use Carbon\Carbon;
 
-use Fadvi\Mail\AdvisorAdded;
+use Fadvi\Notifications\AdvisorAdded;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -167,7 +167,7 @@ class AdminController extends Controller
         ]);
 
         // Send email to advisor notifying them of being added to the directory
-        Mail::to($advisor)->send(new AdvisorAdded($advisor, $randomKey));
+        $advisor->notify(new AdvisorAdded($advisor, $randomKey));
 
         Session::flash('success', "Advisor successfully created!");
         return redirect()->back();

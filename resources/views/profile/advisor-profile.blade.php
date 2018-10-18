@@ -4,7 +4,7 @@
 
 
 
-<div class="profile-wrapper container">
+<div class="profile-wrapper container col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 	@if (Session::has('topic'))
 		<a href="{{ route('results') }}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Back to results</a>
 	@endif
@@ -51,7 +51,22 @@
 								<h5 id="question-header" class="col-sm-2"><strong>Question:</strong></h5>
 								<div id="question" class="col-sm-10 col-sm-offset-2">{{ $question->question }}</div>
 							</div>
-							<form role="form" id="response-input-form-{{ $question->id }}" class="collapse response-input-form">
+							<div class="col-sm-12 row details-question-more">
+								<p class="col-sm-2 text-muted details-header">More...</p>
+								<div class="collapse">
+									<div class="card card-body" id="question-details">
+										<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
+										<p class="answer">{{ $question->getStep1() }}</p>
+										<span class="separator"></span> 
+										<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
+										<p class="answer">{{ $question->getStep2() }}</p>
+										<span class="separator"></span> 
+										<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
+										<p class="answer">{{ $question->getStep3() }}</p>
+									</div>
+								</div>
+							</div>
+							<form role="form" id="response-input-form-{{ $question->id }}" class="response-input-form">
 								<div class="form-group">
 									<textarea class="form-control input-global" id="response-form-input-{{ $question->id }}" name="response-form-input"></textarea>
 								</div>
@@ -63,7 +78,7 @@
 									<li id="metric-time"><i class="fas fa-hourglass-half" title="Time Posted"></i> {{ $question->created_at->diffForHumans() }}</li>
 								</ul>
 							</div>
-							<button class="btn btn-global" id="question-respond" type="button" data-toggle="collapse" data-target="#response-input-form-{{ $question->id }}" aria-expanded="false" aria-controls="response-input-form">Respond</button>
+							<button class="btn btn-global question-respond" type="button">Respond</button>
 							<span class="hidden" data-id="{{ $question->id }}"></span>
 							<div class="question-details-overlay"><p>Response Submitted. Reloading...</p></div>
 						</div>

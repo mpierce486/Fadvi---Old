@@ -55,8 +55,6 @@ $(document).ready(function() {
             step1.push($(this).val());
         });
 
-        console.log(step1);
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -70,23 +68,43 @@ $(document).ready(function() {
             error: function(data){
                 // Retrieve errors and append any error messages.
                 var errors = $.parseJSON(data.responseText);
-                console.log(errors);
-
-                if (errors) {
-                    var postError = errors;
+                
+                if (typeof errors.errors['step1.0'] !== "undefined")
+                {
+                    var postError = errors.errors['step1.0'][0];
                     var pError = '<h5 class="text-danger">'+postError+'</h5>';
-                    $(pError).insertAfter('.mce-tinymce').delay(3000).fadeOut(function() {
+                    $(pError).insertAfter('#step-1 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                } else if (typeof errors.errors['step1.1'] !== "undefined")
+                {
+                    var postError = errors.errors['step1.1'][0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-1 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                } else if (typeof errors.errors['step1.2'] !== "undefined")
+                {
+                    var postError = errors.errors['step1.2'][0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-1 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                }
+                else if (errors.errors.step1[0])
+                {
+                    var postError = errors.errors.step1[0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-1 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
                         $(this).remove();
                     });
                 }
             },
             success: function(data) {
-                console.log(data);
+                $('#step-1').hide();
+                $('#step-2').fadeIn(200);
             }
         });
-
-        $(this).hide();
-        $('#step-2').fadeIn(200);
     });
 
     // Step 2
@@ -101,8 +119,6 @@ $(document).ready(function() {
             step2.push($(this).val());
         });
 
-        console.log(step2);
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -116,23 +132,43 @@ $(document).ready(function() {
             error: function(data){
                 // Retrieve errors and append any error messages.
                 var errors = $.parseJSON(data.responseText);
-                console.log(errors);
-
-                if (errors) {
-                    var postError = errors;
+                
+                if (typeof errors.errors['step2.0'] !== "undefined")
+                {
+                    var postError = errors.errors['step2.0'][0];
                     var pError = '<h5 class="text-danger">'+postError+'</h5>';
-                    $(pError).insertAfter('.mce-tinymce').delay(3000).fadeOut(function() {
+                    $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                } else if (typeof errors.errors['step2.1'] !== "undefined")
+                {
+                    var postError = errors.errors['step2.1'][0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                } else if (typeof errors.errors['step2.2'] !== "undefined")
+                {
+                    var postError = errors.errors['step2.2'][0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                }
+                else if (errors.errors.step2[0])
+                {
+                    var postError = errors.errors.step2[0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
                         $(this).remove();
                     });
                 }
             },
             success: function(data) {
-                console.log(data);
+                $('#step-2').hide();
+                $('#step-3').fadeIn(200);
             }
         });
-
-        $(this).hide();
-        $('#step-3').fadeIn(200);
     });
 
     // Step 3
@@ -147,8 +183,6 @@ $(document).ready(function() {
             step3.push($(this).val());
         });
 
-        console.log(step3);
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -162,23 +196,43 @@ $(document).ready(function() {
             error: function(data){
                 // Retrieve errors and append any error messages.
                 var errors = $.parseJSON(data.responseText);
-                console.log(errors);
-
-                if (errors) {
-                    var postError = errors;
+                
+                if (typeof errors.errors['step3.0'] !== "undefined")
+                {
+                    var postError = errors.errors['step3.0'][0];
                     var pError = '<h5 class="text-danger">'+postError+'</h5>';
-                    $(pError).insertAfter('.mce-tinymce').delay(3000).fadeOut(function() {
+                    $(pError).insertAfter('#step-3 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                } else if (typeof errors.errors['step3.1'] !== "undefined")
+                {
+                    var postError = errors.errors['step3.1'][0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-3 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                } else if (typeof errors.errors['step3.2'] !== "undefined")
+                {
+                    var postError = errors.errors['step3.2'][0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-3 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                        $(this).remove();
+                    });
+                }
+                else if (errors.errors.step3[0])
+                {
+                    var postError = errors.errors.step3[0];
+                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                    $(pError).insertAfter('#step-3 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
                         $(this).remove();
                     });
                 }
             },
             success: function(data) {
-                console.log(data);
+                $('#step-3').hide();
+                $('#step-final').fadeIn(200);
             }
         });
-
-        $(this).hide();
-        $('#step-final').fadeIn(200);
     });
 
 

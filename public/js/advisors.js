@@ -21,10 +21,8 @@ $(document).ready(function(){
 		$grid.isotope({ filter: '.'+btnText+''});
 	});
 
-	// Show all advisors is user clicks on document
-	$('#nav-buttons > button').on('blur', function() {
-		// Remove active class on any buttons
-		$('#nav-buttons > button').removeClass('nav-buttons-active');
-		$grid.isotope({ filter: '*' });
-	});
+	// Advisor bio toggle
+	$('.advisor-detail-more').click(function() {
+		$(this).siblings('.card-body').slideToggle();
+	});	
 });

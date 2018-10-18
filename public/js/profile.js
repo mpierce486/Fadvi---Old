@@ -12,8 +12,31 @@ $(document).ready(function() {
 	});
 
 	//
+	//  Collapse event for "View Responses"
+	//
+
+	$('.view-responses').click(function() {
+		$(this).siblings('.collapse').slideToggle();
+	});
+
+
+	//
+	//	Collapse event fore "More" details section
+	//
+
+	$('.details-header').click(function() {
+		$(this).parent().find('.collapse').slideToggle();
+	});
+
+	//
 	// BEGIN QUESTION RESPONSE FUNCTIONALITY
 	//
+
+	  	//	Slide toggle when advisor clicks the "Respond" button
+
+	  	$('.question-respond').click(function() {
+			$(this).parent().find('form').slideToggle();
+	  	});
 
 	$('.response-input-form').on('submit', function(e) {
 		e.preventDefault();

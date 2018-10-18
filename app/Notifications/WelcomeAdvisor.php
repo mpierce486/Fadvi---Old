@@ -2,15 +2,12 @@
 
 namespace Fadvi\Notifications;
 
-use Fadvi\User;
-use Fadvi\Question;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class QuestionNotificationAdvisorRegistered extends Notification
+class WelcomeAdvisor extends Notification
 {
     use Queueable;
 
@@ -19,11 +16,9 @@ class QuestionNotificationAdvisorRegistered extends Notification
      *
      * @return void
      */
-    public function __construct ($userAdvisor, $question, $topic)
+    public function __construct()
     {
-        $this->userAdvisor = $userAdvisor;
-        $this->question = $question;
-        $this->topic = $topic;
+        //
     }
 
     /**
@@ -46,12 +41,11 @@ class QuestionNotificationAdvisorRegistered extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('New Question is Available')
-                    ->greeting('Hello '. $this->userAdvisor->first_name . ',')
-                    ->line('A new question has been posted that you may be able to help with. You can respond by going to your profile after logging in.')
-                    ->line('Question Topic: '. $this->topic->topic_name)
-                    ->line('Question Summary: '. $this->question->question)
-                    ->action('Respond to Question', url('/profile/'.$this->userAdvisor->first_name . $this->userAdvisor->last_name));
+                    ->subject('Welcome To Fadvi')
+                    ->greeting('Hello '. $this->advisor->first_name . ',')
+                    ->line('Fadvi was created with the mission to help individuals find advice for their finances, taxes, and estate planning. As an advisor, you play a critical role in helping your clients achieve their goals.')
+                    ->line('Now that you are registered, from your profile you will be able to see any available questions to respond to as well as track you conversations with other users.');
+                    ->line('Thank you for registering and please let us know if there is anything we can improve on the platform for you!')
     }
 
     /**

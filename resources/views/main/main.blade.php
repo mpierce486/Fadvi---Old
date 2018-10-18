@@ -46,7 +46,7 @@
 					<i class="fas fa-users"></i>
 				</div>
 				<div id="left-text">
-					We are a network of financial advisors, estate planning attorneys, and certified public accountants the believe in 
+					We are a network of financial advisors, estate planning attorneys, and certified public accountants that believe in 
 					working together to help you plan for your future.
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 					<i class="fas fa-lightbulb"></i>
 				</div>
 				<div id="right-text">
-					We believe each individual and family should have advice around their financial, estate, and tax needs and we intend to make that advice more accessible.
+					We believe each individual and family should have advice around their financial, estate, and tax needs and our mission is to make that advice more accessible.
 				</div>
 			</div>
 		</div>

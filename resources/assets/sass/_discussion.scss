@@ -28,6 +28,18 @@
 			margin: 0 auto 50px auto;
 			background-color: $text-color-splash;
 			padding: 15px;
+
+			.answer {
+				margin-left: 10px;
+				margin-bottom: 0px;
+				font-weight: bold;
+			}
+
+			.separator {
+				display: block;
+				border: 1px solid #fff;
+				margin: 10px 0px;
+			}
 		}
 	}
 

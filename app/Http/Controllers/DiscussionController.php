@@ -82,7 +82,7 @@ class DiscussionController extends Controller
         $discussion = Discussion::where('id', $id)->first();
 
         $question = Question::where('id', $discussion->question_id)->first();
-        
+                
     	$user = User::where('id', $discussion->user_id)->first();
 
     	$advisor = Advisor::where('id', $discussion->advisor_id)->first();

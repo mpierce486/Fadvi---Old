@@ -9,10 +9,13 @@ use Fadvi\Topic;
 use Fadvi\Discussion;
 use Fadvi\Question;
 use Fadvi\Response;
+use Fadvi\Detail;
 use DB;
 use Mail;
 use Session;
 use Carbon\Carbon;
+
+use Illuminate\Validation\Rule;
 
 use Fadvi\Notifications\QuestionNotificationAdvisorRegistered;
 use Fadvi\Notifications\QuestionNotificationAdvisorNotRegistered;
@@ -53,7 +56,7 @@ class QuestionController extends Controller
                             'topic_id' => $topicId,
                             'views' => 0,
                             'responses' => 0,
-                            'details' => collect(Session::get('step-details'))
+                            'detail_id' => 0,
                         ]);
 
             DB::table('question_topic')->insert([
@@ -62,6 +65,21 @@ class QuestionController extends Controller
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
+
+            $step_1 = Session::get('step-details-1');
+            $step_2 = Session::get('step-details-2');
+            $step_3 = Session::get('step-details-3');
+
+            // Create Detail record for the question
+            $detail = Detail::create([
+                'question_id' => $question->id,
+                'step_1' => $step_1,
+                'step_2' => $step_2,
+                'step_3' => $step_3,
+            ]);
+
+            // Update Question record with the Detail ID
+            DB::table('questions')->where('id', $question->id)->update(['detail_id' => $detail->id]);
 
             // Create advisor notification of new question
             // for those advisors that are associated
@@ -173,45 +191,78 @@ class QuestionController extends Controller
     public function postQuestionDetailsStep1(Request $request)
     {
         // Make sure Session variable is clear first
-        Session::forget('step-details');
+        Session::forget('step-details-1');
 
         if ($request->ajax())
         {
             $step1 = $request->input('step1');
-            $step1 = collect($step1);
+            
+            $this->validate($request, [
+                'step1' => 'required',
+                'step1.*' => Rule::in(['Less than $50,000', '$50,000-$100,000', 'More than $100,000']),
+            ], [
+                'step1.required' => 'You must choose one.',
+                'step1.*.in' => 'Invalid response.',
+            ]);
+
+            $step1 = implode(", ", $step1);
 
             // Add step 1 data to session variable
-            Session::push('step-details', $step1);
+            Session::put('step-details-1', $step1);
 
-            return response()->json(Session::get('step-details'));
+            return response()->json(Session::get('step-details-1'));
         }
     }
 
     public function postQuestionDetailsStep2(Request $request)
     {
+        // Make sure Session variable is clear first
+        Session::forget('step-details-2');
+
         if ($request->ajax())
         {
             $step2 = $request->input('step2');
-            $step2 = collect($step2);
+
+            $this->validate($request, [
+                'step2' => 'required',
+                'step2.*' => Rule::in(['Step2-option1', 'Step2-option2', 'Step2-option3']),
+            ], [
+                'step2.required' => 'You must choose one.',
+                'step2.*.in' => 'Invalid response.',
+            ]);
+
+            $step2 = implode(", ", $step2);
 
             // Add step 2 data to session variable
-            Session::push('step-details', $step2);
+            Session::put('step-details-2', $step2);
 
-            return response()->json(Session::get('step-details'));
+            return response()->json(Session::get('step-details-2'));
         }
     }
 
     public function postQuestionDetailsStep3(Request $request)
     {
+        // Make sure Session variable is clear first
+        Session::forget('step-details-3');
+
         if ($request->ajax())
         {
             $step3 = $request->input('step3');
-            $step3 = collect($step3);
+
+            $this->validate($request, [
+                'step3' => 'required',
+                'step3.*' => Rule::in(['Step3-option1', 'Step3-option2', 'Step3-option3']),
+            ], [
+                'step3.required' => 'You must choose one.',
+                'step3.*.in' => 'Invalid response.',
+            ]);
+
+            $step3 = implode(", ", $step3);
 
             // Add step 2 data to session variable
-            Session::push('step-details', $step3);
+            Session::put('step-details-3', $step3);
 
-           return response()->json(Session::get('step-details'));
+           return response()->json(Session::get('step-details-3'));
         }
     }
 }

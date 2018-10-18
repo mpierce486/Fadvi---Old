@@ -24,6 +24,8 @@
 			<div class="advisor-detail-firm">
 				<h5>{{ $advisor->firm_name }}</h5>
 			</div>
+			<span class="advisor-detail-more"><i class="fas fa-ellipsis-h"></i></span>
+			<div class="card card-body">{{ $advisor->about }}</div>
 		</div>
 		@endforeach
 	</div>

@@ -10,7 +10,7 @@
 		button {
 			flex: 1;
 			white-space: normal;
-			background-color: $text-color-splash;
+			background-color: #618f8e;
 			color: #fff;
 
 			&:hover {
@@ -48,9 +48,15 @@
 		font-weight: 100;
 	}
 
-	.more-toggle {
+	.advisor-detail-more {
 		font-size: 15px;
 		cursor: pointer;
+	}
+
+	.card {
+		display: none;
+		z-index: 10;
+		box-shadow: 0 0 2px #000;
 	}
 }
 

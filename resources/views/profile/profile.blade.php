@@ -46,7 +46,7 @@
 							</ul>
 						</div>
 						@if ($question->countResponses())
-							<button class="btn btn-global view-responses" data-toggle="collapse" data-target="#questionResponses-{{ $question->id }}" aria-expanded="false">View Responses</button>
+							<button class="btn btn-global view-responses">View Responses</button>
 							<div class="collapse" id="questionResponses-{{ $question->id }}">
 								@foreach ($question->getResponses() as $response)
 									<div class="card">

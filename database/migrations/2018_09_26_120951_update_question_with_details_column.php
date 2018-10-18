@@ -14,7 +14,7 @@ class UpdateQuestionWithDetailsColumn extends Migration
     public function up()
     {
         Schema::table('questions', function($table){
-            $table->text('details');
+            $table->integer('detail_id')->unsigned();
         });
     }
 
@@ -26,7 +26,7 @@ class UpdateQuestionWithDetailsColumn extends Migration
     public function down()
     {
         Schema::table('questions', function($table){
-            $table->dropColumn('details');
+            $table->dropColumn('detail_id');
         });
     }
 }

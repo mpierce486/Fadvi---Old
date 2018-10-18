@@ -12,7 +12,7 @@ class Question extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'question', 'topic_id', 'views', 'responses', 'details'
+        'user_id', 'question', 'topic_id', 'views', 'responses', 'detail_id'
     ];
 
     public function user()
@@ -45,5 +45,38 @@ class Question extends Model
         return $this->getResponses()->count();
     }
 
+    public function details()
+    {
+        return $this->hasOne('Fadvi\Detail', 'question_id');
+    }
 
+    public function getStep1()
+    {
+        $details = $this->details()->get();
+
+        foreach($details as $step)
+        {
+            return $step->step_1;
+        }
+    }
+
+    public function getStep2()
+    {
+        $details = $this->details()->get();
+
+        foreach($details as $step)
+        {
+            return $step->step_2;
+        }
+    }
+
+    public function getStep3()
+    {
+        $details = $this->details()->get();
+
+        foreach($details as $step)
+        {
+            return $step->step_3;
+        }
+    }
 }
