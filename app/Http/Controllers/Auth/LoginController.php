@@ -94,7 +94,7 @@ class LoginController extends Controller
             return redirect()->route('question');
         }
 
-        return redirect()->route('index');
+        return redirect()->intended('/');
         
     }
 

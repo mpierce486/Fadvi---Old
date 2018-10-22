@@ -8,9 +8,9 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{ route('advisors') }}">Our Advisors</a>
 			</li>
-			<li class="nav-item">
+			<!-- <li class="nav-item">
 				<a class="nav-link" href="{{ route('why') }}">Why</a>
-			</li>
+			</li> -->
 		</ul>
 		<ul class="navbar-nav">
 			@if (Auth::check())
