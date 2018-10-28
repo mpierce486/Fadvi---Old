@@ -265,6 +265,16 @@ Route::post('/question/details/3', [
 	'middleware' => ['auth'],
 ]);
 
+Route::post('/question/details/4', [
+	'uses' => 'QuestionController@postQuestionDetailsStep4',
+	'middleware' => ['auth'],
+]);
+
+Route::post('/question/details/5', [
+	'uses' => 'QuestionController@postQuestionDetailsStep5',
+	'middleware' => ['auth'],
+]);
+
 Route::post('/question/details/final', [
 	'uses' => 'QuestionController@postQuestionDetailsStepFinal',
 	'middleware' => ['auth'],
@@ -274,7 +284,7 @@ Route::post('/question/details/final', [
  *  Discussion Routes
  */
 
-Route::get('/discussion/create/{questionId}/{advisorId}', [
+Route::get('/discussion/create/{questionId}/{advisorId}/{responseId}', [
 	'uses' => 'DiscussionController@createDiscussion',
 	'as' => 'discussion.create',
 	'middleware' => ['auth'],

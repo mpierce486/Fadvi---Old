@@ -268,8 +268,8 @@
 }
 
 #main-middle-wrapper #topics-wrapper .topics-item-wrapper .topics-item {
-  width: 175px;
-  height: 175px;
+  width: 180px;
+  height: 180px;
   padding: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -850,6 +850,7 @@
 .profile-wrapper .main-content .content-section .discussion-link {
   position: absolute;
   right: 15px;
+  top: 15px;
 }
 
 /* ADVISOR PROFILE STYLING */
@@ -881,8 +882,18 @@
   margin-bottom: 10px;
 }
 
-.details-header {
+.question-details-wrapper .details-question-more .details-header {
   cursor: pointer;
+  margin-left: 10px;
+}
+
+.question-details-wrapper .details-question-more .collapse {
+  width: 100%;
+}
+
+.question-details-wrapper .details-question-more .answer {
+  margin-left: 15px;
+  font-weight: bold;
 }
 
 .response-details-wrapper #details-question {
@@ -1327,6 +1338,7 @@
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 10px;
+  padding: 20px;
 }
 
 #discussion-wrapper .discussion-post-content-user:after {
@@ -1356,6 +1368,7 @@
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 10px;
+  padding: 20px;
 }
 
 #discussion-wrapper .discussion-post-content-advisor:after {
@@ -1467,6 +1480,8 @@
 
 #step-2,
 #step-3,
+#step-4,
+#step-5,
 #step-final {
   display: none;
 }
@@ -1479,7 +1494,8 @@
   border-radius: 5px;
 }
 
-.question-form #custom-checkbox-form-group .custom-checkbox {
+.question-form #custom-checkbox-form-group .custom-checkbox,
+.question-form #custom-checkbox-form-group .custom-radio {
   position: relative;
   display: block;
   min-height: 1.5rem;
@@ -1489,22 +1505,26 @@
   padding-bottom: 10px;
 }
 
-.question-form #custom-checkbox-form-group .custom-checkbox:first-child {
+.question-form #custom-checkbox-form-group .custom-checkbox:first-child,
+.question-form #custom-checkbox-form-group .custom-radio:first-child {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
-.question-form #custom-checkbox-form-group .custom-checkbox:last-child {
+.question-form #custom-checkbox-form-group .custom-checkbox:last-child,
+.question-form #custom-checkbox-form-group .custom-radio:last-child {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.question-form #custom-checkbox-form-group .custom-checkbox:hover {
+.question-form #custom-checkbox-form-group .custom-checkbox:hover,
+.question-form #custom-checkbox-form-group .custom-radio:hover {
   background-color: #e8e8e8;
   cursor: pointer;
 }
 
-.question-form #custom-checkbox-form-group .custom-checkbox label:before {
+.question-form #custom-checkbox-form-group .custom-checkbox label:before,
+.question-form #custom-checkbox-form-group .custom-radio label:before {
   background-color: #9acccd !important;
 }
 

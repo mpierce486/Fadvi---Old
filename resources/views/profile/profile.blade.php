@@ -71,12 +71,12 @@
 											</div>
 											<div class="response-text col-sm">
 												<span class="upper-quote text-muted"><i class="fas fa-quote-left"></i></span>
-												<blockquote class="blockquote">{{ $response->response }}</blockquote>
+												<blockquote class="blockquote"><?php echo $response->response ?></blockquote>
 												<span class="lower-quote text-muted"><i class="fas fa-quote-right"></i></span>
 											</div>
 											<div class="discussion-button col-sm-2 col-xs-12">
 												@if ($response->pivot->discussion_created === null)
-												<a class="btn btn-global" href="{{ URL::to('/discussion/create/'. $question->id . '/'. $advisor->id) }}" id="begin-discussion">Begin Discussion</a>
+												<a class="btn btn-global" href="{{ URL::to('/discussion/create/'. $question->id . '/'. $advisor->id . '/'. $response->id) }}" id="begin-discussion">Begin Discussion</a>
 												@else
 												<button class="btn btn-global" id="begin-discussion" title="Discussion Already Created" disabled>Begin Discussion</button>
 												@endif

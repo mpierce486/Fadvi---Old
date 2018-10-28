@@ -68,7 +68,24 @@ class QuestionController extends Controller
 
             $step_1 = Session::get('step-details-1');
             $step_2 = Session::get('step-details-2');
-            $step_3 = Session::get('step-details-3');
+
+            $step_3 = "";
+            if(Session::get('step-details-3'))
+            {
+                $step_3 = Session::get('step-details-3');
+            }
+
+            $step_4 = "";
+            if(Session::get('step-details-4'))
+            {
+                $step_4 = Session::get('step-details-4');
+            }
+
+            $step_5 = "";
+            if(Session::get('step-details-5'))
+            {
+                $step_5 = Session::get('step-details-5');
+            }
 
             // Create Detail record for the question
             $detail = Detail::create([
@@ -76,6 +93,8 @@ class QuestionController extends Controller
                 'step_1' => $step_1,
                 'step_2' => $step_2,
                 'step_3' => $step_3,
+                'step_4' => $step_4,
+                'step_5' => $step_5,
             ]);
 
             // Update Question record with the Detail ID
@@ -193,13 +212,20 @@ class QuestionController extends Controller
         // Make sure Session variable is clear first
         Session::forget('step-details-1');
 
+        // Get the session topic
+        $topic = Topic::where('topic_name', Session::get('topic'))->first();
+
+        // Get topic step 1 options for validation
+        $step1_options = $topic->step_1_options;
+        $step1_options = explode(", ", $step1_options);
+
         if ($request->ajax())
         {
             $step1 = $request->input('step1');
             
             $this->validate($request, [
                 'step1' => 'required',
-                'step1.*' => Rule::in(['Less than $50,000', '$50,000-$100,000', 'More than $100,000']),
+                'step1.*' => Rule::in($step1_options),
             ], [
                 'step1.required' => 'You must choose one.',
                 'step1.*.in' => 'Invalid response.',
@@ -219,13 +245,20 @@ class QuestionController extends Controller
         // Make sure Session variable is clear first
         Session::forget('step-details-2');
 
+        // Get the session topic
+        $topic = Topic::where('topic_name', Session::get('topic'))->first();
+
+        // Get topic step 1 options for validation
+        $step2_options = $topic->step_2_options;
+        $step2_options = explode(", ", $step2_options);
+
         if ($request->ajax())
         {
             $step2 = $request->input('step2');
 
             $this->validate($request, [
                 'step2' => 'required',
-                'step2.*' => Rule::in(['Step2-option1', 'Step2-option2', 'Step2-option3']),
+                'step2.*' => Rule::in($step2_options),
             ], [
                 'step2.required' => 'You must choose one.',
                 'step2.*.in' => 'Invalid response.',
@@ -245,13 +278,20 @@ class QuestionController extends Controller
         // Make sure Session variable is clear first
         Session::forget('step-details-3');
 
+        // Get the session topic
+        $topic = Topic::where('topic_name', Session::get('topic'))->first();
+
+        // Get topic step 1 options for validation
+        $step3_options = $topic->step_3_options;
+        $step3_options = explode(", ", $step3_options);
+
         if ($request->ajax())
         {
             $step3 = $request->input('step3');
 
             $this->validate($request, [
                 'step3' => 'required',
-                'step3.*' => Rule::in(['Step3-option1', 'Step3-option2', 'Step3-option3']),
+                'step3.*' => Rule::in($step3_options),
             ], [
                 'step3.required' => 'You must choose one.',
                 'step3.*.in' => 'Invalid response.',
@@ -263,6 +303,72 @@ class QuestionController extends Controller
             Session::put('step-details-3', $step3);
 
            return response()->json(Session::get('step-details-3'));
+        }
+    }
+
+    public function postQuestionDetailsStep4(Request $request)
+    {
+        // Make sure Session variable is clear first
+        Session::forget('step-details-4');
+
+        // Get the session topic
+        $topic = Topic::where('topic_name', Session::get('topic'))->first();
+
+        // Get topic step 1 options for validation
+        $step4_options = $topic->step_4_options;
+        $step4_options = explode(", ", $step4_options);
+
+        if ($request->ajax())
+        {
+            $step4 = $request->input('step4');
+
+            $this->validate($request, [
+                'step4' => 'required',
+                'step4.*' => Rule::in($step4_options),
+            ], [
+                'step4.required' => 'You must choose one.',
+                'step4.*.in' => 'Invalid response.',
+            ]);
+
+            $step4 = implode(", ", $step4);
+
+            // Add step 2 data to session variable
+            Session::put('step-details-4', $step4);
+
+           return response()->json(Session::get('step-details-4'));
+        }
+    }
+
+    public function postQuestionDetailsStep5(Request $request)
+    {
+        // Make sure Session variable is clear first
+        Session::forget('step-details-5');
+
+        // Get the session topic
+        $topic = Topic::where('topic_name', Session::get('topic'))->first();
+
+        // Get topic step 1 options for validation
+        $step5_options = $topic->step_5_options;
+        $step5_options = explode(", ", $step5_options);
+
+        if ($request->ajax())
+        {
+            $step5 = $request->input('step5');
+
+            $this->validate($request, [
+                'step5' => 'required',
+                'step5.*' => Rule::in($step5_options),
+            ], [
+                'step5.required' => 'You must choose one.',
+                'step5.*.in' => 'Invalid response.',
+            ]);
+
+            $step5 = implode(", ", $step5);
+
+            // Add step 2 data to session variable
+            Session::put('step-details-5', $step5);
+
+           return response()->json(Session::get('step-details-5'));
         }
     }
 }

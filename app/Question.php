@@ -79,4 +79,24 @@ class Question extends Model
             return $step->step_3;
         }
     }
+
+    public function getStep4()
+    {
+        $details = $this->details()->get();
+
+        foreach($details as $step)
+        {
+            return $step->step_4;
+        }
+    }
+
+    public function getStep5()
+    {
+        $details = $this->details()->get();
+
+        foreach($details as $step)
+        {
+            return $step->step_5;
+        }
+    }
 }

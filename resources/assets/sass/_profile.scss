@@ -149,6 +149,7 @@
 			.discussion-link {
 				position: absolute;
 				right: 15px;
+				top: 15px;
 			}
 		}
 	}
@@ -183,10 +184,21 @@
 	    	margin-bottom: 10px;
 	    }
 	}
-}
 
-.details-header {
-	cursor: pointer;
+	.details-question-more {
+		.details-header {
+			cursor: pointer;
+			margin-left: 10px;
+		}
+		.collapse {
+			width: 100%;
+		}
+
+		.answer {
+			margin-left: 15px;
+			font-weight: bold;
+		}
+	}
 }
 
 .response-details-wrapper {

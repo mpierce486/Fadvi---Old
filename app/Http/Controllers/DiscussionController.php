@@ -26,13 +26,16 @@ use Fadvi\Http\Requests;
 
 class DiscussionController extends Controller
 {
-    public function createDiscussion($questionId, $advisorId)
+    public function createDiscussion($questionId, $advisorId, $responseId)
     {
         // Retrieve question record
         $question = Question::where('id', $questionId)->first();
 
         // Retrieve advisor
         $advisor = Advisor::where('id', $advisorId)->first();
+
+        // Get the registered advisor's user record
+        $userAdvisor = User::where('username', $advisor->username)->first();
         
         // Create the discussion record
         $discussion = Discussion::create([
@@ -63,6 +66,15 @@ class DiscussionController extends Controller
         Post::create([
             'post' => $question->question,
             'user_id' => Auth::user()->id,
+            'discussion_id' => $discussion->id,
+        ]);
+
+        // Add advisor's initial response as a post for this discussion
+        $response = DB::table('responses')->where('id', $responseId)->first();
+
+        Post::create([
+            'post' => $response->response,
+            'user_id' => $userAdvisor->id,
             'discussion_id' => $discussion->id,
         ]);
 

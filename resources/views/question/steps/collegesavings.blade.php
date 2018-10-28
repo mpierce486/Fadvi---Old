@@ -1,26 +1,22 @@
 <!-- FORM 1 -->
 <form role="form" id="step-1" class="question-form">
-	<h3>Select what you are interested in (select all that apply).</h3>
+	<h3>Select the type(s) of accounts you currently have established.</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option1" name="step1[]" value="Saving for retirement">
-			<label class="custom-control-label" for="step1-option1">Saving for retirement</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option1" name="step1[]" value="529 plan">
+			<label class="custom-control-label" for="step1-option1">529 College Savings Plan</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="Planning for income">
-			<label class="custom-control-label" for="step1-option2">Planning for income in retirement</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="UTMA or UGMA">
+			<label class="custom-control-label" for="step1-option2">UTMA or UGMA account</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="Social Security">
-			<label class="custom-control-label" for="step1-option3">Social Security strategies</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="Coverdell">
+			<label class="custom-control-label" for="step1-option3">Coverdell Education Savings Account (ESA)</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option4" name="step1[]" value="Managing retirement accounts">
-			<label class="custom-control-label" for="step1-option4">Managing retirement accounts (IRA, 401(k), Pension)</label>
-		</div>
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option5" name="step1[]" value="None">
-			<label class="custom-control-label" for="step1-option5">None of the above</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option4" name="step1[]" value="None">
+			<label class="custom-control-label" for="step1-option4">I do not currently have any accounts established</label>
 		</div>
 	</div>
 	<div class="form-group text-center col">
@@ -29,27 +25,19 @@
 </form>
 
 <form role="form" id="step-2" class="question-form">
-	<h3>What do your current retirement accounts amount to?</h3>
+	<h3>How long before the funds are used for education?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option1" name="step2[]" value="Less than $100,000">
-			<label class="custom-control-label" for="step2-option1">Less than $100,000</label>
+			<input type="radio" class="custom-control-input" id="step2-option1" name="step2[]" value="More than 10">
+			<label class="custom-control-label" for="step2-option1">More than 10 years</label>
 		</div>
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option2" name="step2[]" value="$100,000 to $500,000">
-			<label class="custom-control-label" for="step2-option2">$100,000 to $500,000</label>
+			<input type="radio" class="custom-control-input" id="step2-option2" name="step2[]" value="5 to 10">
+			<label class="custom-control-label" for="step2-option2">Between 5 to 10 years</label>
 		</div>
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option3" name="step2[]" value="$500,000 to $1,000,000">
-			<label class="custom-control-label" for="step2-option3">$500,000 to $1,000,000</label>
-		</div>
-		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option4" name="step2[]" value="Over $1,000,000">
-			<label class="custom-control-label" for="step2-option4">Over $1,000,000</label>
-		</div>
-		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option5" name="step2[]" value="None">
-			<label class="custom-control-label" for="step2-option5">I do not currently have any investments</label>
+			<input type="radio" class="custom-control-input" id="step2-option3" name="step2[]" value="Less than 5">
+			<label class="custom-control-label" for="step2-option3">Less than 5 years</label>
 		</div>
 	</div>
 	<div class="row">

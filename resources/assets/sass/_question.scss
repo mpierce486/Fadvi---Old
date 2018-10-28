@@ -30,7 +30,7 @@
 	display: block;
 }
 
-#step-2, #step-3, #step-final {
+#step-2, #step-3, #step-4, #step-5, #step-final {
 	display: none;
 }
 
@@ -42,7 +42,7 @@
 		border: 1px solid #a3a3a3;
 		border-radius: 5px;
 
-		.custom-checkbox {
+		.custom-checkbox, .custom-radio {
 		    position: relative;
 		    display: block;
 		    min-height: 1.5rem;

@@ -19,18 +19,27 @@
 			<span><i class="fas fa-exclamation-circle"></i></span>
 		</div>
 		<div class="card card-body col-xs-12 col-md-12 col-lg-6" id="question-details">
+			<p class="text-muted">Here are some additional details about this question.</p>
 			@foreach ($question->topic as $topic)
-			{{ $topic->topic_name }}
+				<p class="question">{{ $topic->step_1_question }}</p>
+				<p class="answer">{{ $question->getStep1() }}</p>
+				<span class="separator"></span> 
+				<p class="question">{{ $topic->step_2_question }}</p>
+				<p class="answer">{{ $question->getStep2() }}</p>
+				<span class="separator"></span> 
+				<p class="question">{{ $topic->step_3_question }}</p>
+				<p class="answer">{{ $question->getStep3() }}</p>
+				@if ($topic->step_4_question)
+					<span class="separator"></span> 
+					<p class="question">{{ $topic->step_4_question }}</p>
+					<p class="answer">{{ $question->getStep4() }}</p>
+				@endif
+				@if ($topic->step_5_question)
+					<span class="separator"></span> 
+					<p class="question">{{ $topic->step_5_question }}</p>
+					<p class="answer">{{ $question->getStep5() }}</p>
+				@endif
 			@endforeach
-			
-			<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
-			<p class="answer">{{ $question->getStep1() }}</p>
-			<span class="separator"></span> 
-			<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
-			<p class="answer">{{ $question->getStep2() }}</p>
-			<span class="separator"></span> 
-			<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
-			<p class="answer">{{ $question->getStep3() }}</p>
 		</div>
 	</div>
 

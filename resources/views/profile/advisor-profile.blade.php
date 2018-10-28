@@ -55,14 +55,27 @@
 								<p class="col-sm-2 text-muted details-header">More...</p>
 								<div class="collapse">
 									<div class="card card-body" id="question-details">
-										<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
-										<p class="answer">{{ $question->getStep1() }}</p>
-										<span class="separator"></span> 
-										<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
-										<p class="answer">{{ $question->getStep2() }}</p>
-										<span class="separator"></span> 
-										<p class="question">This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. This is the question. </p>
-										<p class="answer">{{ $question->getStep3() }}</p>
+										<p class="text-muted">Here are some additional details about this question.</p>
+										@foreach ($question->topic as $topic)
+											<p class="question">{{ $topic->step_1_question }}</p>
+											<p class="answer">{{ $question->getStep1() }}</p>
+											<span class="separator"></span> 
+											<p class="question">{{ $topic->step_2_question }}</p>
+											<p class="answer">{{ $question->getStep2() }}</p>
+											<span class="separator"></span> 
+											<p class="question">{{ $topic->step_3_question }}</p>
+											<p class="answer">{{ $question->getStep3() }}</p>
+											@if ($topic->step_4_question)
+												<span class="separator"></span> 
+												<p class="question">{{ $topic->step_4_question }}</p>
+												<p class="answer">{{ $question->getStep4() }}</p>
+											@endif
+											@if ($topic->step_5_question)
+												<span class="separator"></span> 
+												<p class="question">{{ $topic->step_5_question }}</p>
+												<p class="answer">{{ $question->getStep5() }}</p>
+											@endif
+										@endforeach
 									</div>
 								</div>
 							</div>
@@ -107,7 +120,7 @@
 							</div>
 							<div id="details-response" class="col-sm-12 row">
 								<h5 id="response-header" class="col-sm-2"><strong>Response:</strong></h5>
-								<div id="response" class="col-sm-10 col-sm-offset-2">{{ $response->response }}</div>
+								<div id="response" class="col-sm-10 col-sm-offset-2"><?php echo $response->response ?></div>
 							</div>
 							<div id="question-metrics" class="row">
 								<ul>
@@ -130,6 +143,10 @@
 					@foreach ($discussions as $discussion)
 						<div class="discussion-details">
 							<div class="discussion-topic col-sm-8">
+									<div id="details-name" class="col-sm-12 row">
+										<h5 id="name-header" class="col-sm-2"><strong>Name:</strong></h5>
+										<div id="name" class="col-sm-10 col-sm-offset-2">{{ $discussion->question->user->first_name }}</div>
+									</div>
 								@foreach($discussion->question->topic as $topic)
 									<div id="details-topic" class="col-sm-12 row">
 										<h5 id="topic-header" class="col-sm-2"><strong>Topic:</strong></h5>
