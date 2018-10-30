@@ -68,7 +68,7 @@ class LoginController extends Controller
                 return response()->json("/login/error");
             }
 
-            if (Session::has('event'))
+            if (Session::has('topic'))
             {
                 return response()->json("/question");
             }

@@ -19,7 +19,7 @@
 			<label class="custom-control-label" for="step1-option4">Discuss business structure</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option5" name="step1[]" value="None of the above">
+			<input type="checkbox" class="custom-control-input" id="step1-option5" name="step1[]" value="None">
 			<label class="custom-control-label" for="step1-option5">None of the above</label>
 		</div>
 	</div>

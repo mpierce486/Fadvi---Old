@@ -21,8 +21,4 @@ $(document).ready(function(){
 		$grid.isotope({ filter: '.'+btnText+''});
 	});
 
-	// Advisor bio toggle
-	$('.advisor-detail-more').click(function() {
-		$(this).siblings('.card-body').slideToggle();
-	});	
 });

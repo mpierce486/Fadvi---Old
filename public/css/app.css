@@ -727,6 +727,11 @@
   padding: 0px;
 }
 
+.profile-wrapper .main-content .content-section .question-details #details-question,
+.profile-wrapper .main-content .content-section .discussion-details #details-question {
+  margin-bottom: 15px;
+}
+
 .profile-wrapper .main-content .content-section .question-details #question-metrics,
 .profile-wrapper .main-content .content-section .discussion-details #question-metrics {
   font-size: 0.8em;
@@ -1461,11 +1466,21 @@
   padding: 50px;
   background-color: #9acccd;
   border-radius: 5px;
-  margin: auto;
+  margin: auto auto 150px auto;
 }
 
 #question-wrapper textarea {
   resize: vertical;
+}
+
+#question-wrapper h1,
+#question-wrapper h2,
+#question-wrapper h3,
+#question-wrapper h4,
+#question-wrapper h5,
+#question-wrapper h6 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 #question-submit-success {

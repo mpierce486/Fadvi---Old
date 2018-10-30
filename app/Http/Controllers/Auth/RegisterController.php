@@ -121,7 +121,7 @@ class RegisterController extends Controller
 
             Auth::login($user, true);
 
-            if (Session::has('event'))
+            if (Session::has('topic'))
             {
                 return response()->json("/question");
             }
