@@ -44,7 +44,7 @@
 			<label class="custom-control-label" for="step2-option3">Reduce estate taxes</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step2-option4" name="step2[]" value="Gain control">
+			<input type="checkbox" class="custom-control-input" id="step2-option4" name="step2[]" value="Gain control over distribution of assets">
 			<label class="custom-control-label" for="step2-option4">Gain control over distribution of assets</label>
 		</div>
 		<div class="custom-control custom-checkbox">

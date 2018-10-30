@@ -11,7 +11,7 @@
 			<label class="custom-control-label" for="step1-option2">Amending a return</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="Audited">
+			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="I am being audited">
 			<label class="custom-control-label" for="step1-option3">I am being audited</label>
 		</div>
 		<div class="custom-control custom-checkbox">
@@ -19,7 +19,7 @@
 			<label class="custom-control-label" for="step1-option4">Discuss business structure</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option5" name="step1[]" value="None">
+			<input type="checkbox" class="custom-control-input" id="step1-option5" name="step1[]" value="None of the above">
 			<label class="custom-control-label" for="step1-option5">None of the above</label>
 		</div>
 	</div>

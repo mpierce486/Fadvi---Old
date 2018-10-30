@@ -11,11 +11,11 @@
 			<label class="custom-control-label" for="step1-option2">Amending a return</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="Audited">
+			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="I am being audited">
 			<label class="custom-control-label" for="step1-option3">I am being audited</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option4" name="step1[]" value="General">
+			<input type="checkbox" class="custom-control-input" id="step1-option4" name="step1[]" value="General tax questions">
 			<label class="custom-control-label" for="step1-option4">General tax questions</label>
 		</div>
 		<div class="custom-control custom-checkbox">
@@ -44,7 +44,7 @@
 			<label class="custom-control-label" for="step2-option3">Income from investments (dividends, interest, etc.)</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step2-option4" name="step2[]" value="Other">
+			<input type="checkbox" class="custom-control-input" id="step2-option4" name="step2[]" value="Other unearned income">
 			<label class="custom-control-label" for="step2-option4">Other unearned income (Social Security, pension, etc.)</label>
 		</div>
 		<div class="custom-control custom-checkbox">

@@ -31,7 +31,7 @@ class QuestionController extends Controller
         $topic = Topic::where('topic_name', Session::get('topic'))->first();
         
 
-    	return view('question.question');
+    	return view('question.question')->with(['topic' => $topic]);
     }
 
     public function postQuestion(Request $request)

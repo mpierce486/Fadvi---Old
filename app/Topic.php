@@ -15,4 +15,5 @@ class Topic extends Model
     {
     	return $this->belongsToMany('Fadvi\Question', 'question_topic', 'topic_id', 'question_id');
     }
+
 }

@@ -7,7 +7,7 @@
 			<label class="custom-control-label" for="step1-option1">Saving for retirement</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="Planning for income">
+			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="Planning for income in retirement">
 			<label class="custom-control-label" for="step1-option2">Planning for income in retirement</label>
 		</div>
 		<div class="custom-control custom-checkbox">

@@ -28,15 +28,15 @@
 	<h3>How long before the funds are used for education?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option1" name="step2[]" value="More than 10">
+			<input type="radio" class="custom-control-input" id="step2-option1" name="step2[]" value="More than 10 years">
 			<label class="custom-control-label" for="step2-option1">More than 10 years</label>
 		</div>
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option2" name="step2[]" value="5 to 10">
+			<input type="radio" class="custom-control-input" id="step2-option2" name="step2[]" value="5 to 10 years">
 			<label class="custom-control-label" for="step2-option2">Between 5 to 10 years</label>
 		</div>
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option3" name="step2[]" value="Less than 5">
+			<input type="radio" class="custom-control-input" id="step2-option3" name="step2[]" value="Less than 5 years">
 			<label class="custom-control-label" for="step2-option3">Less than 5 years</label>
 		</div>
 	</div>

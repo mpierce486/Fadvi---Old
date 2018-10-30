@@ -3,11 +3,11 @@
 	<h3>What is your reason for inquiring about estate planning?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option1" name="step1[]" value="Do I need">
+			<input type="checkbox" class="custom-control-input" id="step1-option1" name="step1[]" value="Do I need estate planning?">
 			<label class="custom-control-label" for="step1-option1">Do I need estate planning?</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="Asset transfer">
+			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="Asset transfer to future generations">
 			<label class="custom-control-label" for="step1-option2">Asset transfer to future generations</label>
 		</div>
 		<div class="custom-control custom-checkbox">

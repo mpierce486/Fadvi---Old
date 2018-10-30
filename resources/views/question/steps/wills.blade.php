@@ -36,7 +36,7 @@
 			<label class="custom-control-label" for="step2-option1">Discuss existing will</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step2-option2" name="step2[]" value="Gain control">
+			<input type="checkbox" class="custom-control-input" id="step2-option2" name="step2[]" value="Gain control over distribution of assets">
 			<label class="custom-control-label" for="step2-option2">Gain control over distribution of assets</label>
 		</div>
 		<div class="custom-control custom-checkbox">
