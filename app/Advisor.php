@@ -16,7 +16,7 @@ class Advisor extends Model
      */
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password', 'advisor', 'advisor_type', 'title', 'designations', 'image_path', 'firm_name', 
-        'firm_city', 'firm_state', 'lat', 'long', 'username', 'about',
+        'firm_city', 'firm_state', 'lat', 'long', 'username', 'biography',
     ];
 
     protected $table = 'advisors';

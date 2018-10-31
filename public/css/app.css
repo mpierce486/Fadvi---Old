@@ -984,6 +984,14 @@
   }
 }
 
+body {
+  padding-right: 0px !important;
+}
+
+.modal {
+  padding-right: 0px !important;
+}
+
 #nav-buttons-wrapper {
   text-align: center;
   margin-top: 75px;
@@ -1053,6 +1061,22 @@
           box-shadow: 0 0 2px #000;
 }
 
+.advisor-bio .advisor-bio-top {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.advisor-bio .advisor-bio-top img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.advisor-bio .advisor-bio-top .advisor-bio-name h3,
+.advisor-bio .advisor-bio-top .advisor-bio-title h5 {
+  margin-bottom: 2px;
+}
+
 .nav-buttons-active {
   background-color: #3f8888 !important;
   color: #fff !important;
@@ -1083,6 +1107,11 @@
 @media (min-width: 992px) {
   #nav-buttons {
     max-width: 50%;
+  }
+
+  #advisor-bio-modal {
+    width: 650px !important;
+    max-width: 650px;
   }
 }
 

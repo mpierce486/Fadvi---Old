@@ -98,6 +98,7 @@ class AdminController extends Controller
             'firm_name' => 'required',
             'firm_city' => 'required',
             'firm_state' => 'required',
+            'biography' => 'required',
             'topics' => 'required'
         ], [
             'first_name.required' => 'You must input your first name.',
@@ -143,6 +144,7 @@ class AdminController extends Controller
             'firm_name' => $request->input('firm_name'),
             'firm_city' => ucfirst($request->input('firm_city')),
             'firm_state' => $request->input('firm_state'),
+            'biography' => $request->input('biography'),
         ]);
 
         // Create Advisor-Topic association

@@ -167,6 +167,9 @@
                 </div>
             </div>
             <div class="form-group">
+                <textarea class="form-control input-global" id="advisor-bio" name="biography"></textarea> 
+            </div>
+            <div class="form-group">
                 <label for="topics">Choose any topics:</label>
                 <select multiple class="form-control{{ $errors->has('topics') ? ' is-invalid' : '' }}" name="topics[]" id="topics" size="10">
                     @foreach ($topics as $topic)
@@ -185,19 +188,22 @@
 
 <!-- GOOGLE PLACES -->
 <script src="{{ asset('js/admin.js')  }}"></script>
-
-<!-- <script>
-    // Textarea character count
-    $('#about-input').keyup(function () {
-      var max = 250;
-      var len = $(this).val().length;
-      if (len >= max) {
-        $('#charNum').text('You have exceeded 250 characters!').css("color", "#a94442");
-      } else {
-        var char = max - len;
-        $('#charNum').text(char + ' characters left');
-      }
+<!-- TinyMCE JS -->
+<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+<script src="{{ asset('js/tinymce/plugin.min.js') }}"></script>
+<script>
+    tinymce.init({
+        selector: '#advisor-bio',
+        placeholder: 'Enter advisor biography',
+        menubar: false,
+        plugins: ['advlist, lists, placeholder'],
+        toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
+        forced_root_block : "", 
+        force_br_newlines : true,
+        force_p_newlines : false,
+        statusbar: false,
+        content_css: '/css/app.css',
     });
-</script> -->
+</script>
 
 @stop

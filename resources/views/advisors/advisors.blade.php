@@ -27,16 +27,21 @@
 			<span class="advisor-detail-more" data-toggle="modal" data-target="#advisormodal-{{ $advisor->id }}"><i class="fas fa-ellipsis-h"></i></span>
 		</div>
 		<!-- Advisor modal -->
-		<div class="modal fade" tabindex="-1" role="dialog" id="advisormodal-{{ $advisor->id }}">
-			<div class="modal-dialog" role="document">
+		<div class="modal fade" id="advisormodal-{{ $advisor->id }}">
+			<div class="modal-dialog" id="advisor-bio-modal">
 				<div class="modal-content">
 					<div class="modal-body">
-						<div class="media">
-							<img class="mr-3" src="{{ asset('/') }}{{ $advisor->image_path }}">
-							<div class="media-body">
-								<h5 class="mt-0">Media heading</h5>
-								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<div class="advisor-bio">
+							<div class="advisor-bio-top">
+								<div class="advisor-bio-img"><img src="{{ asset('/') }}{{ $advisor->image_path }}" /></div>
+								<div class="advisor-bio-name"><h3>{{ $advisor->first_name }} {{ $advisor->last_name }}</h3></div>
+								<div class="advisor-bio-title"><h5>{{ $advisor->title }}</h5></div>
+								<div class="advisor-bio-firm"><h6>{{ $advisor->firm_name }}</h6></div>
 							</div>
+							<div class="advisor-bio-bottom"><?php echo $advisor->biography ?></div>
 						</div>
 					</div>
 				</div>
