@@ -14,11 +14,11 @@ class UpdateTopicsTableWithOptionsColumn extends Migration
     public function up()
     {
         Schema::table('topics', function($table){
-            $table->text('step_1_options');
-            $table->text('step_2_options');
-            $table->text('step_3_options');
-            $table->text('step_4_options');
-            $table->text('step_5_options');
+            $table->text('step_1_options')->nullable();
+            $table->text('step_2_options')->nullable();
+            $table->text('step_3_options')->nullable();
+            $table->text('step_4_options')->nullable();
+            $table->text('step_5_options')->nullable();
         });
     }
 
