@@ -17,7 +17,9 @@ class CreateQuestionResponsesTable extends Migration
             $table->increments('id');
             $table->integer('question_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->text('response');
+            $table->text('response_id')->unsigned();
+            $table->integer('advisor_id')->unsigned();
+            $table->boolean('discussion_created')->nullable();
             $table->timestamps();
         });
     }
