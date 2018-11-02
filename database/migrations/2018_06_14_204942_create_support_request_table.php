@@ -29,6 +29,6 @@ class CreateSupportRequestTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('support_request');
+        Schema::dropIfExists('support');
     }
 }
