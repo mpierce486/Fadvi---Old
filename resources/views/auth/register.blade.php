@@ -48,7 +48,7 @@
                   <input type="checkbox"> Remember Me
               </label>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-global">Submit</button>
           <input type="hidden" name="_token" value="{{ Session::token() }}"/>
       </form>
 
