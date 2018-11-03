@@ -37,6 +37,7 @@
 }
 
 .navbar .navbar-toggler-icon {
+  background-image: none !important;
   color: #fff;
 }
 
