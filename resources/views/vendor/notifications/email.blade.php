@@ -26,14 +26,14 @@ $style = [
     /* Masthead ----------------------- */
 
     'email-masthead' => 'padding: 20px 0; text-align: center;background-color: #9acccd !important;',
-    'email-masthead_name' => 'font-size: 25px; font-weight: bold; color: #fff !important; text-decoration: none;',
+    'email-masthead_name' => 'font-size: 25px; font-weight: bold; color: #fff; text-decoration: none;',
 
     'email-body' => 'width: 100%; margin: 0; padding: 0; border-top: 1px solid #EDEFF2; border-bottom: 1px solid #EDEFF2; background-color: #FFF;',
     'email-body_inner' => 'width: auto; max-width: 570px; margin: 0 auto; padding: 0;',
     'email-body_cell' => 'padding: 35px;',
 
-    'email-footer' => 'width: auto; max-width: 570px; margin: 0 auto; padding: 0; text-align: center;background-color: #9acccd;',
-    'email-footer_cell' => 'color: #fff; padding: 35px; text-align: center;',
+    'email-footer' => 'width: auto; max-width: 570px; margin: 0 auto; padding: 0; text-align: center;',
+    'email-footer_cell' => 'color: #AEAEAE; padding: 35px; text-align: center;',
 
     /* Body ------------------------------ */
 
