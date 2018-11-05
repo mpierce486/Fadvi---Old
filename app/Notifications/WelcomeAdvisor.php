@@ -16,9 +16,9 @@ class WelcomeAdvisor extends Notification
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($advisor)
     {
-        //
+        $this->advisor = $advisor;
     }
 
     /**
