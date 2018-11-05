@@ -44,7 +44,7 @@ class WelcomeAdvisor extends Notification
                     ->subject('Welcome To Fadvi')
                     ->greeting('Hello '. $this->advisor->first_name . ',')
                     ->line('Fadvi was created with the mission to help individuals find advice for their finances, taxes, and estate planning. As an advisor, you play a critical role in helping your clients achieve their goals.')
-                    ->line('Now that you are registered, from your profile you will be able to see any available questions to respond to as well as track you conversations with other users.');
+                    ->line('Now that you are registered, from your profile you will be able to see any available questions to respond to as well as track you conversations with other users.')
                     ->line('Thank you for registering and please let us know if there is anything we can improve on the platform for you!');
     }
 
