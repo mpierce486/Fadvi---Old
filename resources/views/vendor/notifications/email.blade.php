@@ -91,7 +91,7 @@ $style = [
                                         <!-- Intro -->
                                         @foreach ($introLines as $line)
                                             <p style="{{ $style['paragraph'] }}">
-                                                {{ $line }}
+                                                <?php echo $line ?>
                                             </p>
                                         @endforeach
 

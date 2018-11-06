@@ -6,6 +6,7 @@
 	<h1>Admin Dashboard</h1>
 	<ul class="list-inline">
 		<li><a href="{{ route('admin.add') }}" class="btn btn-global">Add Advisor</a></li>
+		<li><a href="{{ route('admin.email') }}" class="btn btn-global">Email</a></li>
 	</ul>
 
 	<hr>

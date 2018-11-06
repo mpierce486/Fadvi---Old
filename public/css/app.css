@@ -1300,6 +1300,10 @@ body {
   display: none;
 }
 
+.admin-container ul li {
+  display: inline-block;
+}
+
 .admin-form-wrapper {
   margin: 150px auto;
 }
@@ -1313,6 +1317,14 @@ body {
 .advisorRequest-delete,
 .advisorRequest-approve {
   cursor: pointer;
+}
+
+#admin-email-wrapper {
+  margin-top: 150px;
+}
+
+#admin-email-wrapper h3 {
+  margin-bottom: 20px;
 }
 
 #discussion-wrapper {

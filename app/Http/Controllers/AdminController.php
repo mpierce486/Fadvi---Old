@@ -11,9 +11,11 @@ use Image;
 use Session;
 use DB;
 use Mail;
+use Notification;
 use Carbon\Carbon;
 
 use Fadvi\Notifications\AdvisorAdded;
+use Fadvi\Notifications\EmailCreated;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -175,64 +177,30 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function postApproveAdvisor(Request $request, $id)
+    public function getEmail()
     {
-        if ($request->ajax())
-        {
-        
-            $request = AdvisorJoinRequest::where('id', $id)->first();
-            
-            if (!$request)
-            {
-                return response()->json("No such request exists.");
-            }
+        return view('admin.email');
+    }
 
-            $advisor = Advisor::create([
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'advisor_type' => $request->advisor_type,
-                'title' => $request->title,
-                'designations' => $request->designations,
-                'image_path' => $request->image_path,
-                'username' => $request->username,
-                'firm_name' => $request->firm_name,
-                'firm_address' => $request->firm_address,
-                'lat' => $request->lat,
-                'long' => $request->long,
-                'services' => $request->services,
-                'about' => $request->about,
-                'fees' => $request->fees,
-                'languages' => $request->languages,
-            ]);
+    public function postEmail(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+            'subject' => 'required',
+            'body' => 'required',
+        ], [
+            'email.required' => 'You must input your email.',
+            'subject.required' => 'You must enter a subject.',
+            'body.required' => 'You must enter a message',
+        ]);
 
-            // Create Advisor-Topic association
-            $topics = $request->input('topics');
-            
-            foreach ($topics as $key => $value)
-            {
-                $topic = Topic::where('topic_name', $value)->first();
+        $email = $request->input('email');
+        $subject = $request->input('subject');
+        $body = $request->input('body');
 
-                $advisor->addTopic($topic);
-            }
+        Notification::route('mail', $email)->notify(new EmailCreated($email, $subject, $body));
 
-            // Generate random code for email registration link
-            $randomKey = md5(microtime());
-
-            // Add information to advisor_key table
-            DB::table('advisor_key')->insert([
-                'email' => $advisor->email,
-                'key' => $randomKey,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-
-            // Send email to advisor notifying them of being added to the directory
-            Mail::to($advisor)->send(new AdvisorAdded($advisor, $randomKey));
-
-            Session::flash('success', "Advisor successfully created!");
-            return redirect()->back();
-            
-            }
+        Session::flash('success', "Email successfully sent!");
+        return redirect()->back();
     }
 }

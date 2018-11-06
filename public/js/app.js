@@ -13957,8 +13957,8 @@ window.Pusher = __webpack_require__(37);
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
   broadcaster: 'pusher',
-  key: process.env.MIX_PUSHER_APP_KEY,
-  cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+  key: "11bb42d25be27362ab20",
+  cluster: "us2",
   encrypted: true,
   namespace: "Fadvi.Events"
 });

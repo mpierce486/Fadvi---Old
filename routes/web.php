@@ -172,6 +172,19 @@ Route::post('/admin/approve/advisor/{id}', [
 	'roles' => ['Admin']
 ]);
 
+Route::get('/admin/dashboard/email', [
+	'uses' => 'AdminController@getEmail',
+	'as' => 'admin.email',
+	'middleware' => 'roles',
+	'roles' => ['Admin']
+]);
+
+Route::post('/admin/dashboard/email', [
+	'uses' => 'AdminController@postEmail',
+	'middleware' => 'roles',
+	'roles' => ['Admin']
+]);
+
 /**
  *  Password Reset Routes
  */
