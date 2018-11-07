@@ -48,8 +48,6 @@
         statusbar: false,
         content_css: '/css/app.css',
     });
-
-    tinyMCE.activeEditor.setContent('<span>some</span>');
 </script>
 
 @stop

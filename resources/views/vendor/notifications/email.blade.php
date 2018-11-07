@@ -132,9 +132,15 @@ $style = [
                                         @endforeach
 
                                         <!-- Salutation -->
-                                        <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ config('app.name') }}
-                                        </p>
+                                        @if ($salutation === "Matt")
+                                            <p style="{{ $style['paragraph'] }}">
+                                                <strong>Matt Pierce</strong><br>CEO & Founder | Fadvi.com
+                                            </p>
+                                        @else
+                                            <p style="{{ $style['paragraph'] }}">
+                                                Regards,<br>{{ config('app.name') }}
+                                            </p>
+                                        @endif
 
                                         <!-- Sub Copy -->
                                         @if (isset($actionText))

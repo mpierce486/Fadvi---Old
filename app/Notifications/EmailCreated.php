@@ -44,7 +44,9 @@ class EmailCreated extends Notification
     {
         return (new MailMessage)
                     ->subject($this->subject)
-                    ->line($this->body);
+                    ->line($this->body)
+                    // Change name in salutation to correspond to email signature in email template
+                    ->salutation("Matt");
     }
 
     /**
