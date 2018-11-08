@@ -580,7 +580,7 @@
 
 .auth-form-wrapper {
   min-height: 600px !important;
-  margin: 150px auto 0px auto;
+  margin: 150px auto 100px auto;
 }
 
 .auth-form-wrapper .auth-form-title {
@@ -677,6 +677,16 @@
 
 #services-input {
   resize: vertical;
+}
+
+.modal-body-register h6 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#user-register-form h6 {
+  margin-top: 20px;
+  text-align: center;
 }
 
 .profile-wrapper {

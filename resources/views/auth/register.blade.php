@@ -50,6 +50,7 @@
           </div>
           <button type="submit" class="btn btn-global">Submit</button>
           <input type="hidden" name="_token" value="{{ Session::token() }}"/>
+          <h6>By registering as a user of Fadvi, you agree to our <a href="{{ route('terms') }}" target="_blank">Terms of Service</a>.</h6>
       </form>
 
       <!-- ADVISOR CHECK EMAIL FORM -->
