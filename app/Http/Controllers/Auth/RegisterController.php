@@ -96,12 +96,14 @@ class RegisterController extends Controller
            $this->validate($request, [
                 'first_name' => 'required|max:100',
                 'last_name' => 'required|max:100',
+                'age_range' => 'required|in:13-17,18-24,25-34,35-44,45-54,55-64,65-74,75+',
                 'email' => 'required|email|max:255|unique:users',
                 'password' => 'required|min:6|confirmed',
                 'password_confirmation' => 'required|same:password'
             ], [
                 'first_name.required' => 'You must input your first name.',
                 'last_name.required' => 'You must input your last name.',
+                'age_range.required' => 'You must select an age range.',
                 'email.required' => 'You must input your email.',
                 'password.required' => 'You must input a password.',
                 'password_confirmation.required' => 'You must confirm your password.',
@@ -111,6 +113,7 @@ class RegisterController extends Controller
             $user = User::create([
                 'first_name' => $request->input('first_name'),
                 'last_name' => $request->input('last_name'),
+                'age_range' => $request->input('age_range'),
                 'email' => $request->input('email'),
                 'password' => bcrypt($request->input('password')),
                 'advisor_registered' => 0,
@@ -132,12 +135,14 @@ class RegisterController extends Controller
             $this->validate($request, [
                 'first_name' => 'required|max:100',
                 'last_name' => 'required|max:100',
+                'age_range' => 'required|in:13-17,18-24,25-34,35-44,45-54,55-64,65-74,75+',
                 'email' => 'required|email|max:255|unique:users',
                 'password' => 'required|min:6|confirmed',
                 'password_confirmation' => 'required|same:password'
             ], [
                 'first_name.required' => 'You must input your first name.',
                 'last_name.required' => 'You must input your last name.',
+                'age_range.required' => 'You must select an age range.',
                 'email.required' => 'You must input your email.',
                 'password.required' => 'You must input a password.',
                 'password_confirmation.required' => 'You must confirm your password.',
@@ -147,6 +152,7 @@ class RegisterController extends Controller
             $user = User::create([
                 'first_name' => $request->input('first_name'),
                 'last_name' => $request->input('last_name'),
+                'age_range' => $request->input('age_range'),
                 'email' => $request->input('email'),
                 'password' => bcrypt($request->input('password')),
                 'advisor_registered' => 0,

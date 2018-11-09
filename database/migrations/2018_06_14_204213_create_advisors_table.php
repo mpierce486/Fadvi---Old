@@ -31,6 +31,7 @@ class CreateAdvisorsTable extends Migration
             $table->string('designations')->nullable();
             $table->string('fees')->nullable();
             $table->string('languages')->nullable();
+            $table->text('biography')->nullable();
             $table->timestamps();
         });
     }

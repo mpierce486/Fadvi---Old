@@ -91,42 +91,59 @@ $(document).ready(function(){
 
 		var fname = $('#first-name').val();
 		var lname = $('#last-name').val();
+		var ageRange = $('#age-range').find(":selected").attr('value');
 		var email = $('#email').val();
 		var password = $('#password').val();
 		var cpassword = $('#confirm-password').val();
 
-		// Remove existing error text
-		$(this).find('.text-danger').remove();
+		
 
 		$.ajax({
 			type: "POST",
 			url: "/register",
-			data: {first_name:fname, last_name:lname, email:email, password:password, password_confirmation:cpassword},
+			data: {first_name:fname, last_name:lname, age_range:ageRange, email:email, password:password, password_confirmation:cpassword},
 			error: function(data) {
+				// Remove existing is-invalid class from all elements
+				$('#register-modal-form input, #register-modal-form select').removeClass('is-invalid');
+				
+				// Remove existing error text
+				$('#register-modal-form').find('.text-danger').remove();
+
 				var errors = $.parseJSON(data.responseText);
-				if (errors.first_name) {
-					var ferror = errors.first_name[0];
-    				var ferror = '<h5 class="text-danger">'+ferror+'</h5>';
+				if (errors.errors.first_name) {
+					var ferror = errors.errors.first_name[0];
+    				var ferror = '<p class="text-danger">'+ferror+'</p>';
+    				$('#first-name').addClass('is-invalid');
     				$(ferror).insertAfter('#first-name');
 				}
-				if (errors.last_name) {
-					var lerror = errors.last_name[0];
-    				var lerror = '<h5 class="text-danger">'+lerror+'</h5>';
+				if (errors.errors.last_name) {
+					var lerror = errors.errors.last_name[0];
+    				var lerror = '<p class="text-danger">'+lerror+'</p>';
+    				$('#last-name').addClass('is-invalid');
     				$(lerror).insertAfter('#last-name');
 				}
-				if (errors.email) {
-					var eerror = errors.email[0];
-    				var eerror = '<h5 class="text-danger">'+eerror+'</h5>';
+				if (errors.errors.age_range) {
+					var lerror = errors.errors.age_range[0];
+    				var lerror = '<p class="text-danger">'+lerror+'</p>';
+    				$('#age-range').addClass('is-invalid');
+    				$(lerror).insertAfter('#age-range');
+				}
+				if (errors.errors.email) {
+					var eerror = errors.errors.email[0];
+    				var eerror = '<p class="text-danger">'+eerror+'</p>';
+    				$('#email').addClass('is-invalid');
     				$(eerror).insertAfter('#email');
 				}
-				if (errors.password) {
-					var perror = errors.password[0];
-    				var perror = '<h5 class="text-danger">'+perror+'</h5>';
+				if (errors.errors.password) {
+					var perror = errors.errors.password[0];
+    				var perror = '<p class="text-danger">'+perror+'</p>';
+    				$('#password').addClass('is-invalid');
     				$(perror).insertAfter('#password');
 				}
-				if (errors.password_confirmation) {
-					var cperror = errors.password_confirmation[0];
-    				var cperror = '<h5 class="text-danger">'+cperror+'</h5>';
+				if (errors.errors.password_confirmation) {
+					var cperror = errors.errors.password_confirmation[0];
+    				var cperror = '<p class="text-danger">'+cperror+'</p>';
+    				$('#confirm-password').addClass('is-invalid');
     				$(cperror).insertAfter('#confirm-password');
 				}
 			},

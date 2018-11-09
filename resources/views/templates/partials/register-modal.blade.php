@@ -16,6 +16,22 @@
                   </div>
               </div>
               <div class="form-group">
+                  <select class="form-control{{ $errors->has('age_range') ? ' is-invalid' : '' }}" id="age-range" name="age_range">
+                      <option selected>Select your age range</option>
+                      <option value="13-17">13 - 17 years old</option>
+                      <option value="18-24">18 - 24 years old</option>
+                      <option value="25-34">25 - 34 years old</option>
+                      <option value="35-44">35 - 44 years old</option>
+                      <option value="45-54">45 - 54 years old</option>
+                      <option value="55-64">55 - 64 years old</option>
+                      <option value="65-74">65 - 74 years old</option>
+                      <option value="75+">75 years or older</option>
+                  </select>
+                  @if ($errors->has('age_range'))
+                      <div class="invalid-feedback">{{ $errors->first('age_range') }}</div>
+                  @endif
+              </div>
+              <div class="form-group">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Email" />
               </div>
               <div class="form-group">

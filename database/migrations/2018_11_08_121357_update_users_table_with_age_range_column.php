@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateAdvisorsTableWithBioColumn extends Migration
+class UpdateUsersTableWithAgeRangeColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class UpdateAdvisorsTableWithBioColumn extends Migration
      */
     public function up()
     {
-        Schema::table('advisors', function($table){
-            $table->text('biography')->nullable();
+        Schema::table('users', function($table) {
+            $table->string('age_range');
         });
     }
 
@@ -25,8 +25,8 @@ class UpdateAdvisorsTableWithBioColumn extends Migration
      */
     public function down()
     {
-        Schema::table('advisors', function($table){
-            $table->dropColumn('biography');
+        Schema::table('users', function($table) {
+            $table->dropColumn('age_range');
         });
     }
 }
