@@ -70,6 +70,7 @@
 					<th>Advisor Type</th>
 					<th>Title</th>
 					<th>Firm Name</th>
+					<th>Firm Website</th>
 					<th>Firm Address</th>
 					<th>Latitude</th>
 					<th>Longitude</th>
@@ -93,6 +94,7 @@
 						<td>{{ $advisor->advisor_type }}</td>
 						<td>{{ $advisor->title }}</td>
 						<td>{{ $advisor->firm_name }}</td>
+						<td>{{ $advisor->firm_website }}</td>
 						<td>{{ $advisor->firm_address }}</td>
 						<td>{{ $advisor->lat }}</td>
 						<td>{{ $advisor->long }}</td>
