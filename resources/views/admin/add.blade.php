@@ -101,7 +101,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <input type="text" class="form-control{{ $errors->has('firm_website') ? ' is-invalid' : '' }}" name="firm_website" placeholder="Enter Firm Name" value="{{ Request::old('firm_website') ?: '' }}"/>
+                <input type="text" class="form-control{{ $errors->has('firm_website') ? ' is-invalid' : '' }}" name="firm_website" placeholder="Enter Firm Website" value="{{ Request::old('firm_website') ?: '' }}"/>
                 @if ($errors->has('firm_website'))
                     <div class="invalid-feedback">{{ $errors->first('firm_website') }}</div>
                 @endif
