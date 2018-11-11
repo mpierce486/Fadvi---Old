@@ -98,7 +98,7 @@ class AdminController extends Controller
             'title' => 'required|max:150',
             'advisor_pic' => 'required',
             'firm_name' => 'required',
-            'firm_website' => 'required',
+            'firm_website' => 'required|url',
             'firm_city' => 'required',
             'firm_state' => 'required',
             'biography' => 'required',
@@ -112,6 +112,7 @@ class AdminController extends Controller
             'advisor_pic.required' => 'You must enter the image path.',
             'firm_name.required' => 'You must enter a firm name.',
             'firm_website.required' => 'You must enter the website.',
+            'firm_website.url' => 'The website must be a valid URL.',
             'firm_city.required' => 'You must enter the city.',
             'firm_state.required' => 'You must enter the state.',
         ]);
