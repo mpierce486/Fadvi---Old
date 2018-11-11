@@ -22,7 +22,7 @@
 				<h4>{{ $advisor->first_name }} {{ $advisor->last_name }}</h4>
 			</div>
 			<div class="advisor-detail-firm">
-				<h5>{{ $advisor->firm_name }}</h5>
+				<h5><a href="{{ $advisor->firm_website }}" target="_blank">{{ $advisor->firm_name }}</a></h5>
 			</div>
 			<span class="advisor-detail-more" data-toggle="modal" data-target="#advisormodal-{{ $advisor->id }}"><i class="fas fa-ellipsis-h"></i></span>
 		</div>
@@ -39,7 +39,7 @@
 								<div class="advisor-bio-img"><img src="{{ asset('/') }}{{ $advisor->image_path }}" /></div>
 								<div class="advisor-bio-name"><h3>{{ $advisor->first_name }} {{ $advisor->last_name }}</h3></div>
 								<div class="advisor-bio-title"><h5>{{ $advisor->title }}</h5></div>
-								<div class="advisor-bio-firm"><h6><a href="{{ $advisor->firm_website }}">{{ $advisor->firm_name }}</a></h6></div>
+								<div class="advisor-bio-firm"><h6><a href="{{ $advisor->firm_website }}" target="_blank">{{ $advisor->firm_name }}</a></h6></div>
 							</div>
 							<div class="advisor-bio-bottom"><?php echo $advisor->biography ?></div>
 						</div>
