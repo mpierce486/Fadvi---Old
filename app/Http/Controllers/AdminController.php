@@ -98,6 +98,7 @@ class AdminController extends Controller
             'title' => 'required|max:150',
             'advisor_pic' => 'required',
             'firm_name' => 'required',
+            'firm_website' => 'required',
             'firm_city' => 'required',
             'firm_state' => 'required',
             'biography' => 'required',
@@ -110,6 +111,7 @@ class AdminController extends Controller
             'title.required' => 'You must specify a title.',
             'advisor_pic.required' => 'You must enter the image path.',
             'firm_name.required' => 'You must enter a firm name.',
+            'firm_website.required' => 'You must enter the website.',
             'firm_city.required' => 'You must enter the city.',
             'firm_state.required' => 'You must enter the state.',
         ]);
@@ -144,6 +146,7 @@ class AdminController extends Controller
             'image_path' => $fileName,
             'username' => $fileNumber,
             'firm_name' => $request->input('firm_name'),
+            'firm_website' => $request->input('firm_website'),
             'firm_city' => ucfirst($request->input('firm_city')),
             'firm_state' => $request->input('firm_state'),
             'biography' => $request->input('biography'),

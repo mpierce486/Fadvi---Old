@@ -100,6 +100,12 @@
                     <div class="invalid-feedback">{{ $errors->first('firm_name') }}</div>
                 @endif
             </div>
+            <div class="form-group">
+                <input type="text" class="form-control{{ $errors->has('firm_website') ? ' is-invalid' : '' }}" name="firm_website" placeholder="Enter Firm Name" value="{{ Request::old('firm_website') ?: '' }}"/>
+                @if ($errors->has('firm_website'))
+                    <div class="invalid-feedback">{{ $errors->first('firm_website') }}</div>
+                @endif
+            </div>
             <div class="row">
                 <div class="form-group col-sm-6">
                     <input type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" id="firm_city" name="firm_city" placeholder="City" value="{{ Request::old('firm_city') ?: '' }}" />
