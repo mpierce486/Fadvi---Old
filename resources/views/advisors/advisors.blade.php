@@ -19,10 +19,13 @@
 				<img src="{{ asset('/') }}{{ $advisor->image_path }}" />
 			</div>
 			<div class="advisor-detail-name">
-				<h4>{{ $advisor->first_name }} {{ $advisor->last_name }}</h4>
+				<h3>{{ $advisor->first_name }} {{ $advisor->last_name }}</h3>
+			</div>
+			<div class="advisor-detail-title">
+				<h5>{{ $advisor->title }}</h5>
 			</div>
 			<div class="advisor-detail-firm">
-				<h5><a href="{{ $advisor->firm_website }}" target="_blank">{{ $advisor->firm_name }}</a></h5>
+				<h6><a href="{{ $advisor->firm_website }}" target="_blank">{{ $advisor->firm_name }}</a></h6>
 			</div>
 			<span class="advisor-detail-more" data-toggle="modal" data-target="#advisormodal-{{ $advisor->id }}"><i class="fas fa-ellipsis-h"></i></span>
 		</div>
