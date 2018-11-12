@@ -227,6 +227,7 @@ class RegisterController extends Controller
             'password' => bcrypt($request->input('password')),
             'advisor_registered' => 1,
             'username' => $advisor->username,
+            'age_range' => "",
         ]);
 
         // Check question_notifications table for placeholder records.
