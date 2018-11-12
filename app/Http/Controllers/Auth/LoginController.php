@@ -89,7 +89,7 @@ class LoginController extends Controller
             return redirect()->route('auth.error');
         }
 
-        if (Session::has('event'))
+        if (Session::has('topic'))
         {
             return redirect()->route('question');
         }
