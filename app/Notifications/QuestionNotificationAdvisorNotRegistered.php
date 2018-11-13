@@ -47,6 +47,7 @@ class QuestionNotificationAdvisorNotRegistered extends Notification
                     ->subject('New Question is Available')
                     ->greeting('Hello '. $this->advisor->first_name . ',')
                     ->line('A new question has been posted that you may be able to help with. In order to respond, you will need to register online at Fadvi.com by clicking the button below.')
+                    ->line('Once registered, you can view available questions to respond to from your profile page.')
                     ->line('Question Topic: '. $this->topic->topic_name)
                     ->line('Question Summary: '. $this->question->question)
                     ->action('Register', url('/register/advisor/'. $this->advisorKey->key));
