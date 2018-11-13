@@ -173,7 +173,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <span class="text-muted">Make sure to paste biography as plain text.</span>
+                <span class="text-info">Make sure to paste biography as plain text.</span>
                 <textarea class="form-control input-global" id="advisor-bio" name="biography"></textarea> 
             </div>
             <div class="form-group">
