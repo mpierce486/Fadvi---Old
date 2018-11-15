@@ -923,8 +923,21 @@
 /* END ADVISOR PROFILE STYLING */
 
 @media (max-width: 576px) {
+  .profile-wrapper {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  .profile-wrapper h1 {
+    text-align: center;
+  }
+
   .profile-wrapper .nav-item {
     width: 100%;
+  }
+
+  .profile-wrapper .nav-item .nav-link {
+    border: none !important;
   }
 
   .profile-wrapper .main-content {
@@ -935,9 +948,57 @@
     padding-left: 0px;
   }
 
+  .profile-wrapper .main-content .content-section h4 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-wrapper .main-content .content-section .question-details {
+    border-radius: 0px;
+  }
+
+  .profile-wrapper .main-content .content-section .discussion-details {
+    border-radius: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .profile-wrapper .main-content .content-section .discussion-details .discussion-link {
+    top: auto;
+  }
+
+  .profile-wrapper .main-content .content-section .discussion-details #details-topic {
+    border-top: 1px solid #e3e3e3;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+
   .profile-wrapper .main-content .content-section .questions-content {
     margin-left: -15px;
     margin-right: -15px;
+  }
+
+  .profile-wrapper .main-content .content-section #details-topic {
+    text-align: center;
+    border-bottom: 1px solid #e3e3e3;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  .profile-wrapper .main-content .content-section #details-question {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3e3e3;
+    margin: 0 0 15px 0;
+  }
+
+  .profile-wrapper .main-content .content-section .view-responses {
+    font-size: 0.7rem !important;
+  }
+
+  .profile-wrapper .main-content .content-section #section-name td {
+    padding: .75rem .5rem !important;
   }
 
   .response-advisor-info .advisor-img,
@@ -1047,8 +1108,8 @@ body {
 }
 
 #advisors-wrapper .advisor-detail-img img {
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
 }
 
@@ -1058,6 +1119,10 @@ body {
 
 #advisors-wrapper .advisor-detail-firm h5 {
   font-weight: 100;
+}
+
+#advisors-wrapper .advisor-detail-title h5 {
+  margin-bottom: 2px;
 }
 
 #advisors-wrapper .advisor-detail-more {
@@ -1086,6 +1151,10 @@ body {
 .advisor-bio .advisor-bio-top .advisor-bio-name h3,
 .advisor-bio .advisor-bio-top .advisor-bio-title h5 {
   margin-bottom: 2px;
+}
+
+.advisor-bio .advisor-bio-bottom {
+  text-align: justify;
 }
 
 .nav-buttons-active {
@@ -1331,6 +1400,7 @@ body {
 
 #admin-email-wrapper {
   margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 #admin-email-wrapper h3 {

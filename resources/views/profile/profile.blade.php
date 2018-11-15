@@ -23,7 +23,7 @@
 
 	<div class="main-content">
 		<div class="content-section" id="questions">
-			<h2>Questions I Have Asked</h2>
+			<h4>Questions I Have Asked</h4>
 			@if (!$questions->count())
 				<p>You have not asked any questions yet. Once you ask a question, you will see it here along with any responses from advisors.</p>
 			@else
@@ -31,12 +31,12 @@
 					<div class="question-details col-sm">
 						@foreach($question->topic as $topic)
 						<div id="details-topic" class="col-sm-12 row">
-							<h5 id="topic-header" class="col-sm-2"><strong>Topic:</strong></h5>
+							<h5 id="topic-header" class="col-sm-2"><strong>Topic</strong></h5>
 							<div id="topic" class="col-sm-10 col-sm-offset-2">{{ $topic->topic_name }}</div>
 						</div>
 						@endforeach
 						<div id="details-question" class="col-sm-12 row">
-							<h5 id="question-header" class="col-sm-2"><strong>Question:</strong></h5>
+							<h5 id="question-header" class="col-sm-2"><strong>Question</strong></h5>
 							<div id="question" class="col-sm-10 col-sm-offset-2">{{ $question->question }}</div>
 						</div>
 						<div id="question-metrics" class="row">
@@ -78,7 +78,7 @@
 												@if ($response->pivot->discussion_created === null)
 												<a class="btn btn-global" href="{{ URL::to('/discussion/create/'. $question->id . '/'. $advisor->id . '/'. $response->id) }}" id="begin-discussion">Begin Discussion</a>
 												@else
-												<button class="btn btn-global" id="begin-discussion" title="Discussion Already Created" disabled>Begin Discussion</button>
+												<button class="btn btn-global" id="begin-discussion" title="Discussion Already Created" disabled>Discussion Already Created</button>
 												@endif
 											</div>
 										</div>
@@ -91,7 +91,7 @@
 			@endif
 		</div>
 		<div class="content-section" id="discussions">
-			<h2>My Discussions With Advisors</h2>
+			<h4>My Discussions With Advisors</h4>
 			@if (!$discussions->count())
 				<p>You do not have any active discussions with advisors.</p>
 			@else
@@ -138,6 +138,7 @@
 				<tr>
 					<td class="item-col-1"><strong>Name</strong></td>
 					<td class="item-col-2">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</td>
+					<td class="item-col-3"></td>
 				</tr>
 				<tr>
 					<td class="item-col-1"><strong>Email</strong></td>

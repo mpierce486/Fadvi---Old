@@ -7,6 +7,7 @@ use Fadvi\User;
 use Fadvi\Advisor;
 use Fadvi\AdvisorJoinRequest;
 use Fadvi\Topic;
+use Fadvi\Question;
 use Image;
 use Session;
 use DB;
@@ -161,6 +162,23 @@ class AdminController extends Controller
             $topic = Topic::where('topic_name', $value)->first();
 
             $advisor->addTopic($topic);
+
+            // Query all available questions to see which questions match with this new advisor
+            // and set placeholder record in question_notifications table for when advisor registers
+            $questions = Question::whereHas('topic', function ($query) use ($value) {
+                $query->where('topic_name', $value);
+            })->get();
+
+            foreach ($questions as $question)
+            {
+                DB::table('question_notifications')->insert([
+                    'question_id' => $question->id,
+                    'user_id' => 0,
+                    'username' => $advisor->username,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
+                ]);
+            }
         }
 
         // Generate random code for email registration link
