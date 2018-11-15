@@ -116,12 +116,12 @@
 						<div class="discussion-topic col-sm-8">
 							@foreach($discussion->question->topic as $topic)
 								<div id="details-topic" class="col-sm-12 row">
-									<h5 id="topic-header" class="col-sm-2"><strong>Topic:</strong></h5>
+									<h5 id="topic-header" class="col-sm-2"><strong>Topic</strong></h5>
 									<div id="topic" class="col-sm-10 col-sm-offset-2">{{ $topic->topic_name }}</div>
 								</div>
 							@endforeach
 							<div id="details-question" class="col-sm-12 row">
-								<h5 id="question-header" class="col-sm-2"><strong>Question:</strong></h5>
+								<h5 id="question-header" class="col-sm-2"><strong>Question</strong></h5>
 								<div id="question" class="col-sm-10 col-sm-offset-2">{{ $discussion->question->question }}</div>
 							</div>
 						</div>
