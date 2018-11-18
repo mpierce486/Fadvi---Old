@@ -47,6 +47,7 @@ class ResponseReceived extends Notification
                     ->subject('Fadvi Response Received')
                     ->greeting('Hello '. $this->user->first_name . ',')
                     ->line('An advisor has responded to your question about '.$this->topic.'. Click the button below to view this response in your profile.')
+                    ->line('If you like this response or want more detail consider inviting this advisor to a discussion. A discussion is similar to a private chatroom where you and the advisor can discuss more details relating to your question. We still keep your information confidential and remind you to only give information relevant to the discussion. If you want to engage the advisor more directly, you can contact the advisor offline.')
                     ->action('View Response', url('/profile/'.$this->user->first_name . $this->user->last_name));
     }
 
