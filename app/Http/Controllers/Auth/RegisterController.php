@@ -232,6 +232,7 @@ class RegisterController extends Controller
 
         // Check question_notifications table for placeholder records.
         // If records exist, add new user_id to each record.
+        // This will allow advisor to see available question on the advisor dashboard.
         DB::table('question_notifications')->where('username', $advisor->username)->update(['user_id' => $user->id]);
 
         // Send email to advisor once registered

@@ -94,7 +94,7 @@ class AdminController extends Controller
         $this->validate($request, [
             'first_name' => 'required|max:100',
             'last_name' => 'required|max:100',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255|unique:advisors',
             'advisor_type' => 'required|in:FP,CPA,EPA',
             'title' => 'required|max:150',
             'advisor_pic' => 'required',
@@ -181,22 +181,37 @@ class AdminController extends Controller
             }
         }
 
-        // Generate random code for email registration link
-        $randomKey = md5(microtime());
+        // Check if advisor has previously registered as a user
+        $user = User::where('email', $advisor->email)->first();
 
-        // Add information to advisor_key table
-        DB::table('advisor_key')->insert([
-            'email' => $advisor->email,
-            'key' => $randomKey,
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+        if (!$user)
+        {
+            // Generate random code for email registration link
+            $randomKey = md5(microtime());
+
+            // Add information to advisor_key table
+            DB::table('advisor_key')->insert([
+                'email' => $advisor->email,
+                'key' => $randomKey,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+
+            // Send email to advisor notifying them of being added to the directory
+            $advisor->notify(new AdvisorAdded($advisor, $randomKey));
+
+            Session::flash('success', "Advisor successfully created!");
+            return redirect()->back();
+        }
+
+        DB::table('users')->where('email', $advisor->email)->update([
+            'advisor_registered' => '1',
+            'username' => $advisor->username,
         ]);
-
-        // Send email to advisor notifying them of being added to the directory
-        $advisor->notify(new AdvisorAdded($advisor, $randomKey));
 
         Session::flash('success', "Advisor successfully created!");
         return redirect()->back();
+        
     }
 
     public function getEmail()
