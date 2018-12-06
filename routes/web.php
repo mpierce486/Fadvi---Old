@@ -189,9 +189,9 @@ Route::post('/admin/dashboard/email', [
  *  Password Reset Routes
  */
 
-Route::get('/password/reset', ['uses' => 'Auth\ForgotPasswordController@showLinkRequestForm',]);
-Route::post('/password/email', ['uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail', 'as' => 'password.reset']);
-Route::get('/password/reset/{token?}', [ 'uses' => 'Auth\ResetPasswordController@showResetForm']);
+Route::get('/password/reset', ['uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
+Route::post('/password/email', ['uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
+Route::get('/password/reset/{token?}', [ 'uses' => 'Auth\ResetPasswordController@showResetForm', 'as' => 'password.reset']);
 Route::post('/password/reset', ['uses' => 'Auth\ResetPasswordController@reset']);
 
 /**
