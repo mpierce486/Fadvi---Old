@@ -41,7 +41,7 @@
         menubar: false,
         plugins: ['advlist, lists, placeholder'],
         toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
-        forced_root_block : "", 
+        forced_root_block : 'div', 
         force_br_newlines : false,
         force_p_newlines : false,
         statusbar: false,

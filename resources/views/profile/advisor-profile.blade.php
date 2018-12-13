@@ -210,7 +210,6 @@
 <script src="{{ asset('js/profile.js') }}"></script>
 <script src="{{ asset('js/favorite.js')  }}"></script>
 <!-- TinyMCE JS -->
-<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
 <script src="{{ asset('js/tinymce/plugin.min.js') }}"></script>
 <script>
     tinymce.init({
@@ -218,7 +217,7 @@
         menubar: false,
         plugins: ['advlist, lists, placeholder'],
         toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent',
-        forced_root_block : "", 
+        forced_root_block : 'div',  
         force_br_newlines : true,
         force_p_newlines : false,
         statusbar: false,
