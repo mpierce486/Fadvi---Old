@@ -27,6 +27,10 @@
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
         <script>window.Fadvi = <?= Auth::check() ? json_encode(['user' => Auth::user()->first_name]) : "" ?></script>
 
+        <!-- TinyMCE -->
+
+        <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=5z6xgvxfz4bezwgokadopiu34i5gcl6joohltyy689mwckj2"></script>
+
         <!-- SweetAlert2 -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.11/sweetalert2.all.min.js"></script>
