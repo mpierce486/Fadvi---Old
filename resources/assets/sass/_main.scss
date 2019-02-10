@@ -77,6 +77,7 @@
 		    	width: 180px;
 		    	height: 180px;
 		    	padding: 40px;
+		    	box-shadow: 0 0 1px rgba(154, 204, 205, 1);
 		    	display: flex;
 		    	transition: .2s;
 		    	justify-content: center;
@@ -396,7 +397,7 @@
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
 	#main-top {
-		height: 100vh;
+		height: 80vh;
 
 		#main-banner {
 			top: -275px !important;
