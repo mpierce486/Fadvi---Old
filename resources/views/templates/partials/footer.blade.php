@@ -8,6 +8,13 @@
 				<li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
 			</ul>
 		</div>
+		<div class="footer-social">
+			<ul>
+				<li><a href="https://www.facebook.com/FadviAdvice" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+				<li><a href="https://www.linkedin.com/company/fadvi" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="https://www.instagram.com/fadviadvice/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+			</ul>
+		</div>
 		<div class="footer-copy">
 			<p>&copy;<?php echo date("Y"); ?> Fadvi</p>
 		</div>

@@ -78,10 +78,6 @@
   color: #fff;
 }
 
-#nav-alerts {
-  cursor: pointer;
-}
-
 /* SECONDARY NAVBAR STYLING */
 
 .navbar-secondary {
@@ -276,6 +272,8 @@
   width: 180px;
   height: 180px;
   padding: 40px;
+  -webkit-box-shadow: 0 0 1px #9acccd;
+          box-shadow: 0 0 1px #9acccd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -602,7 +600,7 @@
 
 @media (min-width: 1200px) {
   #main-top {
-    height: 100vh;
+    height: 80vh;
   }
 
   #main-top #main-banner {
