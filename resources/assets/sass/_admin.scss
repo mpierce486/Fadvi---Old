@@ -34,3 +34,26 @@
 		margin-bottom: 20px;
 	}
 }
+
+#admin-blog-wrapper {
+	margin-top: 150px;
+	text-align: center;
+
+	header {
+		margin-bottom: 50px;
+	}
+
+	#blog-input {
+		margin-bottom: 100px;
+		padding-top: 25px;
+		min-height: 100px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	#submit-blog-btn {
+		margin-bottom: 150px;
+	}
+}

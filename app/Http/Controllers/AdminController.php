@@ -8,6 +8,7 @@ use Fadvi\Advisor;
 use Fadvi\AdvisorJoinRequest;
 use Fadvi\Topic;
 use Fadvi\Question;
+use Fadvi\Blog;
 use Image;
 use Session;
 use DB;
@@ -240,4 +241,42 @@ class AdminController extends Controller
         Session::flash('success', "Email successfully sent!");
         return redirect()->back();
     }
+
+    public function getBlog()
+    {
+        return view('admin.blog.index');
+    }
+
+    public function postBlog(Request $request)
+    {
+        if ($request->ajax())
+        {
+            $this->validate($request, [
+                'blogTitle' => 'required',
+                'blogMainImg' => 'required|url',
+                'blogSnippet' => 'required',
+                'blogContent' => 'required'
+            ], [
+                'blogTitle.required' => 'You must include a blog title.',
+                'blogMainImg.required' => 'You must include a URL for the main image.',
+                'blogSnippet.required' => 'You must include a blog snippet.',
+                'blogContent.required' => 'You must include a blog post.',
+            ]);
+
+            // Generate URL slug
+            $urlSlug = str_replace(' ', '-', $request->input('blogTitle'));
+
+            $blog = Blog::create([
+                'blog_title' => $request->input('blogTitle'),
+                'blog_main_img' => $request->input('blogMainImg'),
+                'blog_snippet' => $request->input('blogSnippet'),
+                'blog_content' => $request->input('blogContent'),
+                'url_slug' => $urlSlug,
+            ]);
+
+            return response()->json("Blog successfully posted!");
+        }
+        
+    }
+    
 }

@@ -169,4 +169,48 @@ $(document).ready(function() {
 		});
 	});
 
+	/*SCRIPT TO SUBMIT BLOG ON ADMIN PAGE*/
+
+	$('#submit-blog-btn').click(function(){
+
+		var blogTitle = $('#blog-title').val();
+		var blogMainImg = $('#blog-main-img').val();
+		var blogSnippet = $('#blog-snippet').val();
+		var blogContent = tinymce.get('blog-input').getContent();
+
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+
+		$.ajax({
+			type: "POST",
+			url: "/admin/dashboard/blog/",
+			data: {blogTitle:blogTitle, blogMainImg:blogMainImg, blogSnippet:blogSnippet, blogContent:blogContent},
+			error: function(data){
+				/*Retrieve errors and append any error messages.*/
+				var errors = $.parseJSON(data.responseText);
+				var errors = errors;
+				console.log(errors);
+			},
+			success: function(data) {
+				if (data == "Blog successfully posted!")
+				{
+					swal(data, {
+				      icon: "success", 
+				    })
+					.then((reload) => {
+					  if (reload) {
+					  	location.reload();
+					  } 
+					});
+				}
+			}
+		});
+
+	});
+
+		
+
 });

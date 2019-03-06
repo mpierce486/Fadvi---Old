@@ -20,9 +20,4 @@ class Controller extends BaseController
     {
     	return view('privacy');
     }
-
-    public function getWhy()
-    {
-    	return view('why');
-    }
 }

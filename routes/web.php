@@ -37,9 +37,18 @@ Route::get('/advisors', [
 	'as' => 'advisors',
 ]);
 
-Route::get('/why', [
-	'uses' => 'Controller@getWhy',
-	'as' => 'why',
+/**
+ *  Blog Routes
+ */
+
+Route::get('/blog', [
+	'uses' => 'BlogController@getBlog',
+	'as' => 'blog',
+]);
+
+Route::get('/blog/{id}/{title}', [
+	'uses' => 'BlogController@getBlogPost',
+	'as' => 'blog.post',
 ]);
 
 /**
@@ -181,6 +190,19 @@ Route::get('/admin/dashboard/email', [
 
 Route::post('/admin/dashboard/email', [
 	'uses' => 'AdminController@postEmail',
+	'middleware' => 'roles',
+	'roles' => ['Admin']
+]);
+
+Route::get('/admin/dashboard/blog', [
+	'uses' => 'AdminController@getBlog',
+	'as' => 'admin.blog',
+	'middleware' => 'roles',
+	'roles' => ['Admin']
+]);
+
+Route::post('/admin/dashboard/blog', [
+	'uses' => 'AdminController@postBlog',
 	'middleware' => 'roles',
 	'roles' => ['Admin']
 ]);
