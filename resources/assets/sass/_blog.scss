@@ -55,9 +55,16 @@
 		margin-bottom: 200px;
 
 		img {
-			max-width: 600px;
+			max-width: 100%;
+			height: auto;
 			display: block;
 			margin: auto;
 		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	#blog-post-wrapper {
+		text-align: justify;
 	}
 }
