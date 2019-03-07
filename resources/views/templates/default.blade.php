@@ -9,7 +9,11 @@
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <link rel="icon" href="{{ asset('images/favicon/favicon-32x32.png') }}" type="image/x-icon" />
 
-        <title>Fadvi | Find Financial Advice, Estate Planning Advice, and Tax Advice</title>
+        @if (Route::current()->getName() === 'blog.post')
+            <title>Fadvi | @yield('pageTitle')</title>
+        @else
+            <title>Fadvi | Find Financial Advice, Estate Planning Advice, and Tax Advice</title>
+        @endif
 
         <!-- StyleSheets -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}" />

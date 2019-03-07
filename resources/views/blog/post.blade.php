@@ -1,5 +1,7 @@
 @extends('templates.default')
 
+@section('pageTitle', $blog->blog_title)
+
 @section('content')
 
 <div class="global-wrapper container">
