@@ -5,14 +5,16 @@
         <meta name="google-site-verification" content="vdqZT8RiZTDcTFXACoyiBXEAAPJt_b-DZp2fije1SLM" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-        <meta name="description" content="We believe each individual and family should have advice around their financial, estate, and tax needs and our mission is to make that advice more accessible.">
+        
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <link rel="icon" href="{{ asset('images/favicon/favicon-32x32.png') }}" type="image/x-icon" />
 
         @if (Route::current()->getName() === 'blog.post')
             <title>Fadvi | @yield('pageTitle')</title>
+            <meta name="description" content="@yield('pageDescription')">
         @else
             <title>Fadvi | Find Financial Advice, Estate Planning Advice, and Tax Advice</title>
+            <meta name="description" content="We believe each individual and family should have advice around their financial, estate, and tax needs and our mission is to make that advice more accessible.">
         @endif
 
         <!-- StyleSheets -->

@@ -1,6 +1,7 @@
 @extends('templates.default')
 
 @section('pageTitle', $blog->blog_title)
+@section('pageDescription', $blog->blog_snippet)
 
 @section('content')
 
