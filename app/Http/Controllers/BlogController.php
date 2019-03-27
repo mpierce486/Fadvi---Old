@@ -11,7 +11,7 @@ class BlogController extends Controller
     public function getBlog()
     {
     	// Retrieve all blog posts
-        $blogs = Blog::all();
+        $blogs = Blog::all()->sortByDesc('created_at');
 
     	return view('blog.main')->with([
             'blogs' => $blogs,
