@@ -38,7 +38,7 @@ class Advisor extends Model
 
     public function blogs()
     {
-        return $this->hasMany('Fadvi\Blog', 'advisor_blog');
+        return $this->hasMany('Fadvi\Blog', 'advisor_id');
     }
         
 }

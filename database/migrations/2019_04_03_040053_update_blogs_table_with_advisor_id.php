@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdvisorBlogPivotTable extends Migration
+class UpdateBlogsTableWithAdvisorId extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateAdvisorBlogPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('advisor_blog', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('advisor_id');
-            $table->integer('blog_id');
-            $table->timestamps();
+        Schema::table('blogs', function($table) {
+            $table->integer('advisor_id')->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateAdvisorBlogPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('advisor_blog');
+        Schema::table('blogs', function($table) {
+            $table->dropColumn('advisor_id');
+        });
     }
 }

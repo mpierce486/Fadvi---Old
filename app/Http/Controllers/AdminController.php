@@ -280,10 +280,10 @@ class AdminController extends Controller
                 ]);
 
                 DB::table('advisor_blog')->insert([
-                    'advisor_id' => $request->input('advisorId');
+                    'advisor_id' => $request->input('advisorId'),
                     'blog_id' => $blog->id,
-                    'created_at' => Carbon::now();
-                    'updated_at' => Carbon::now();
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
                 ]);
 
                 return response()->json("Blog successfully posted!");

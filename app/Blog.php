@@ -14,6 +14,6 @@ class Blog extends Model
 
     public function advisor()
     {
-    	return $this->belongsTo('Fadvi\Advisor', 'advisor_blog');
+    	return $this->belongsTo('Fadvi\Advisor');
     }
 }
