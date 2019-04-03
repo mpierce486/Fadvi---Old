@@ -11,10 +11,16 @@
 		box-shadow: 0 0 5px #c0c0c0;
 		border-radius: 5px;
 
-		.advisor-blog-notice {
+		.advisor-blog-notice, .blog-info-advisor-name {
 			font-size: 10px;
 			font-weight: 600;
 			margin-top: 5px;
+		}
+
+		.blog-info-advisor-firm {
+			font-size: 10px;
+			font-weight: 600;
+			margin-bottom: 5px;
 		}
 	}
 

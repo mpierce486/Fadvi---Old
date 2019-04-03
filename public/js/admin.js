@@ -177,10 +177,12 @@ $(document).ready(function() {
 			$('#blog-help-text').hide();
 			$('#blog-input').hide();
 			$('#advisor-blog-url').show();
+			$('#advisor-id').show();
 		} else {
 			$('#blog-help-text').show();
 			$('#blog-input').show();
 			$('#advisor-blog-url').hide();
+			$('#advisor-id').hide();
 		}
 	});
 
@@ -193,6 +195,7 @@ $(document).ready(function() {
 		{
 			var advisorBlog = 1;
 			var advisorBlogUrl = $('#advisor-blog-url').val();
+			var advisorId = $('#advisor-id').val();
 		}
 
 		var blogTitle = $('#blog-title').val();
@@ -209,7 +212,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: "POST",
 			url: "/admin/dashboard/blog/",
-			data: {advisorBlog:advisorBlog, blogTitle:blogTitle, blogMainImg:blogMainImg, advisorBlogUrl:advisorBlogUrl, blogSnippet:blogSnippet, blogContent:blogContent},
+			data: {advisorBlog:advisorBlog, blogTitle:blogTitle, blogMainImg:blogMainImg, advisorBlogUrl:advisorBlogUrl, blogSnippet:blogSnippet, blogContent:blogContent, advisorId:advisorId},
 			error: function(data){
 				/*Retrieve errors and append any error messages.*/
 				var errors = $.parseJSON(data.responseText);

@@ -260,11 +260,13 @@ class AdminController extends Controller
                     'blogMainImg' => 'required|url',
                     'blogSnippet' => 'required',
                     'advisorBlogUrl' => 'required',
+                    'advisorId' => 'required',
                 ], [
                     'blogTitle.required' => 'You must include a blog title.',
                     'blogMainImg.required' => 'You must include a URL for the main image.',
                     'blogSnippet.required' => 'You must include a blog snippet.',
                     'advisorBlogUrl.required' => 'You must include the blog URL.',
+                    'advisorId.required' => 'You must enter an advisor ID.',
                 ]);
 
                 $blog = Blog::create([
@@ -275,6 +277,13 @@ class AdminController extends Controller
                     'url_slug' => '',
                     'advisor_blog' => 1,
                     'blog_url' => $request->input('advisorBlogUrl'),
+                ]);
+
+                DB::table('advisor_blog')->insert([
+                    'advisor_id' => $request->input('advisorId');
+                    'blog_id' => $blog->id,
+                    'created_at' => Carbon::now();
+                    'updated_at' => Carbon::now();
                 ]);
 
                 return response()->json("Blog successfully posted!");

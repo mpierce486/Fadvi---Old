@@ -1548,7 +1548,8 @@ body {
   margin-bottom: 15px;
 }
 
-#admin-blog-wrapper #advisor-blog-url {
+#admin-blog-wrapper #advisor-blog-url,
+#admin-blog-wrapper #advisor-id {
   display: none;
 }
 
@@ -1888,10 +1889,17 @@ body {
   border-radius: 5px;
 }
 
-.blog-post .advisor-blog-post .advisor-blog-notice {
+.blog-post .advisor-blog-post .advisor-blog-notice,
+.blog-post .advisor-blog-post .blog-info-advisor-name {
   font-size: 10px;
   font-weight: 600;
   margin-top: 5px;
+}
+
+.blog-post .advisor-blog-post .blog-info-advisor-firm {
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .blog-post img {

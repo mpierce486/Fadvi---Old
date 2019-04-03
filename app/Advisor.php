@@ -35,5 +35,10 @@ class Advisor extends Model
     {
         $this->topics()->attach($topic->id);
     }
+
+    public function blogs()
+    {
+        return $this->hasMany('Fadvi\Blog', 'advisor_blog');
+    }
         
 }

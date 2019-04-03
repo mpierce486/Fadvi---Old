@@ -23,6 +23,9 @@
         <div class="form-group">
             <textarea class="form-control input-global" name="blog_snippet" id="blog-snippet" placeholder="Enter blog snippet"></textarea>
         </div>
+        <div class="form-group">
+            <input type="number" class="form-control input-global" name="advisor_id" id="advisor-id" placeholder="Enter Advisor ID"/>
+        </div>
         <h5 id="blog-help-text">Begin blog post below...</h5>	
 		<div id="blog-input"></div>
 	</form>
