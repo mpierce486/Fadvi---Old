@@ -7,6 +7,10 @@
 		<h1>Add Blog Post</h1>
 	</header>
 	<form method="post" action="#" id="admin-blog-post-form" enctype="multipart/form-data">
+        <div class="form-check" id="advisorBlog">
+            <input type="checkbox" class="form-check-input" name="advisor_content" id="advisor-content">
+            <label class="form-check-label" for="advisor-content">Is this an advisor's blog post?</label>
+        </div>
 		<div class="form-group">
             <input type="text" class="form-control input-global" name="blog_title" id="blog-title" placeholder="Enter Blog Title" value="{{ Request::old('blog_title') ?: '' }}"/>
         </div>
@@ -14,9 +18,12 @@
             <input type="text" class="form-control input-global" name="blog_main_img" id="blog-main-img" placeholder="Enter Image URL"/>
         </div>
         <div class="form-group">
+            <input type="text" class="form-control input-global" name="advisor_blog_url" id="advisor-blog-url" placeholder="Enter Blog URL"/>
+        </div>
+        <div class="form-group">
             <textarea class="form-control input-global" name="blog_snippet" id="blog-snippet" placeholder="Enter blog snippet"></textarea>
         </div>
-        <h5>Begin blog post below...</h5>	
+        <h5 id="blog-help-text">Begin blog post below...</h5>	
 		<div id="blog-input"></div>
 	</form>
 	<button id="submit-blog-btn" class="btn btn-global">Submit Blog</button>

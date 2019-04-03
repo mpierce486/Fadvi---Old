@@ -251,6 +251,35 @@ class AdminController extends Controller
     {
         if ($request->ajax())
         {
+            $advisorBlog = $request->input('advisorBlog');
+
+            if ($advisorBlog === "1")
+            {
+                $this->validate($request, [
+                    'blogTitle' => 'required',
+                    'blogMainImg' => 'required|url',
+                    'blogSnippet' => 'required',
+                    'advisorBlogUrl' => 'required',
+                ], [
+                    'blogTitle.required' => 'You must include a blog title.',
+                    'blogMainImg.required' => 'You must include a URL for the main image.',
+                    'blogSnippet.required' => 'You must include a blog snippet.',
+                    'advisorBlogUrl.required' => 'You must include the blog URL.',
+                ]);
+
+                $blog = Blog::create([
+                    'blog_title' => $request->input('blogTitle'),
+                    'blog_main_img' => $request->input('blogMainImg'),
+                    'blog_snippet' => $request->input('blogSnippet'),
+                    'blog_content' => '',
+                    'url_slug' => '',
+                    'advisor_blog' => 1,
+                    'blog_url' => $request->input('advisorBlogUrl'),
+                ]);
+
+                return response()->json("Blog successfully posted!");
+            }
+
             $this->validate($request, [
                 'blogTitle' => 'required',
                 'blogMainImg' => 'required|url',
@@ -262,7 +291,7 @@ class AdminController extends Controller
                 'blogSnippet.required' => 'You must include a blog snippet.',
                 'blogContent.required' => 'You must include a blog post.',
             ]);
-
+            
             // Generate URL slug
             $urlSlug = str_replace(' ', '-', $request->input('blogTitle'));
 

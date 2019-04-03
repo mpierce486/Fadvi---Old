@@ -1544,6 +1544,14 @@ body {
   margin-bottom: 50px;
 }
 
+#admin-blog-wrapper #advisorBlog {
+  margin-bottom: 15px;
+}
+
+#admin-blog-wrapper #advisor-blog-url {
+  display: none;
+}
+
 #admin-blog-wrapper #blog-input {
   margin-bottom: 100px;
   padding-top: 25px;
@@ -1864,8 +1872,26 @@ body {
   }
 }
 
+.blog-grid {
+  margin-bottom: 200px;
+}
+
 .blog-post {
   margin-bottom: 15px;
+}
+
+.blog-post .advisor-blog-post {
+  border: 1px solid #c0c0c0;
+  padding: 5px;
+  -webkit-box-shadow: 0 0 5px #c0c0c0;
+          box-shadow: 0 0 5px #c0c0c0;
+  border-radius: 5px;
+}
+
+.blog-post .advisor-blog-post .advisor-blog-notice {
+  font-size: 10px;
+  font-weight: 600;
+  margin-top: 5px;
 }
 
 .blog-post img {
@@ -1920,10 +1946,14 @@ body {
 }
 
 #blog-post-wrapper #blog-post-content-wrapper img {
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
   display: block;
   margin: auto;
+}
+
+#blog-post-wrapper #blog-post-content-wrapper strong {
+  font-weight: 600 !important;
 }
 
 @media (max-width: 575.98px) {

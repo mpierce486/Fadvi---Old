@@ -171,7 +171,29 @@ $(document).ready(function() {
 
 	/*SCRIPT TO SUBMIT BLOG ON ADMIN PAGE*/
 
+	$('#advisorBlog > input, label').click(function() {
+		if ($('#advisor-content').is(":checked"))
+		{
+			$('#blog-help-text').hide();
+			$('#blog-input').hide();
+			$('#advisor-blog-url').show();
+		} else {
+			$('#blog-help-text').show();
+			$('#blog-input').show();
+			$('#advisor-blog-url').hide();
+		}
+	});
+
 	$('#submit-blog-btn').click(function(){
+
+		var advisorBlog = 0;
+		var advisorBlogUrl = '';
+
+		if ($('#advisor-content').is(":checked"))
+		{
+			var advisorBlog = 1;
+			var advisorBlogUrl = $('#advisor-blog-url').val();
+		}
 
 		var blogTitle = $('#blog-title').val();
 		var blogMainImg = $('#blog-main-img').val();
@@ -187,7 +209,7 @@ $(document).ready(function() {
 		$.ajax({
 			type: "POST",
 			url: "/admin/dashboard/blog/",
-			data: {blogTitle:blogTitle, blogMainImg:blogMainImg, blogSnippet:blogSnippet, blogContent:blogContent},
+			data: {advisorBlog:advisorBlog, blogTitle:blogTitle, blogMainImg:blogMainImg, advisorBlogUrl:advisorBlogUrl, blogSnippet:blogSnippet, blogContent:blogContent},
 			error: function(data){
 				/*Retrieve errors and append any error messages.*/
 				var errors = $.parseJSON(data.responseText);
