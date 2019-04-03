@@ -277,13 +277,7 @@ class AdminController extends Controller
                     'url_slug' => '',
                     'advisor_blog' => 1,
                     'blog_url' => $request->input('advisorBlogUrl'),
-                ]);
-
-                DB::table('advisor_blog')->insert([
                     'advisor_id' => $request->input('advisorId'),
-                    'blog_id' => $blog->id,
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now(),
                 ]);
 
                 return response()->json("Blog successfully posted!");
