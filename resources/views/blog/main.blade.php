@@ -9,9 +9,9 @@
 		<div class="blog-post col-sm-4">
 			@if ($blog->advisor_blog === 1)
 			<div class="blog-post-inner advisor-blog-post">
-				<a href="{{ $blog->blog_url }}"><img src="{{ $blog->blog_main_img }}" class="img-responsive" /></a>
+				<a href="{{ $blog->blog_url }}" target="_blank"><img src="{{ $blog->blog_main_img }}" class="img-responsive" /></a>
 				<div class="blog-info">
-					<div class="blog-info-title"><a href="{{ $blog->blog_url }}">{{ $blog->blog_title }}</a></div>
+					<div class="blog-info-title"><a href="{{ $blog->blog_url }}" target="_blank">{{ $blog->blog_title }}</a></div>
 					@if ($blog->advisor)
 					<div class="blog-info-advisor-name">By: {{ $blog->advisor->first_name }} {{ $blog->advisor->last_name }}</div>
 					<div class="blog-info-advisor-firm">{{ $blog->advisor->firm_name }}</div>
