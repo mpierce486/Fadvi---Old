@@ -9,7 +9,7 @@
 				<a class="nav-link" href="{{ route('advisors') }}">Our Advisors</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{{ route('blog') }}">Blog</a>
+				<a class="nav-link" href="{{ route('blog') }}">Fadvi Learning Center</a>
 			</li>
 		</ul>
 		<ul class="navbar-nav">
