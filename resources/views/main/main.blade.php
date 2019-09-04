@@ -56,7 +56,7 @@
 									<a href="#" class="middle-left-article-link">This is the title of - <span class="article-author">John Smith</span></a>
 								</li>
 								<li>
-									<a href="/blog" class="middle-left-article-link" id="browse-article-link">View More...</a>
+									<a href="#" class="middle-left-article-link" id="browse-article-link">View More...</a>
 								</li>
 							</ul>
 						</div>
