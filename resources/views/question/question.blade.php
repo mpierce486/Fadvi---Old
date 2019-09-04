@@ -10,45 +10,37 @@
 	</div>
 	
 	<div id="question-wrapper" class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-		@if (Session::get('topic') === "Debt Reduction")
-			@include('question.steps.debtreduction')
+		@if (Session::get('topic') === "Budgeting")
+			@include('question.steps.budgeting')
 		@endif
-		@if (Session::get('topic') === "Retirement Planning")
-			@include('question.steps.retirementplanning')
+		@if (Session::get('topic') === "Paying Off Debt")
+			@include('question.steps.payingoffdebt')
 		@endif
-		@if (Session::get('topic') === "College Savings")
-			@include('question.steps.collegesavings')
+		@if (Session::get('topic') === "Investing")
+			@include('question.steps.investing')
 		@endif
-		@if (Session::get('topic') === "Investments")
-			@include('question.steps.investments')
+		@if (Session::get('topic') === "Employer Retirement Plans")
+			@include('question.steps.employerretirementplans')
 		@endif
-		@if (Session::get('topic') === "Life Insurance & Annuities")
-			@include('question.steps.lifeinsuranceannuities')
-		@endif
-
-
-		@if (Session::get('topic') === "Trusts")
-			@include('question.steps.trusts')
-		@endif
-		@if (Session::get('topic') === "Wills")
-			@include('question.steps.wills')
-		@endif
-		@if (Session::get('topic') === "Powers of Attorney")
-			@include('question.steps.powersofattorney')
-		@endif
-		@if (Session::get('topic') === "Estate Planning")
-			@include('question.steps.estateplanning')
+		@if (Session::get('topic') === "Other Financial Planning")
+			@include('question.steps.otherfinancialplanning')
 		@endif
 
 
-		@if (Session::get('topic') === "Personal Taxes")
-			@include('question.steps.personaltaxes')
+		@if (Session::get('topic') === "Buying a House")
+			@include('question.steps.buyingahouse')
 		@endif
-		@if (Session::get('topic') === "Business Taxes")
-			@include('question.steps.businesstaxes')
+		@if (Session::get('topic') === "Planning for College")
+			@include('question.steps.planningforcollege')
 		@endif
-		@if (Session::get('topic') === "Tax Planning")
-			@include('question.steps.taxplanning')
+		@if (Session::get('topic') === "Marriage")
+			@include('question.steps.marriage')
+		@endif
+		@if (Session::get('topic') === "Having Children")
+			@include('question.steps.havingchildren')
+		@endif
+		@if (Session::get('topic') === "Planning for Retirement")
+			@include('question.steps.planningforretirement')
 		@endif
 	</div>
 </div>

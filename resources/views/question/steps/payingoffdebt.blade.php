@@ -1,26 +1,26 @@
 <!-- FORM 1 -->
 <form role="form" id="step-1" class="question-form">
-	<h3>Select what you are interested in (select all that apply).</h3>
+	<h3>What types of debt do you have? (Select all that apply)</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option1" name="step1[]" value="Saving for retirement">
-			<label class="custom-control-label" for="step1-option1">Saving for retirement</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option1" name="step1[]" value="Credit card">
+			<label class="custom-control-label" for="step1-option1">Credit card</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="Planning for income in retirement">
-			<label class="custom-control-label" for="step1-option2">Planning for income in retirement</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="Auto loan">
+			<label class="custom-control-label" for="step1-option2">Auto loan</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="Social Security">
-			<label class="custom-control-label" for="step1-option3">Social Security strategies</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="Student loan">
+			<label class="custom-control-label" for="step1-option3">Student loan</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option4" name="step1[]" value="Managing retirement accounts">
-			<label class="custom-control-label" for="step1-option4">Managing retirement accounts (IRA, 401(k), Pension)</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option4" name="step1[]" value="Mortgage">
+			<label class="custom-control-label" for="step1-option4">Mortgage</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option5" name="step1[]" value="None">
-			<label class="custom-control-label" for="step1-option5">None of the above</label>
+			<input type="checkbox" class="custom-control-input" id="step1-option5" name="step1[]" value="Other">
+			<label class="custom-control-label" for="step1-option4">Other</label>
 		</div>
 	</div>
 	<div class="form-group text-center col">
@@ -29,27 +29,23 @@
 </form>
 
 <form role="form" id="step-2" class="question-form">
-	<h3>What do your current retirement accounts amount to?</h3>
+	<h3>How much total debt do you currently have?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option1" name="step2[]" value="Less than $100,000">
-			<label class="custom-control-label" for="step2-option1">Less than $100,000</label>
+			<input type="radio" class="custom-control-input" id="step2-option1" name="step2[]" value="Less than $10,000">
+			<label class="custom-control-label" for="step2-option1">Less than $10,000</label>
 		</div>
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option2" name="step2[]" value="$100,000 to $500,000">
-			<label class="custom-control-label" for="step2-option2">$100,000 to $500,000</label>
+			<input type="radio" class="custom-control-input" id="step2-option2" name="step2[]" value="$10,000 to $50,000">
+			<label class="custom-control-label" for="step2-option2">$10,000 to $50,000</label>
 		</div>
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option3" name="step2[]" value="$500,000 to $1,000,000">
-			<label class="custom-control-label" for="step2-option3">$500,000 to $1,000,000</label>
+			<input type="radio" class="custom-control-input" id="step2-option3" name="step2[]" value="$50,000 to $100,000">
+			<label class="custom-control-label" for="step2-option3">$50,000 to $100,000</label>
 		</div>
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option4" name="step2[]" value="Over $1,000,000">
-			<label class="custom-control-label" for="step2-option4">Over $1,000,000</label>
-		</div>
-		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option5" name="step2[]" value="None">
-			<label class="custom-control-label" for="step2-option5">I do not currently have any investments</label>
+			<input type="radio" class="custom-control-input" id="step2-option4" name="step2[]" value="More than $100,000">
+			<label class="custom-control-label" for="step2-option3">More than $100,000</label>
 		</div>
 	</div>
 	<div class="row">
@@ -61,7 +57,7 @@
 </form>
 
 <form role="form" id="step-3" class="question-form">
-	<h3>Do you currently work with other advisors regarding this topic?</h3>
+	<h3>Do you currently work with or have you worked with a financial planner before?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-radio">
 			<input type="radio" class="custom-control-input" id="Step3-option1" name="step3[]" value="Yes">

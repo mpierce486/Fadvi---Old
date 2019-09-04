@@ -212,6 +212,60 @@
 	}
 }
 
+#post-blog-xs {
+	display: none;
+
+	&:hover {
+		background-color: $form-button-color;
+		color: #000;
+	}
+}
+
+#blogModal .modal-dialog {
+	min-width: 800px;
+
+	.modal-header {
+		display: initial !important;
+	}
+
+	.modal-title {
+		text-align: center;
+	}
+
+	#navbar-container {
+		width: 100%;
+
+		#blog-modal-navbar {
+			list-style-type: none;
+			display: flex;
+			padding: 0;
+			margin: 0;
+
+			li {
+				flex: 1;
+				text-align: center;
+				line-height: 3rem;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				&.nav-active {
+					border-bottom: 1px solid #000;
+				}
+			}
+		}
+	}
+
+	#blog-title-input {
+		margin-bottom: 15px;
+	}
+}
+
+#blog-options, .dz-default {
+	display: none;
+}
+
 /* END ADVISOR PROFILE STYLING */
 
 @media (max-width:576px) {
@@ -295,7 +349,13 @@
 		}
 	}
 
-		
+	.hide-xs {
+		display: none;
+	}	
+
+	#post-blog-xs {
+		display: initial;
+	}
 
 	.response-advisor-info, .discussion-advisor-info {
 

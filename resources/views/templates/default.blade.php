@@ -13,8 +13,8 @@
             <title>Fadvi | @yield('pageTitle')</title>
             <meta name="description" content="@yield('pageDescription')">
         @else
-            <title>Fadvi | Find Financial Advice, Estate Planning Advice, and Tax Advice</title>
-            <meta name="description" content="We believe each individual and family should have advice around their financial, estate, and tax needs and our mission is to make that advice more accessible.">
+            <title>Fadvi | Financial Advice For the Next Generation</title>
+            <meta name="description" content="Financial advice for the next generation.">
         @endif
 
         <!-- StyleSheets -->
@@ -22,7 +22,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/v4-shims.css">
         
 
         <!-- JavaScript -->

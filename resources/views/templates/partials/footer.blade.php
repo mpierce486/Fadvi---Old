@@ -16,7 +16,7 @@
 			</ul>
 		</div>
 		<div class="footer-copy">
-			<p>&copy;<?php echo date("Y"); ?> Fadvi</p>
+			<p>&copy;<?php echo date("Y"); ?> Fadvi, LLC</p>
 		</div>
 	</div>
 

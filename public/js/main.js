@@ -26,6 +26,36 @@ $(document).ready(function(){
 	  });
 	});
 
+	// Switching between Topics and Life Event tiles
+	$('#life-events-toggle, #topics-toggle').click(function() {
+		if ($('#topics-wrapper').is(':visible'))
+		{
+			$('#topics-wrapper').fadeOut(200);
+			$('#life-events-toggle').fadeOut(200);
+			window.setTimeout(function () {
+				$('#life-events-wrapper').css('display', 'flex').hide().fadeIn();
+				$('#topics-toggle').fadeIn();
+			}, 200);
+		} else {
+			$('#life-events-wrapper').fadeOut(200);
+			$('#topics-toggle').fadeOut(200);
+			window.setTimeout(function () {
+				$('#topics-wrapper').css('display', 'flex').hide().fadeIn();
+				$('#life-events-toggle').fadeIn();
+			}, 200);
+		}
+	});
+
+	// Toggling the Main Middle Wrapper Collapse event when clicking on a topic
+	$('.topics-item').on('click', function() {
+		// Replace main middle left text with name of topic/life event
+		var topic = $(this).find('p').text();
+		$('#middle-left-sub-header > strong > span').text(topic);
+		
+		$('#middleCollapse').collapse('show');
+	});
+
+
 	// Click topic for topic tiles //
 	
 	$.ajaxSetup({
@@ -53,12 +83,12 @@ $(document).ready(function(){
     			if (data == "Error")
     			{
     				console.log("Error. Reloading page.");
+    				alert("Error. Reloading page.");
     				location.reload();
     			}
     			if (data.result == "Success")
     			{
-    				console.log("Success. Redirecting page.");
-    				window.location.href = data.redirect;
+    				console.log("Success");
     			}
     		}
 		});

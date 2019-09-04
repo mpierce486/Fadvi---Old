@@ -1,22 +1,14 @@
 <!-- FORM 1 -->
 <form role="form" id="step-1" class="question-form">
-	<h3>Select the type(s) of accounts you currently have established.</h3>
+	<h3>Is this your first child?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option1" name="step1[]" value="529 plan">
-			<label class="custom-control-label" for="step1-option1">529 College Savings Plan</label>
+		<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="Step1-option1" name="step1[]" value="Yes">
+			<label class="custom-control-label" for="Step1-option1">Yes</label>
 		</div>
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="UTMA or UGMA">
-			<label class="custom-control-label" for="step1-option2">UTMA or UGMA account</label>
-		</div>
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="Coverdell">
-			<label class="custom-control-label" for="step1-option3">Coverdell Education Savings Account (ESA)</label>
-		</div>
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option4" name="step1[]" value="None">
-			<label class="custom-control-label" for="step1-option4">I do not currently have any accounts established</label>
+		<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="Step1-option2" name="step1[]" value="No">
+			<label class="custom-control-label" for="Step1-option2">No</label>
 		</div>
 	</div>
 	<div class="form-group text-center col">
@@ -25,19 +17,15 @@
 </form>
 
 <form role="form" id="step-2" class="question-form">
-	<h3>How long before the funds are used for education?</h3>
+	<h3>Have you planned financially for your new addition?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option1" name="step2[]" value="More than 10 years">
-			<label class="custom-control-label" for="step2-option1">More than 10 years</label>
+			<input type="radio" class="custom-control-input" id="Step2-option1" name="step2[]" value="Yes">
+			<label class="custom-control-label" for="Step2-option1">Yes</label>
 		</div>
 		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option2" name="step2[]" value="5 to 10 years">
-			<label class="custom-control-label" for="step2-option2">Between 5 to 10 years</label>
-		</div>
-		<div class="custom-control custom-radio">
-			<input type="radio" class="custom-control-input" id="step2-option3" name="step2[]" value="Less than 5 years">
-			<label class="custom-control-label" for="step2-option3">Less than 5 years</label>
+			<input type="radio" class="custom-control-input" id="Step2-option2" name="step2[]" value="No">
+			<label class="custom-control-label" for="Step2-option2">No</label>
 		</div>
 	</div>
 	<div class="row">
@@ -49,7 +37,7 @@
 </form>
 
 <form role="form" id="step-3" class="question-form">
-	<h3>Do you currently work with other advisors regarding this topic?</h3>
+	<h3>Have you set up any new accounts for the child?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-radio">
 			<input type="radio" class="custom-control-input" id="Step3-option1" name="step3[]" value="Yes">
@@ -58,6 +46,26 @@
 		<div class="custom-control custom-radio">
 			<input type="radio" class="custom-control-input" id="Step3-option2" name="step3[]" value="No">
 			<label class="custom-control-label" for="Step3-option2">No</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group text-center col">
+			<button type="button" class="btn btn-default btn-back">Back</button>
+			<button type="submit" class="btn btn-primary">Next</button>
+		</div>
+	</div>
+</form>
+
+<form role="form" id="step-4" class="question-form">
+	<h3>Do you currently work with or have you worked with a financial planner before?</h3>
+	<div class="form-group" id="custom-checkbox-form-group">
+		<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="Step4-option1" name="step4[]" value="Yes">
+			<label class="custom-control-label" for="Step4-option1">Yes</label>
+		</div>
+		<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="Step4-option2" name="step4[]" value="No">
+			<label class="custom-control-label" for="Step4-option2">No</label>
 		</div>
 	</div>
 	<div class="row">

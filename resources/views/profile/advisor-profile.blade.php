@@ -22,6 +22,9 @@
 	  <li class="nav-item" data-title="discussions">
 	    <a class="nav-link" href="#">My Discussions</a>
 	  </li>
+	  <li class="nav-item" data-title="blog">
+	    <a class="nav-link" href="#">My Blog Posts</a>
+	  </li>
 	  <li class="nav-item" data-title="usernamepassword">
 	    <a class="nav-link" href="#">Username & Password</a>
 	  </li>
@@ -164,6 +167,43 @@
 				@endif
 			</div>
 		</div>
+		<div class="content-section" id="blog">
+			<h4>These are your blog posts.</h4>
+			<div class="discussion-content">
+				<button id="post-blog" class="btn btn-global hide-xs" data-toggle="modal" data-target="#blogModal">Post Blog</button>
+				<button id="post-blog-xs" class="btn btn-global" disabled>Post Blog</button>
+				<div class="modal" id="blogModal" tabindex="-1" role="dialog">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">New Blog Post</h5>
+								<div id="navbar-container">
+									<ul id="blog-modal-navbar">
+										<li class="navbar-buttons nav-active" data-id="blog-content">Content</li>
+										<li class="navbar-buttons" data-id="blog-options">Options</li>
+									</ul>
+								</div>
+							</div>
+							<div class="modal-body">
+								<form role="form" class="dropzone" action="/" enctype="multipart/form-data">
+									<div id="blog-content">
+										<input type="text" class="form-control" id="blog-title-input" placeholder="Enter a blog title...">
+										<textarea id="blog-post-input" style="height:50vh;"></textarea>
+									</div>
+									<div id="blog-options">
+									    
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-global">Submit</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="content-section table-responsive" id="usernamepassword">
 			<h4>Username & Password</h4>
 			<table class="section-item table" id="section-name">
@@ -209,10 +249,12 @@
 <!-- JS -->
 <script src="{{ asset('js/profile.js') }}"></script>
 <script src="{{ asset('js/favorite.js')  }}"></script>
+<script src="{{ asset('js/dropzone.js')  }}"></script>
 <!-- TinyMCE JS -->
 <script src="{{ asset('js/tinymce/plugin.min.js') }}"></script>
 <script>
     tinymce.init({
+    	selector: '#blog-post-input',
         mode: "textareas",
         menubar: false,
         plugins: ['advlist, lists, placeholder'],

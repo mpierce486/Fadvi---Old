@@ -1,3 +1,55 @@
+#FLC-page-header {
+	font-size: 3.5em;
+	text-align: center;
+}
+
+#FLC-copy {
+	font-size: 1.5em;
+	margin: 0 auto 50px auto;
+	text-align: center;
+}
+
+#FLC-filters {
+	text-align: center;
+	margin-bottom: 30px;
+
+	nav a {
+		background-color: #3f8888;
+		color: #fff;
+		margin-right: 5px;
+		margin-bottom: 5px;
+
+		&:hover {
+			background-color: #f2da64;
+			color: #000 !important;
+			box-shadow: 0 0 5px #000;
+		}
+
+		&:focus {
+			outline: 0;
+			color: #fff !important;
+		}
+
+		&.active {
+			background-color: #f2da64;
+			color: #000 !important;
+			box-shadow: 0 0 5px #000;
+		}
+	}
+
+	#filters-subtext {
+		display: none;
+		margin-top: 20px;
+
+		i {
+			margin-right: 5px;
+			font-size: 12px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	}
+}
+
 .blog-grid {
 	margin-bottom: 200px;
 }
@@ -93,5 +145,21 @@
 @media (max-width: 575.98px) {
 	#blog-post-wrapper {
 		text-align: justify;
+	}
+
+	#filters {
+		flex-direction: initial !important;
+	}
+}
+
+@media (max-width: 991.98px) {
+	#FLC-wrapper {
+		max-width: 100% !important;
+	}
+}
+
+@media (min-width: 1200px) {
+	#FLC-copy {
+		max-width: 75%;
 	}
 }

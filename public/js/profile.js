@@ -80,6 +80,45 @@ $(document).ready(function() {
 	//
 
 	//
+	//	BLOG FUNCTIONALITY
+	//
+
+	// Find height of add blog modal and lock it
+	$("#blogModal").on('shown.bs.modal', function(e) {
+		var height = $(".modal-content").height();
+		$(".modal-content").css("height", "796px");
+	});
+
+	// Change active class on modal navigation bar
+	$('#blog-modal-navbar > li').on('click', function() {
+		$('#blog-modal-navbar > li').removeClass('nav-active');
+		$(this).addClass('nav-active');
+
+		var title = $(this).attr("data-id");
+
+		if (title === "blog-content")
+		{
+			$('#blog-options').hide();
+			$('.dz-default').hide();
+			$('#blog-content').show();
+		} else if (title === "blog-options")
+		{
+			$('#blog-content').hide();
+			$('#blog-options').show();
+			$('.dz-default').show();
+		}
+	});
+
+	// Initiate Dropzone for image upload
+	var myDropzone = new Dropzone("#blog-options > input", { url: "/file/post"});
+
+
+
+	//
+	//	END BLOG FUNCTIONALITY
+	//
+
+	//
 	// EDIT PROFILE AJAX FUNCTIONS
 	//
 

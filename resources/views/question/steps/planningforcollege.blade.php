@@ -1,26 +1,14 @@
 <!-- FORM 1 -->
 <form role="form" id="step-1" class="question-form">
-	<h3>What is your reason for inquiring about estate planning?</h3>
+	<h3>Have you estimated how much your college education will cost?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option1" name="step1[]" value="Do I need estate planning?">
-			<label class="custom-control-label" for="step1-option1">Do I need estate planning?</label>
+		<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="Step1-option1" name="step1[]" value="Yes">
+			<label class="custom-control-label" for="Step1-option1">Yes</label>
 		</div>
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option2" name="step1[]" value="Asset transfer to future generations">
-			<label class="custom-control-label" for="step1-option2">Asset transfer to future generations</label>
-		</div>
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option3" name="step1[]" value="Minimize taxes">
-			<label class="custom-control-label" for="step1-option3">Minimize taxes</label>
-		</div>
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option4" name="step1[]" value="Protect assets">
-			<label class="custom-control-label" for="step1-option4">Protect my assets from others</label>
-		</div>
-		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step1-option5" name="step1[]" value="None">
-			<label class="custom-control-label" for="step1-option5">I don't know</label>
+		<div class="custom-control custom-radio">
+			<input type="radio" class="custom-control-input" id="Step1-option2" name="step1[]" value="No">
+			<label class="custom-control-label" for="Step1-option2">No</label>
 		</div>
 	</div>
 	<div class="form-group text-center col">
@@ -29,23 +17,27 @@
 </form>
 
 <form role="form" id="step-2" class="question-form">
-	<h3>Do you have any of the following already in place?</h3>
+	<h3>How do you plan on paying for college? (Select all that apply)</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step2-option1" name="step2[]" value="Trust">
-			<label class="custom-control-label" for="step2-option1">Trust</label>
+			<input type="checkbox" class="custom-control-input" id="step2-option1" name="step2[]" value="Scholarship">
+			<label class="custom-control-label" for="step2-option1">Scholarship</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step2-option2" name="step2[]" value="Will">
-			<label class="custom-control-label" for="step2-option2">Will</label>
+			<input type="checkbox" class="custom-control-input" id="step2-option2" name="step2[]" value="Student loans">
+			<label class="custom-control-label" for="step2-option2">Student loans</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step2-option3" name="step2[]" value="Power of attorney">
-			<label class="custom-control-label" for="step2-option3">Power of Attorney</label>
+			<input type="checkbox" class="custom-control-input" id="step2-option3" name="step2[]" value="Investments">
+			<label class="custom-control-label" for="step2-option3">Investments (529 Plan, Coverdell ESA, etc.)</label>
 		</div>
 		<div class="custom-control custom-checkbox">
-			<input type="checkbox" class="custom-control-input" id="step2-option5" name="step2[]" value="None">
-			<label class="custom-control-label" for="step2-option5">None of the above</label>
+			<input type="checkbox" class="custom-control-input" id="step2-option4" name="step2[]" value="Help">
+			<label class="custom-control-label" for="step2-option4">Help from family or friends</label>
+		</div>
+		<div class="custom-control custom-checkbox">
+			<input type="checkbox" class="custom-control-input" id="step2-option5" name="step2[]" value="Other">
+			<label class="custom-control-label" for="step2-option5">Other</label>
 		</div>
 	</div>
 	<div class="row">
@@ -57,7 +49,7 @@
 </form>
 
 <form role="form" id="step-3" class="question-form">
-	<h3>Do you currently work with other advisors regarding this topic?</h3>
+	<h3>Do you currently work with or have you worked with a financial planner before?</h3>
 	<div class="form-group" id="custom-checkbox-form-group">
 		<div class="custom-control custom-radio">
 			<input type="radio" class="custom-control-input" id="Step3-option1" name="step3[]" value="Yes">

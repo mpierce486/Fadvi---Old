@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     //
-    //  Hover and click event for checkboxes
+    //  Hover and click event for checkboxes and radios
     //
 
     $('.custom-checkbox').click(function() {
@@ -11,6 +11,20 @@ $(document).ready(function() {
         } else {
             $(this).find('input[type=checkbox]').prop("checked", true);
         }
+    });
+
+    $('.custom-radio').click(function() {
+        if ($(this).find('input[type=radio]').is(':checked'))
+        {
+            $(this).find('input[type=radio]').prop("checked", false);
+        } else {
+            $(this).find('input[type=radio]').prop("checked", true);
+        }
+    });
+
+    // Solve issue where clicking on a radio label doesn't select the radio button
+    $('.custom-radio > label').click(function(e) {
+        e.preventDefault();
     });
 
     //
@@ -123,79 +137,87 @@ $(document).ready(function() {
             },
             success: function(data) {
                 $('#step-1').hide();
-                $('#step-2').fadeIn(200);
-            }
-        });
-    });
-
-    // Step 2
-
-    $('#step-2').submit(function(e) {
-        e.preventDefault();
-
-        var step2 = [];
-        
-        $("input[name='step2[]']:checked").each(function() {
-            
-            step2.push($(this).val());
-        });
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "/question/details/2",
-            data: {step2:step2},
-            error: function(data){
-                // Retrieve errors and append any error messages.
-                var errors = $.parseJSON(data.responseText);
-                
-                if (typeof errors.errors['step2.0'] !== "undefined")
+                if ($('#step-2').length)
                 {
-                    var postError = errors.errors['step2.0'][0];
-                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
-                    $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
-                        $(this).remove();
-                    });
-                } else if (typeof errors.errors['step2.1'] !== "undefined")
-                {
-                    var postError = errors.errors['step2.1'][0];
-                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
-                    $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
-                        $(this).remove();
-                    });
-                } else if (typeof errors.errors['step2.2'] !== "undefined")
-                {
-                    var postError = errors.errors['step2.2'][0];
-                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
-                    $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
-                        $(this).remove();
-                    });
-                }
-                else if (errors.errors.step2[0])
-                {
-                    var postError = errors.errors.step2[0];
-                    var pError = '<h5 class="text-danger">'+postError+'</h5>';
-                    $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
-                        $(this).remove();
-                    });
-                }
-            },
-            success: function(data) {
-                $('#step-2').hide();
-                if ($('#step-3').length)
-                {
-                    $('#step-3').fadeIn(200);
+                    $('#step-2').fadeIn(200);
                 } else {
                     $('#step-final').fadeIn(200);
                 }
             }
         });
     });
+
+    if ($('#step-2').length)
+    {
+        // Step 2
+
+        $('#step-2').submit(function(e) {
+            e.preventDefault();
+
+            var step2 = [];
+            
+            $("input[name='step2[]']:checked").each(function() {
+                
+                step2.push($(this).val());
+            });
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type: "POST",
+                url: "/question/details/2",
+                data: {step2:step2},
+                error: function(data){
+                    // Retrieve errors and append any error messages.
+                    var errors = $.parseJSON(data.responseText);
+                    
+                    if (typeof errors.errors['step2.0'] !== "undefined")
+                    {
+                        var postError = errors.errors['step2.0'][0];
+                        var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                        $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                            $(this).remove();
+                        });
+                    } else if (typeof errors.errors['step2.1'] !== "undefined")
+                    {
+                        var postError = errors.errors['step2.1'][0];
+                        var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                        $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                            $(this).remove();
+                        });
+                    } else if (typeof errors.errors['step2.2'] !== "undefined")
+                    {
+                        var postError = errors.errors['step2.2'][0];
+                        var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                        $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                            $(this).remove();
+                        });
+                    }
+                    else if (errors.errors.step2[0])
+                    {
+                        var postError = errors.errors.step2[0];
+                        var pError = '<h5 class="text-danger">'+postError+'</h5>';
+                        $(pError).insertAfter('#step-2 > #custom-checkbox-form-group').delay(3000).fadeOut(function() {
+                            $(this).remove();
+                        });
+                    }
+                },
+                success: function(data) {
+                    $('#step-2').hide();
+                    if ($('#step-3').length)
+                    {
+                        $('#step-3').fadeIn(200);
+                    } else {
+                        $('#step-final').fadeIn(200);
+                    }
+                }
+            });
+        });
+    }
 
     if ($('#step-3').length)
     {

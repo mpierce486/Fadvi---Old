@@ -3,102 +3,137 @@
 @section('content')
 
 <div id="main-top">
-	<div id="main-banner-overlay"></div>
-	<div id="main-banner-wrapper">
-		<img src="{{ asset('/images/main_banner.jpg') }}" id="main-banner" />
-	</div>
 	<div id="main-top-text">
-		<h1 id="main-text">Helping You Find the Advice You Need</h1>
+		<h1 id="main-text">Financial Advice For the Next Generation</h1>
+	</div>
+	<div id="main-topics-wrapper">
+		<div id="main-topics" class="container advisor-categories">
+			<h3 id="topics-header-text">Choose one of the topics below</h3>
+			<div id="topics-wrapper" class="col-lg-10 col-lg-offset-1 col-xs-12">
+				@foreach ($topics as $topic)
+					<div class="topics-item-wrapper">
+						<div class="topics-item img-thumbnail">
+							<p>{{ $topic }}</p>
+						</div>
+					</div>
+				@endforeach
+			</div>
+			<div id="life-events-wrapper" class="col-lg-10 col-lg-offset-1 col-xs-12">
+				@foreach ($life_events as $life_event)
+					<div class="topics-item-wrapper">
+						<div class="topics-item img-thumbnail">
+							<p>{{ $life_event }}</p>
+						</div>
+					</div>
+				@endforeach
+			</div>
+			<h6 id="life-events-toggle">Or choose life events <i class="fas fa-ellipsis-h"></i></h6>
+			<h6 id="topics-toggle">Or choose topics <i class="fas fa-ellipsis-h"></i></h6>
+		</div>
 	</div>
 </div>
 
 <div id="main-middle-wrapper">
-	<div id="main-middle" class="container advisor-categories">
-		<h2 id="middle-header-text">Choose one of the topics below</h2>
-		<form class="advisor-cat-form" role="form" method="post" action="#">
-			<div id="topics-wrapper" class="col-lg-10 col-lg-offset-1 col-xs-12">
-				@foreach ($topics as $topic)
-					<div class="topics-item-wrapper">
-					@if (Auth::check())
-						<div class="topics-item img-thumbnail">
-							<p>{{ $topic }}</p>
+	<div class="collapse" id="middleCollapse">
+		<div id="collapse-inside-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm" id="middle-left">
+						<span id="middle-left-header">Fadvi Learning Center</span>
+						<p id="middle-left-sub-header">Come learn about <strong><span></span></strong></p>
+						<div id="middle-left-article-list">
+							<ul>
+								<li>
+									<a href="#" class="middle-left-article-link">This is the title of the article - <span class="article-author">John Smith</span></a>
+								</li>
+								<li>
+									<a href="#" class="middle-left-article-link">This is the title of the article that is about a certain topic - <span class="article-author">John Smith</span></a>
+								</li>
+								<li>
+									<a href="#" class="middle-left-article-link">This is the title of - <span class="article-author">John Smith</span></a>
+								</li>
+								<li>
+									<a href="/blog" class="middle-left-article-link" id="browse-article-link">View More...</a>
+								</li>
+							</ul>
 						</div>
-					@else
-						<div class="topics-item img-thumbnail hide-xs" data-toggle="modal" data-target="#register-modal">
-							<p>{{ $topic }}</p>
-						</div>
-						<a href="/register" class="topics-item img-thumbnail show-xs">
-							<p>{{ $topic }}</p>
-						</a>
-					@endif	
 					</div>
-				@endforeach
+					<div class="col-sm" id="middle-right">
+						<span id="middle-right-header">Ask An Advisor</span>
+						<i class="far fa-comments"></i>
+						<p id="main-right-text">Want some extra help? Don't go look for quality financial advisors. Instead, post your question and have them come to you!</p>
+						<a href="/question" class="btn" id="middle-right-button">Ask Question</a>
+					</div>
+				</div>
 			</div>
-		</form>
+		</div>
 	</div>
 </div>
 
-<div id="main-bottom-wrapper">
-	<div id="main-bottom-1-wrapper">
-		<div id="main-bottom-1" class="container">
-			<div class="row">
-				<div id="main-bottom-left" class="col-sm-12 col-md-6">
-					<div id="left-graphic">
-						<i class="fas fa-users"></i>
-					</div>
-					<div id="left-text">
-						We are a network of financial advisors, estate planning attorneys, and certified public accountants that believe in 
-						working together to help you plan for your future.
-					</div>
+<div id="main-bottom-wrapper" class="container">
+	<div class="main-bottom-header"><h1>How Does It Work?</h1></div>
+	<div class="main-bottom-inside-wrapper">
+		<div class="main-bottom-step-wrapper">
+			<div class="main-bottom-step row">
+				<div class="main-bottom-step-img col-md show-xs">
+					<img src="{{ '/images/person_thinking_img.jpg' }}" class="img-fluid" id="first-step-img" />
 				</div>
+				<div class="main-bottom-step-text col-md">
+					<div class="main-bottom-step-number">1</div>
+					<div class="main-bottom-step-text-header">CHOOSE A TOPIC</div>
+					<div class="main-bottom-step-text-copy">I'm guessing you came here because you have some questions about finances. Don't worry, we all have questions about that every now and then. Fadvi makes it easy. Simply choose your topic above and start learning!</div>
+				</div>
+				<div class="main-bottom-step-img col-md hide-xs">
+					<img src="{{ '/images/person_thinking_img.jpg' }}" class="img-fluid" />
+				</div>
+			</div>
+		</div>
+	</div>
 
-				<div id="main-bottom-right" class="col-sm-12 col-md-6">
-					<div id="left-graphic">
-						<i class="fas fa-lightbulb"></i>
-					</div>
-					<div id="right-text">
-						We believe each individual and family should have advice around their financial, estate, and tax needs and our mission is to make that advice more accessible.
-					</div>
+	<div class="main-bottom-inside-wrapper">
+		<div class="main-bottom-step-wrapper">
+			<div class="main-bottom-step row">
+				<div class="main-bottom-step-img col-md">
+					<img src="{{ '/images/person_working_img.jpg' }}" class="img-fluid" />
+				</div>
+				<div class="main-bottom-step-text col-md">
+					<div class="main-bottom-step-number">2</div>
+					<div class="main-bottom-step-text-header">BROWSE ARTICLES OR INTERACT WITH ADVISORS</div>
+					<div class="main-bottom-step-text-copy">You can be the "do-it-yourselfer" and browse through our library of articles. Did we mention those articles are written by actual financial advisors themselves? You can even take it a step further and connect with advisors directly. Simply post your question and sit back and let advisors answer to you!</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="main-bottom-2-wrapper">
-		<div id='main-bottom-2'>
-			<div id="main-bottom-2-header">How Does It Work?</div>
-			<div class="main-bottom-text-wrapper row">
-				<div class="main-bottom-text col-md-8 col-sm-12">
-					<div class="main-bottom-text-header">Ask A Question</div>
-					<p class="main-bottom-text-copy">Choose from any of the topics above. Answer a few details about your situation and submit your question.</p>
+
+	<div class="main-bottom-inside-wrapper">
+		<div class="main-bottom-step-wrapper">
+			<div class="main-bottom-step row">
+				<div class="main-bottom-step-img col-md show-xs">
+					<img src="{{ '/images/person_celebrating_img.jpg' }}" class="img-fluid" id="third-step-img" />
 				</div>
-				<div class="main-bottom-graphic col-md-4">
-					<i class="fas fa-question-circle"></i>
+				<div class="main-bottom-step-text col-md">
+					<div class="main-bottom-step-number">3</div>
+					<div class="main-bottom-step-text-header">CELEBRATE YOUR NEWFOUND KNOWLEDGE</div>
+					<div class="main-bottom-step-text-copy">You just took the first step on your way to financial enlightenment! Whether you browsed the Fadvi Learning Center or connected with an advisor, you should feel more empowered to take charge of your finances and even help others do the same.</div>
 				</div>
-			</div>
-		</div>
-	</div>
-	<div id="main-bottom-3-wrapper">
-		<div id='main-bottom-3'>
-			<div class="main-bottom-text-wrapper row">
-				<div class="main-bottom-text col-md-8 col-sm-12">
-					<div class="main-bottom-text-header">Receive Reponses From Advisors</div>
-					<p class="main-bottom-text-copy">We let advisors know about your question and they will provide a response to you. We will notify you whenever you get a response.</p>
-				</div>
-				<div class="main-bottom-graphic col-md-4">
-					<i class="fas fa-reply"></i>
+				<div class="main-bottom-step-img col-md hide-xs">
+					<img src="{{ '/images/person_celebrating_img.jpg' }}" class="img-fluid" />
 				</div>
 			</div>
 		</div>
 	</div>
-	<div id="main-bottom-4-wrapper">
-		<div id='main-bottom-4'>
-			<div class="main-bottom-text-wrapper row">
-				<div class="main-bottom-text col-md-8 col-sm-12">
-					<div class="main-bottom-text-header">Engage With Advisors</div>
-					<p class="main-bottom-text-copy">Once you receive some responses, if you like any of those reponses you can create a discussion with an advisor which is similar to a private chat with that advisor where you can get into more details to help with your question.</p>
+</div>
+
+<div id="main-mission-wrapper">
+	<div id="main-mission-inside-wrapper">
+		<div class="main-bottom-step-wrapper">
+			<div class="main-bottom-step row">
+				<div class="main-mission-img col-md">
+					<img src="{{ '/images/person_instructing_img.png' }}" class="img-fluid" />
 				</div>
-				<div class="main-bottom-graphic col-md-4">
-					<i class="fas fa-comments"></i>
+				<div class="main-mission-text col-md">
+					<div class="main-mission-text-header">OUR MISSION</div>
+					<div class="main-mission-text-copy">We help empower you by using two main resources. You can be the "Do It Yourself" person and browse through our library of information on your topic or you can connect with our hand-picked network of financial advisors. Connecting with a advisor is super easy and confidential! Just post a question and advisors will respond to you right here on Fadvi. No outside emails or phone calls needed. We respect your confidentiality and host all communication on Fadvi.</div>
 				</div>
 			</div>
 		</div>
