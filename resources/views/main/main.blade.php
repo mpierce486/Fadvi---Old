@@ -36,6 +36,9 @@
 <div id="main-middle-wrapper">
 	<div class="collapse" id="middleCollapse">
 		<div id="collapse-inside-wrapper">
+			<div class="alert alert-warning" style="text-align:center;" role="alert">
+  				UNDER CONSTRUCTION - LINKS DO NOT WORK!!!
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm" id="middle-left">
@@ -62,7 +65,7 @@
 						<span id="middle-right-header">Ask An Advisor</span>
 						<i class="far fa-comments"></i>
 						<p id="main-right-text">Want some extra help? Don't go look for quality financial advisors. Instead, post your question and have them come to you!</p>
-						<a href="/question" class="btn" id="middle-right-button">Ask Question</a>
+						<a href="#" class="btn" id="middle-right-button" disabled>Coming soon...</a>
 					</div>
 				</div>
 			</div>
