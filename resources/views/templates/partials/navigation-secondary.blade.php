@@ -6,7 +6,7 @@
 	<div class="collapse navbar-collapse" id="navbarToggler">
 		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 			<li class="nav-item">
-				<a class="nav-link" href="{{ route('advisors') }}">Our Advisors</a>
+				<!-- <a class="nav-link" href="#">Our Advisors</a> -->
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{{ route('blog') }}">Fadvi Learning Center</a>
