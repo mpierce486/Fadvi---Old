@@ -76,7 +76,7 @@
 		<div class="main-bottom-step-wrapper">
 			<div class="main-bottom-step row">
 				<div class="main-bottom-step-img col-md show-xs">
-					<img src="{{ '/images/person_thinking_img.jpg' }}" class="img-fluid" id="first-step-img" />
+					<img src="https://i.imgur.com/pW1Yb2o.jpg" class="img-fluid" id="first-step-img" />
 				</div>
 				<div class="main-bottom-step-text col-md">
 					<div class="main-bottom-step-number">1</div>
@@ -84,7 +84,7 @@
 					<div class="main-bottom-step-text-copy">I'm guessing you came here because you have some questions about finances. Don't worry, we all have questions about that every now and then. Fadvi makes it easy. Simply choose your topic above and start learning!</div>
 				</div>
 				<div class="main-bottom-step-img col-md hide-xs">
-					<img src="{{ '/images/person_thinking_img.jpg' }}" class="img-fluid" />
+					<img src="https://i.imgur.com/pW1Yb2o.jpg" class="img-fluid" />
 				</div>
 			</div>
 		</div>
@@ -94,7 +94,7 @@
 		<div class="main-bottom-step-wrapper">
 			<div class="main-bottom-step row">
 				<div class="main-bottom-step-img col-md">
-					<img src="{{ '/images/person_working_img.jpg' }}" class="img-fluid" />
+					<img src="https://i.imgur.com/e1lg2Ob.jpg" class="img-fluid" />
 				</div>
 				<div class="main-bottom-step-text col-md">
 					<div class="main-bottom-step-number">2</div>
@@ -109,7 +109,7 @@
 		<div class="main-bottom-step-wrapper">
 			<div class="main-bottom-step row">
 				<div class="main-bottom-step-img col-md show-xs">
-					<img src="{{ '/images/person_celebrating_img.jpg' }}" class="img-fluid" id="third-step-img" />
+					<img src="https://i.imgur.com/jM2AR96.jpg" class="img-fluid" id="third-step-img" />
 				</div>
 				<div class="main-bottom-step-text col-md">
 					<div class="main-bottom-step-number">3</div>
@@ -117,7 +117,7 @@
 					<div class="main-bottom-step-text-copy">You just took the first step on your way to financial enlightenment! Whether you browsed the Fadvi Learning Center or connected with an advisor, you should feel more empowered to take charge of your finances and even help others do the same.</div>
 				</div>
 				<div class="main-bottom-step-img col-md hide-xs">
-					<img src="{{ '/images/person_celebrating_img.jpg' }}" class="img-fluid" />
+					<img src="https://i.imgur.com/jM2AR96.jpg" class="img-fluid" />
 				</div>
 			</div>
 		</div>
@@ -129,7 +129,7 @@
 		<div class="main-bottom-step-wrapper">
 			<div class="main-bottom-step row">
 				<div class="main-mission-img col-md">
-					<img src="{{ '/images/person_instructing_img.png' }}" class="img-fluid" />
+					<img src="https://i.imgur.com/CLElCBZ.png" class="img-fluid" />
 				</div>
 				<div class="main-mission-text col-md">
 					<div class="main-mission-text-header">OUR MISSION</div>
