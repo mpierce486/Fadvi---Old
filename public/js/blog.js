@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+	var $grid = $('.grid').isotope({
+	  // options
+	  itemSelector: '.grid-item',
+	});
+
 	// Add "active" class to filters & populate subtext
 	$('#filters > a').on('click', function(e) {
 		e.preventDefault();
@@ -10,6 +15,7 @@ $(document).ready(function() {
 			$(this).removeClass("active");
 			// Hide filters subtext
 			$('#filters-subtext').hide();
+			$grid.isotope({ filter: '*' });
 
 			return;
 		}
@@ -17,6 +23,9 @@ $(document).ready(function() {
 		$('#filters > a').removeClass("active");
 		// Add "active" class to selected filter
 		$(this).addClass("active");
+		// Get data-id of selected filter
+		var id = $(this).attr("data-id");
+		$grid.isotope({ filter: '1' });
 
 		// Populate filters subtext based on which filter was selected
 		var filter = $(this).text();
@@ -29,6 +38,16 @@ $(document).ready(function() {
 	$('#filters-subtext i').on('click', function() {
 		$('#filters-subtext').hide();
 		$('#filters > a').removeClass("active");
+		$grid.isotope({ filter: '*' });
 	});
+
+	$('.grid').masonry({
+	  // options
+	  itemSelector: '.grid-item',
+	});
+
+	
+
+
 
 });

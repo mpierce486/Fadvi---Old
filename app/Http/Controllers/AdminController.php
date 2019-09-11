@@ -244,71 +244,52 @@ class AdminController extends Controller
 
     public function getBlog()
     {
-        return view('admin.blog.index');
+        // Retrieve collection of topic names from database table
+        $topics = DB::table('topics')->where('life_event', null)->get();
+        // Retrieve collection of life event names from database table
+        $life_events = DB::table('topics')->where('life_event', 1)->get();
+
+        return view('admin.blog.index')->with([
+            'topics' => $topics,
+            'life_events' => $life_events,
+        ]);
     }
 
     public function postBlog(Request $request)
     {
-        if ($request->ajax())
-        {
-            $advisorBlog = $request->input('advisorBlog');
+        $this->validate($request, [
+            'advisor_name' => 'required',
+            'firm_name' => 'required',
+            'blog_title' => 'required',
+            'blog_main_img' => 'required|url',
+            'blog_snippet' => 'required',
+            'advisor_blog_url' => 'required',
+            'topics' => 'required',
+        ]);
 
-            if ($advisorBlog === "1")
-            {
-                $this->validate($request, [
-                    'blogTitle' => 'required',
-                    'blogMainImg' => 'required|url',
-                    'blogSnippet' => 'required',
-                    'advisorBlogUrl' => 'required',
-                    'advisorId' => 'required',
-                ], [
-                    'blogTitle.required' => 'You must include a blog title.',
-                    'blogMainImg.required' => 'You must include a URL for the main image.',
-                    'blogSnippet.required' => 'You must include a blog snippet.',
-                    'advisorBlogUrl.required' => 'You must include the blog URL.',
-                    'advisorId.required' => 'You must enter an advisor ID.',
-                ]);
+        $blog = Blog::create([
+            'advisor_name' => $request->input('advisor_name'),
+            'firm_name' => $request->input('firm_name'),
+            'blog_title' => $request->input('blog_title'),
+            'blog_main_img' => $request->input('blog_main_img'),
+            'blog_snippet' => $request->input('blog_snippet'),
+            'blog_content' => '',
+            'url_slug' => '',
+            'advisor_blog' => 1,
+            'blog_url' => $request->input('advisor_blog_url'),
+        ]);
 
-                $blog = Blog::create([
-                    'blog_title' => $request->input('blogTitle'),
-                    'blog_main_img' => $request->input('blogMainImg'),
-                    'blog_snippet' => $request->input('blogSnippet'),
-                    'blog_content' => '',
-                    'url_slug' => '',
-                    'advisor_blog' => 1,
-                    'blog_url' => $request->input('advisorBlogUrl'),
-                    'advisor_id' => $request->input('advisorId'),
-                ]);
-
-                return response()->json("Blog successfully posted!");
-            }
-
-            $this->validate($request, [
-                'blogTitle' => 'required',
-                'blogMainImg' => 'required|url',
-                'blogSnippet' => 'required',
-                'blogContent' => 'required'
-            ], [
-                'blogTitle.required' => 'You must include a blog title.',
-                'blogMainImg.required' => 'You must include a URL for the main image.',
-                'blogSnippet.required' => 'You must include a blog snippet.',
-                'blogContent.required' => 'You must include a blog post.',
-            ]);
-            
-            // Generate URL slug
-            $urlSlug = str_replace(' ', '-', $request->input('blogTitle'));
-
-            $blog = Blog::create([
-                'blog_title' => $request->input('blogTitle'),
-                'blog_main_img' => $request->input('blogMainImg'),
-                'blog_snippet' => $request->input('blogSnippet'),
-                'blog_content' => $request->input('blogContent'),
-                'url_slug' => $urlSlug,
-            ]);
-
-            return response()->json("Blog successfully posted!");
-        }
+        // Create Blog-Topic association
+        $topics = $request->input('topics');
         
-    }
+        foreach ($topics as $key => $value)
+        {
+            $topic = Topic::where('id', $value)->first();
+
+            $blog->addTopic($topic);
+        }
+
+        return redirect()->back();
     
+    }
 }

@@ -1828,11 +1828,6 @@ body {
   margin-bottom: 15px;
 }
 
-#admin-blog-wrapper #advisor-blog-url,
-#admin-blog-wrapper #advisor-id {
-  display: none;
-}
-
 #admin-blog-wrapper #blog-input {
   margin-bottom: 100px;
   padding-top: 25px;
@@ -1844,6 +1839,7 @@ body {
 }
 
 #admin-blog-wrapper #submit-blog-btn {
+  margin-top: 15px;
   margin-bottom: 150px;
 }
 
@@ -2153,6 +2149,10 @@ body {
   }
 }
 
+#FLC-wrapper {
+  padding-bottom: 200px;
+}
+
 #FLC-page-header {
   font-size: 3.5em;
   text-align: center;
@@ -2205,10 +2205,6 @@ body {
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;
-}
-
-.blog-grid {
-  margin-bottom: 200px;
 }
 
 .blog-post {
