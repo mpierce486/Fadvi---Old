@@ -22,8 +22,8 @@
 
 	<div class="blog-grid row grid">
 		@foreach ($blogs as $blog)
-		<div class="blog-post col-sm-4 grid-item 1 @foreach($blog->topics as $topic) {{$topic->id}}@endforeach">
-			<div class="blog-post-inner advisor-blog-post 1">
+		<div class="blog-post col-sm-4 grid-item @foreach($blog->topics as $topic) {{$topic->id}}@endforeach">
+			<div class="blog-post-inner advisor-blog-post">
 				<a href="{{ $blog->blog_url }}" target="_blank"><img src="{{ $blog->blog_main_img }}" class="img-responsive" /></a>
 				<div class="blog-info">
 					<div class="blog-info-title"><a href="{{ $blog->blog_url }}" target="_blank">{{ $blog->blog_title }}</a></div>

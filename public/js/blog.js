@@ -25,7 +25,7 @@ $(document).ready(function() {
 		$(this).addClass("active");
 		// Get data-id of selected filter
 		var id = $(this).attr("data-id");
-		$grid.isotope({ filter: '1' });
+		$grid.isotope({ filter: '.'+id+'' });
 
 		// Populate filters subtext based on which filter was selected
 		var filter = $(this).text();
