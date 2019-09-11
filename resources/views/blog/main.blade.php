@@ -32,6 +32,7 @@
 					<div class="blog-info-advisor-firm">{{ $blog->firm_name }}</div>
 					<div class="blog-info-snippet">{{ $blog->blog_snippet }}</div>
 					<div class="blog-info-date">{{ date("F j, Y", strtotime($blog->created_at)) }}</div>
+					<div class="blog-external-notice">External Content</div>
 <!-- 					<div class="advisor-blog-notice">Contributing Advisor Content</div>-->				
 				</div>
 			</div>
