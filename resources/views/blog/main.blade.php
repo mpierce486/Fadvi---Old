@@ -22,11 +22,12 @@
 
 	<div class="blog-grid row grid">
 		@foreach ($blogs as $blog)
+		@if ($blog->advisor_name !== "Fadvi")
 		<div class="blog-post col-sm-4 grid-item @foreach($blog->topics as $topic) {{$topic->id}}@endforeach">
 			<div class="blog-post-inner advisor-blog-post">
 				<a href="{{ $blog->blog_url }}" target="_blank"><img src="{{ $blog->blog_main_img }}" class="img-responsive" /></a>
 				<div class="blog-info">
-					<div class="blog-info-title"><a href="{{ $blog->blog_url }}" target="_blank">{{ $blog->blog_title }}</a></div>
+					<div class="blog-info-title"><a href="{{ $blog->blog_url }}" target="_blank">{{ $blog->blog_title }} <i class="fas fa-external-link-alt"></i></a></div>
 					<div class="blog-info-advisor-name">By: {{ $blog->advisor_name }}</div>
 					<div class="blog-info-advisor-firm">{{ $blog->firm_name }}</div>
 					<div class="blog-info-snippet">{{ $blog->blog_snippet }}</div>
@@ -35,6 +36,7 @@
 				</div>
 			</div>
 		</div>
+		@endif
 		@endforeach
 	</div>
 
