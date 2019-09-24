@@ -14,6 +14,7 @@ use Session;
 use DB;
 use Mail;
 use Notification;
+use Twitter;
 use Carbon\Carbon;
 
 use Fadvi\Notifications\AdvisorAdded;
@@ -288,6 +289,8 @@ class AdminController extends Controller
 
             $blog->addTopic($topic);
         }
+
+    
 
         return redirect()->back();
     

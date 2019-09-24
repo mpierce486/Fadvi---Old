@@ -41,12 +41,14 @@ $(document).ready(function() {
 		$grid.isotope({ filter: '*' });
 	});
 
-	$('.grid').masonry({
+	var $grid = $('.grid').masonry({
 	  // options
 	  itemSelector: '.grid-item',
 	});
 
-	
+	$grid.imagesLoaded().progress( function() {
+	  $grid.masonry('layout');
+	});
 
 
 
