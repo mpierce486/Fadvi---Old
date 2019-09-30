@@ -19,6 +19,9 @@ class MainController extends Controller
 {
     public function getIndex()
     {
+        // Redirect to Fadvi Learning Center for the time being
+        return redirect()->route('blog');
+
         // Retrieve collection of topic names from database table
         $topics = DB::table('topics')->where('life_event', null)->pluck('topic_name');
         // Retrieve collection of life event names from database table
