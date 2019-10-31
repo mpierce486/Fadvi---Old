@@ -1,9 +1,15 @@
 $(document).ready(function() {
 
+
+	// init Isotope
 	var $grid = $('.grid').isotope({
-	  // options
 	  itemSelector: '.grid-item',
+	  percentPosition: true,
 	});
+	// layout Isotope after each image loads
+	$grid.imagesLoaded().progress( function() {
+	  $grid.isotope('layout');
+	}); 
 
 	// Add "active" class to filters & populate subtext
 	$('#filters > a').on('click', function(e) {
@@ -46,9 +52,7 @@ $(document).ready(function() {
 	  itemSelector: '.grid-item',
 	});
 
-	$grid.imagesLoaded().progress( function() {
-	  $grid.masonry('layout');
-	});
+	
 
 
 

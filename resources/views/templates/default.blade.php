@@ -33,6 +33,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+        <script src="https://npmcdn.com/imagesloaded@4.1.4/imagesloaded.pkgd.js"></script>
         <script>window.Fadvi = <?= Auth::check() ? json_encode(['user' => Auth::user()->first_name]) : "" ?></script>
 
         <!-- TinyMCE -->
